@@ -33,7 +33,7 @@ class CommentManager
 
     private function dbConnect()
     {
-        $db = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'voy', '5_Ow9sG4MYxX!');
+        $db = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'voy', '5_Ow9sG4MYxX');
         return $db;
     }
 }
