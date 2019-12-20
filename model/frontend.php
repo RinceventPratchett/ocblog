@@ -39,6 +39,6 @@ function postComment($postId, $author, $comment)
 
 function dbConnect()
 {
-        $db = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', 'C4m1lle69!');
+        $db = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'voy', '5_Ow9sG4MYxX');
         return $db;
 }
