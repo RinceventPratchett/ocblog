@@ -9,6 +9,9 @@ try{
         elseif ($_GET['action'] == 'adminView') {
                 adminView();
         }
+        elseif ($_GET['action'] == 'editChapterView') {
+                editChapterView();
+        }
         elseif ($_GET['action'] == 'post') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 postDetails();
@@ -36,6 +39,14 @@ try{
             }
             else {
                 throw new Exception('un des champs requis est manquant  (addChapter)');
+            }
+        }
+        elseif ($_GET['action'] == 'editChapter') {
+            if (!empty($_POST['title']) && !empty($_POST['content'])) {
+                editChapter($_POST['title'], $_POST['content']);
+            }
+            else {
+                throw new Exception('un des champs requis est manquant  (editChapter)');
             }
         }
     }

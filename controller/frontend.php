@@ -13,6 +13,15 @@ function adminView()
     require('view/frontend/adminView.php');
 }
 
+function editChapterView()
+{
+    $postManager = new PostManager(); // Création d'un objet
+    $posts = $postManager->showChapters(); // Appel d'une fonction de cet objet
+    $commentManager = new CommentManager();
+    
+    require('view/frontend/editChapterView.php');
+}
+
 function listPosts()
 {
     $postManager = new PostManager(); // Création d'un objet
@@ -57,6 +66,21 @@ function addChapter($chapterTitle, $chapterContent)
     
      if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le chapitre !');
+    }
+    else {
+        header('Location: /index.php?action=adminView');
+
+    }
+}
+
+function editChapter($chapterTitle, $chapterContent)
+{
+    $PostManager = new PostManager();
+    
+    $affectedLines = $PostManager->editChapters($chapterTitle, $chapterContent);
+    
+     if ($affectedLines === false) {
+        throw new Exception('Impossible d\'editer le chapitre !');
     }
     else {
         header('Location: /index.php?action=adminView');

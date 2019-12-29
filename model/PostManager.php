@@ -40,4 +40,12 @@ class PostManager extends Manager
         
         return $affectedLines;
     }
+    public function editChapters($chapterTitle, $chapterContent)
+    {
+        $db = $this->dbConnect();
+        $chapter_modified = $db->prepare('UPDATE chapter(title, content, creation_date) VALUES(?, ?, NOW())');
+        $affectedLines = $chapter_modified->execute(array($chapterTitle, $chapterContent));
+        
+        return $affectedLines;
+    }
 }
