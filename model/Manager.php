@@ -15,7 +15,7 @@ class Manager
 {
     protected function dbConnect()
     {
-        $db = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'voy', '5_Ow9sG4MYxX');
+        $db = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', 'C4m1lle69!');
         return $db;
     }
 }
