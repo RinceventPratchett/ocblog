@@ -15,7 +15,7 @@ require_once("model/Manager.php");
 
 class CommentManager extends Manager 
 {
-    public function getComments($postId)
+    public function showComments($postId)
     {
         $db = $this->dbConnect();
         $comments = $db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%i\') AS comment_date_fr FROM comment WHERE id_chapter = ? ORDER BY comment_date DESC');

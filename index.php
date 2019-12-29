@@ -8,6 +8,7 @@ try{
         }
         elseif ($_GET['action'] == 'adminView') {
                 adminView();
+                
         }
         elseif ($_GET['action'] == 'post') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {

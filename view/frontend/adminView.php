@@ -36,7 +36,7 @@ while ($data = $posts->fetch())
 $posts->closeCursor();
 ?>
 
-<form action="index.php?action=addChapter&amp;id=<?= $chapterId['id'] ?>" method="post">
+<form action="index.php?action=addChapter" method="post">
     <div>
         
         <p>Ajouter un chapitre</p>

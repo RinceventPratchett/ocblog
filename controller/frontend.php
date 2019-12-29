@@ -8,10 +8,7 @@ function adminView()
 {
     $postManager = new PostManager(); // Création d'un objet
     $posts = $postManager->showChapters(); // Appel d'une fonction de cet objet
-    //$chapter_id = $postManager->newChapter();
     $commentManager = new CommentManager();
-
-    
     
     require('view/frontend/adminView.php');
 }

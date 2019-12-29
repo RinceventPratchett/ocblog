@@ -35,7 +35,7 @@ class PostManager extends Manager
     public function newChapter($chapterTitle, $chapterContent)
     {
         $db = $this->dbConnect();
-        $chapter = $db->prepare('INSERT INTO chapter(title, content, creation_date) VALUES(?, ?, ?, NOW())');
+        $chapter = $db->prepare('INSERT INTO chapter(title, content, creation_date) VALUES(?, ?, NOW())');
         $affectedLines = $chapter->execute(array($chapterTitle, $chapterContent));
         
         return $affectedLines;
