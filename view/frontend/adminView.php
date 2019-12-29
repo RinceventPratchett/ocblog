@@ -1,3 +1,4 @@
+
 <?php $title = "interface admin"; ?>
 
 <?php ob_start(); ?>
@@ -23,8 +24,7 @@ while ($data = $posts->fetch())
                 <?= htmlspecialchars($data['title']) ?>
                 <em>le <?= $data['creation_date_fr'] ?></em>
             </h3>
-        </textarea>
-        <textarea class="default">
+        
             <p>
                 <?= nl2br(htmlspecialchars($data['content'])) ?>
                 <br />
@@ -55,5 +55,6 @@ $posts->closeCursor();
 
 
 <?php $content = ob_get_clean(); ?>
+
 
 <?php require('template.php'); ?><!--attendre le chargement des données avant l'appel à template-->

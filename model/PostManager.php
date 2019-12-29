@@ -18,7 +18,7 @@ class PostManager extends Manager
     public function showChapters()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%i\') AS creation_date_fr FROM chapter ORDER BY creation_date DESC LIMIT 0, 5');
+        $req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%i\') AS creation_date_fr FROM chapter ORDER BY creation_date DESC');// LIMIT 0, 0
 
         return $req;
     }
