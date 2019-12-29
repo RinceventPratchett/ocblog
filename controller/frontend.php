@@ -59,7 +59,7 @@ function addChapter($chapterTitle, $chapterContent)
         throw new Exception('Impossible d\'ajouter le chapitre !');
     }
     else {
-        //header('Location: index.php?action=post&id=' . $chapter_id);
-        echo "billet bien ajouté";
+        header('Location: /index.php?action=adminView');
+
     }
 }
