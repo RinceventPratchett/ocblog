@@ -6,9 +6,12 @@ try{
         if ($_GET['action'] == 'listPosts') {
             listPosts();
         }
+        elseif ($_GET['action'] == 'adminView') {
+                adminView();
+        }
         elseif ($_GET['action'] == 'post') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
-                post();
+                postDetails();
             }
             else {
                 //echo 'Erreur : aucun identifiant de billet envoyé';
@@ -28,7 +31,18 @@ try{
             }
             else {
                 //echo 'Erreur : aucun identifiant de billet envoyé';
-                throw new Exception('Aucun identifiant de chapitre envoyé');
+                throw new Exception('Aucun identifiant de chapitre envoyé (addComment)');
+            }
+        }
+        elseif ($_GET['action'] == 'addChapter') {
+            //if (isset($_GET['id']) && $_GET['id'] > 0) {
+                if (!empty($_POST['title']) && !empty($_POST['content'])) {
+                    addChapter($_POST['title'], $_POST['content']);
+                }
+            //}
+            else {
+                //echo 'Erreur : aucun identifiant de billet envoyé';
+                throw new Exception('un des champs requis est manquant ! (addChapter)');
             }
         }
     }
