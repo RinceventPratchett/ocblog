@@ -35,17 +35,24 @@ class PostManager extends Manager
     public function newChapter($chapterTitle, $chapterContent)
     {
         $db = $this->dbConnect();
-        $chapter = $db->prepare('INSERT INTO chapter(title, content, creation_date) VALUES(?, ?, NOW())');
+        $chapter = $db->prepare('INSERT INTO chapter( title, content, creation_date) VALUES(?, ?, NOW())');
         $affectedLines = $chapter->execute(array($chapterTitle, $chapterContent));
-        
+        var_dump($affectedLines);
         return $affectedLines;
     }
-    public function editChapters($chapterTitle, $chapterContent)
+    public function updateChapter($chapterTitle, $chapterContent, $chapterId)
     {
         $db = $this->dbConnect();
-        $chapter_modified = $db->prepare('UPDATE chapter(title, content, creation_date) VALUES(?, ?, NOW())');
-        $affectedLines = $chapter_modified->execute(array($chapterTitle, $chapterContent));
-        
+        $updatedChapter = $db->prepare('UPDATE chapter SET title=?, content=? WHERE id=?');
+        echo 'updateChapter PostManager';
+        echo $chapterTitle;
+        echo $chapterContent;
+        $affectedLines = $updatedChapter->execute(array($chapterTitle, $chapterContent, $chapterId));
+            var_dump($affectedLines);
+            var_dump($updatedChapter);
+            var_dump($db);
+            var_dump($updatedChapter->errorInfo(), $updatedChapter->rowCount());
+
         return $affectedLines;
     }
 }

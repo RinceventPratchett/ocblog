@@ -7,10 +7,14 @@ try{
             listPosts();
         }
         elseif ($_GET['action'] == 'adminView') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
                 adminView();
+            }
         }
         elseif ($_GET['action'] == 'editChapterView') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
                 editChapterView();
+            }
         }
         elseif ($_GET['action'] == 'post') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
@@ -42,11 +46,17 @@ try{
             }
         }
         elseif ($_GET['action'] == 'editChapter') {
-            if (!empty($_POST['title']) && !empty($_POST['content'])) {
-                editChapter($_POST['title'], $_POST['content']);
-            }
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                if (!empty($_POST['title']) && !empty($_POST['content'])) {
+                    editChapter($_POST['title'], $_POST['content'], $_GET['id']);
+                }
+                else
+                {
+                    throw new Exception('un de champs est reconnu comme vide - controler - editChapter - l55');
+                }    
+            }    
             else {
-                throw new Exception('un des champs requis est manquant  (editChapter)');
+                throw new Exception('pas d\'id de chapitre retourné (controller editChapter)');
             }
         }
     }

@@ -21,11 +21,11 @@ while ($data = $posts->fetch())
         </h3>
         
         <p>
-            <?= nl2br(htmlspecialchars($data['content'])) ?>
-            <br />
-            <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
-            <em><a href="index.php?action=adminView">admin</a></em>
+            <?= nl2br($data['content']) ?>
+
         </p>
+            <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
+            <em><a href="index.php?action=adminView&amp;id=<?= $data['id'] ?>">admin</a></em>
     </div>
 <?php
 }

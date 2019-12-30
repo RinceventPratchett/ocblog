@@ -7,8 +7,9 @@ require_once('model/CommentManager.php');
 function adminView()
 {
     $postManager = new PostManager(); // Création d'un objet
-    $posts = $postManager->showChapters(); // Appel d'une fonction de cet objet
+    $post = $postManager->getPost($_GET['id']); // Appel d'une fonction de cet objet
     $commentManager = new CommentManager();
+    $comments = $commentManager->showComments($_GET['id']);
     
     require('view/frontend/adminView.php');
 }
@@ -16,8 +17,9 @@ function adminView()
 function editChapterView()
 {
     $postManager = new PostManager(); // Création d'un objet
-    $posts = $postManager->showChapters(); // Appel d'une fonction de cet objet
+    $post = $postManager->getPost($_GET['id']); // Appel d'une fonction de cet objet
     $commentManager = new CommentManager();
+    $comments = $commentManager->showComments($_GET['id']);
     
     require('view/frontend/editChapterView.php');
 }
@@ -68,22 +70,23 @@ function addChapter($chapterTitle, $chapterContent)
         throw new Exception('Impossible d\'ajouter le chapitre !');
     }
     else {
-        header('Location: /index.php?action=adminView');
+        header('Location: index.php');
 
     }
 }
 
-function editChapter($chapterTitle, $chapterContent)
+function editChapter($chapterTitle, $chapterContent, $chapterId)
 {
     $PostManager = new PostManager();
     
-    $affectedLines = $PostManager->editChapters($chapterTitle, $chapterContent);
-    
+    $affectedLines = $PostManager->updateChapter($chapterTitle, $chapterContent, $chapterId);
+
+    var_dump($affectedLines);
      if ($affectedLines === false) {
-        throw new Exception('Impossible d\'editer le chapitre !');
+        throw new Exception('Impossible d\'editer le chapitre ! - frontend - l.85');
     }
     else {
-        header('Location: /index.php?action=adminView');
+        header('Location: index.php');
 
     }
 }
