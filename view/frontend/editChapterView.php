@@ -3,7 +3,7 @@
 
 <?php ob_start(); ?>
 <h1>interface admin - edition de chapitre</h1>
-<p><a href="/index.php">Retour à la liste des billets</a></p>
+<p><a href="index.php">Retour à la liste des billets</a></p>
 
 <p>Derniers billets du blog :</p>
 

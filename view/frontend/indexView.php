@@ -22,10 +22,10 @@ while ($data = $posts->fetch())
         
         <p>
             <?= nl2br($data['content']) ?>
-
-        </p>
+            <br />
             <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
             <em><a href="index.php?action=adminView&amp;id=<?= $data['id'] ?>">admin</a></em>
+        </p>
     </div>
 <?php
 }
