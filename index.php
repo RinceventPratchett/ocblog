@@ -11,6 +11,9 @@ try{
                 adminView();
             }
         }
+        elseif ($_GET['action'] == 'addChapterView') {
+                addChapterView();
+        }
         elseif ($_GET['action'] == 'editChapterView') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 editChapterView();
@@ -56,7 +59,16 @@ try{
                 }    
             }    
             else {
-                throw new Exception('pas d\'id de chapitre retourné (controller editChapter)');
+                throw new Exception('pas d\'id de chapitre retourné (controler editChapter)');
+            }
+        }
+        elseif ($_GET['action'] == 'moderateComment') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                moderateComment($_GET['id']);
+            }
+            else {
+
+                throw new Exception('impossible de supprimer le commentaire --> index.php');
             }
         }
     }

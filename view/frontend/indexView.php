@@ -23,9 +23,10 @@ while ($data = $posts->fetch())
         <p>
             <?= nl2br($data['content']) ?>
             <br />
-            <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
-            <em><a href="index.php?action=adminView&amp;id=<?= $data['id'] ?>">admin</a></em>
         </p>
+        <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em> <br />
+        <em><a href="index.php?action=adminView&amp;id=<?= $data['id'] ?>">administration</a></em> <br />
+        
     </div>
 <?php
 }
@@ -33,4 +34,4 @@ $posts->closeCursor();
 ?>
 <?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?><!--attendre le chargement des données avant l'appel à template-->
+<?php require('template.php'); ?>

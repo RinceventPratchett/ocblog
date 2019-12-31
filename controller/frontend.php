@@ -23,6 +23,11 @@ function editChapterView()
     
     require('view/frontend/editChapterView.php');
 }
+function addChapterView()
+{
+        
+    require('view/frontend/addChapterView.php');
+}
 
 function listPosts()
 {
@@ -84,6 +89,19 @@ function editChapter($chapterTitle, $chapterContent, $chapterId)
     var_dump($affectedLines);
      if ($affectedLines === false) {
         throw new Exception('Impossible d\'editer le chapitre ! - frontend - l.85');
+    }
+    else {
+        header('Location: index.php');
+
+    }
+}
+
+function moderateComment($commentId) {
+    
+    $CommentManager = new CommentManager();
+    $affectedLines = $CommentManager->deleteComment($commentId);
+    if ($affectedLines === false) {
+        throw new Exception('Impossible de supprimer le commentaire ! - frontend - l.104');
     }
     else {
         header('Location: index.php');
