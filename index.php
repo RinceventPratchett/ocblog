@@ -24,6 +24,14 @@ try{
                 reportedComment($_GET['id']);
             }
         }
+        elseif ($_GET['action'] == 'showReportedComment') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                showReportedComment($_GET['id']);
+            }
+            else {
+                throw new Exception('Aucun id de chapitre envoyé');
+            }
+        }
         elseif ($_GET['action'] == 'post') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 postDetails();

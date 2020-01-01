@@ -44,6 +44,7 @@ function adminView()
     $post = $postManager->getPost($_GET['id']); // Appel d'une fonction de cet objet
     $commentManager = new CommentManager();
     $comments = $commentManager->showComments($_GET['id']);
+    $reportedComment = $commentManager->reportPending($_GET['id']);
     
     require('view/frontend/adminView.php');
 }
@@ -57,6 +58,7 @@ function editChapterView()
     
     require('view/frontend/editChapterView.php');
 }
+
 function addChapterView()
 {        
     require('view/frontend/addChapterView.php');
@@ -102,13 +104,12 @@ function moderateComment($commentId) {
     }
     else {
         header('Location: index.php');
-
     }
 }
 
 function reportedComment($commentId) {
     
-        $CommentManager = new CommentManager();
+    $CommentManager = new CommentManager();
     $affectedLines = $CommentManager->reportComment($commentId);
     var_dump($affectedLines);
     if ($affectedLines === false) {
@@ -117,4 +118,15 @@ function reportedComment($commentId) {
     else {
         header('Location: /view/frontend/confirmationReport.php');
     }
+}
+
+function showReportedComment($commentId) {
+    
+    $commentManager = new CommentManager();
+    $comments = $commentManager->reportPending($_GET['id']);
+    $postManager = new PostManager(); // Création d'un objet
+    $post = $postManager->getPost($_GET['id']); // Appel d'une fonction de cet objet
+    
+    require('view/frontend/adminComment.php');
+    
 }

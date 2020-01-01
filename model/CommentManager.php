@@ -43,9 +43,19 @@ class CommentManager extends Manager
     
     public function reportComment($commentId) {
         $db = $this->dbConnect();
-        $reportComment= $db->prepare('UPDATE comment SET reported=reported+1 WHERE id='.$commentId);
-        $affectedLines = $reportComment->execute(array($commentId));
+        $reportedComment= $db->prepare('UPDATE comment SET reported=reported+1 WHERE id='.$commentId);
+        $affectedLines = $reportedComment->execute(array($commentId));
         
         return $affectedLines;
     }
+    
+    public function reportPending($commentId) {
+        $db = $this->dbConnect();
+        $reportInPending = $db->prepare('SELECT id, author, comment, reported, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%i\') AS comment_date_fr FROM comment WHERE id_chapter = ? AND reported <> 0 ORDER BY reported DESC'); //<> dans la requete SQL est egal à different de
+        $reportInPending->execute(array($commentId));
+
+
+        return $reportInPending;
+    }
 }
+    

@@ -4,9 +4,10 @@
 <?php ob_start(); ?>
 
 <h1>interface admin - modification du chapitre</h1>
-<p><a href="/index.php">Retour à la liste des billets</a></p><br />
+<em><a href="/index.php">Retour à la liste des billets</a></em><br />
 <em><a href="index.php?action=addChapterView">ajouter un chapitre</a></em><br />
-<a href="index.php?action=editChapterView&amp;id=<?= $post['id'] ?>">Editer le chapitre</a>
+<em><a href="index.php?action=editChapterView&amp;id=<?= $post['id'] ?>">Editer le chapitre</a><br /></em>
+<em><a href="index.php?action=showReportedComment&amp;id=<?= $post['id'] ?>">administrer les commentaires reported</a></em>
 
 <div class="news">
     <h3>
@@ -28,9 +29,7 @@ while ($comment = $comments->fetch())
 ?>
     <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-    <form action="index.php?action=moderateComment&amp;id=<?= $comment['id'] ?>" method="post">
-        <input type="submit" value="supprimer commentaire" />
-    </form>
+    
 
 <?php
 }
