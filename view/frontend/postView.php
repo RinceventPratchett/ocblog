@@ -26,8 +26,10 @@ while ($comment = $comments->fetch())
 <div class="comment">
         <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
         <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-        <p><a class="btn btn-danger" href="/view/frontend/confirmationReport.php">Signaler le commentaire</a></p>
-
+                
+        <form action="index.php?action=reportedComment&amp;id=<?= $comment['id'] ?>" method="post">
+            <input type="submit" class="btn btn-danger" value="Signaler le commentaire"/>
+        </form>
     </div>
 <?php
 }

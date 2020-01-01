@@ -19,6 +19,11 @@ try{
                 editChapterView();
             }
         }
+        elseif ($_GET['action'] == 'reportedComment') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                reportedComment($_GET['id']);
+            }
+        }
         elseif ($_GET['action'] == 'post') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 postDetails();
