@@ -1,10 +1,13 @@
 
+
 <?php $title = "interface admin"; ?>
 
 <?php ob_start(); ?>
 
 <h1>interface admin - Ajout de chapitre</h1>
-<p><a href="/index.php">Retour à la liste des billets</a></p>
+
+<em><a href="/index.php">Retour à la liste des billets</a></em><br />
+
 
 <div class="news">
 

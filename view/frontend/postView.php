@@ -1,3 +1,4 @@
+
 <?php $title = htmlspecialchars($post['title']); ?>
 
 <?php ob_start(); ?>

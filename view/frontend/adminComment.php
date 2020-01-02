@@ -1,4 +1,3 @@
-
 <?php $title = "Visualisation des commentaires reported"; ?>
 
 <?php ob_start(); ?>

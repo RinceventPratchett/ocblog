@@ -1,9 +1,11 @@
 
+
 <?php $title = "interface admin"; ?>
 
 <?php ob_start(); ?>
 <h1>interface admin - edition de chapitre</h1>
 <p><a href="index.php">Retour à la liste des billets</a></p>
+<em><a href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">retour administration du billet</a></em><br />
 
 <p>Derniers billets du blog :</p>
 
