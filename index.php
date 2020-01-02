@@ -1,4 +1,4 @@
 <?php 
 
-require('controller/routeur.php');
+require('routeur.php');
 

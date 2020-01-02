@@ -14,6 +14,7 @@ $_SESSION['password'] = 'adminBlogAlaska!';
 
 
 require('controller/frontend.php');
+require('controller/backend.php');
 
 try{
     if (isset($_GET['action'])) {
@@ -33,9 +34,9 @@ try{
                 editChapterView();
             }
         }
-        elseif ($_GET['action'] == 'reportedComment') {
+        elseif ($_GET['action'] == 'reportComment') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
-                reportedComment($_GET['id']);
+                reportComment($_GET['id']);
             }
         }
         elseif ($_GET['action'] == 'showReportedComment') {
