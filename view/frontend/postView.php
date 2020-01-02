@@ -1,4 +1,3 @@
-
 <?php $title = htmlspecialchars($post['title']); ?>
 
 <?php ob_start(); ?>
@@ -29,7 +28,7 @@ while ($comment = $comments->fetch())
         <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
                 
         <form action="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>" method="post">
-            <input type="submit" class="btn btn-danger" value="Signaler le commentaire"/>
+            <input type="submit" class="btn btn-danger" value="Signaler le commentaire"/>           
         </form>
     </div>
 <?php

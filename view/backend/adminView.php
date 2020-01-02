@@ -29,9 +29,12 @@ while ($comment = $comments->fetch())
 ?>
     <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-    
-
-<?php
+    <?php
+        if($comment['reported'] != 0){
+    ?>
+    <p>Commentaire signalé <strong><?= $comment['reported'] ?></strong> fois</p> <!--pour afficher le nombre de report des commentaires sur la session admin-->
+    <?php
+    }    
 }
 ?>
 <?php $content = ob_get_clean(); ?>
