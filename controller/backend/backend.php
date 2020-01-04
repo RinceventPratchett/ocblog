@@ -1,5 +1,13 @@
 <?php
 
+// Chargement des classes
+
+require_once(MODEL_DIR.'/AdminManager.php');
+require_once(MODEL_DIR.'/PostManager.php');
+require_once(MODEL_DIR.'/CommentManager.php');
+
+
+
 function adminView()
 {
     $postManager = new PostManager(); // Création d'un objet

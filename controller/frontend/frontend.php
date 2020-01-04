@@ -1,16 +1,30 @@
 <?php
 
 // Chargement des classes
-require_once('model/PostManager.php');
-require_once('model/CommentManager.php');
+require_once(MODEL_DIR.'/PostManager.php');
+require_once(MODEL_DIR.'/CommentManager.php');
+require_once(MODEL_DIR.'/AdminManager.php');
 
+
+function login(){
+    require(FRONT_VIEW_DIR.'/loginView.php');
+}
+
+function signIn(){
+    $AdminManager = new AdminManager();
+    $signIn = $AdminManager->signIn();
+    if ($signIn){
+       header('Location: index.php');
+    }
+    throw new Exception('Impossible de se connecter !');
+}
 
 function listPosts()
 {
     $postManager = new PostManager(); // Création d'un objet
     $posts = $postManager->showChapters(); // Appel d'une fonction de cet objet
 
-    require('view/frontend/indexView.php');
+    require(FRONT_VIEW_DIR.'/indexView.php');
 }
 
 function postDetails()
@@ -21,7 +35,7 @@ function postDetails()
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->showComments($_GET['id']);
 
-    require('view/frontend/postView.php');
+    require(FRONT_VIEW_DIR.'/postView.php');
 }
 
 function addComment($postId, $author, $comment)
@@ -49,4 +63,5 @@ function reportComment($commentId) {
     else {
         header('Location: /view/frontend/confirmationReport.php');
     }
+    
 }

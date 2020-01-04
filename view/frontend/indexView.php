@@ -7,7 +7,9 @@ ob_start();
 ?>
 
 <h1>Blog Alaska !</h1>
-<button type="button"><i class="fas fa-sign-in-alt fa-lg"> sign-in</i></button>
+<form action="index.php?action=login" method="post">
+    <input type="submit" value="sign-in" />
+</form>
 <p>Derniers billets du blog :</p>
 
 <?php
@@ -25,7 +27,14 @@ while ($data = $posts->fetch())
             <br />
         </p>
         <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em> <br />
-        <em><a href="index.php?action=adminView&amp;id=<?= $data['id'] ?>">administration</a></em> <br />
+        <?php 
+        if ($_SESSION['adminLogged'])
+        { ?>
+            <em><a href="index.php?action=adminView&amp;id=<?= $data['id'] ?>">administration</a></em> <br />
+        <?php
+        }
+        ?>
+        
         
     </div>
 <?php
