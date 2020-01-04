@@ -28,6 +28,7 @@
                         
                         $_SESSION['id'] = $resultat['id'];
                         $_SESSION['pseudo'] = $pseudo;
+                        $_SESSION['adminLogged'] = true;
                         return true;
                     }
                     else {

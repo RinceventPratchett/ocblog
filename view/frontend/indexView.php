@@ -28,7 +28,7 @@ while ($data = $posts->fetch())
         </p>
         <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em> <br />
         <?php 
-        if ($_SESSION['adminLogged'])
+        if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged'])
         { ?>
             <em><a href="index.php?action=adminView&amp;id=<?= $data['id'] ?>">administration</a></em> <br />
         <?php
