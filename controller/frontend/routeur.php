@@ -3,11 +3,9 @@
 session_start();
 
 //check si session admin est ouverte
-$_SESSION['adminLogged'] = false;
 
-if (isset($_SESSION['pseudo']) && $_SESSION['pseudo'] == ADMIN_USER){
+if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']){
     require(CONTROLLER_DIR.'/backend/backend.php');
-    $_SESSION['adminLogged'] = true;
 }
 
 try{
@@ -19,7 +17,7 @@ try{
         if(($_GET['action'] == 'adminView' || $_GET['action'] == 'addChapterView' || 
                 $_GET['action'] == 'editChapterView' || $_GET['action'] == 'showReportedComment' || 
                 $_GET['action'] == 'addChapter' || $_GET['action'] == 'editChapter' || 
-                $_GET['action'] == 'moderateComment') && $adminLogged == true){
+                $_GET['action'] == 'moderateComment') && $_SESSION['adminLogged'] == true){
             
             if ($_GET['action'] == 'adminView') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
