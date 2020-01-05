@@ -67,3 +67,7 @@ div.comment:hover input.btn.btn-danger{
     left: 1rem;
     margin-bottom: 0.5rem;
 }
+
+.specific{
+    width: 85px;
+}

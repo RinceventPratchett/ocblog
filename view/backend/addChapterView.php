@@ -24,7 +24,7 @@
             <textarea type="text" class="default" name="content"></textarea>
         </div>
         <div>
-            <input type="submit" />
+            <input class="btn btn-secondary" type="submit" />
         </div>
     </form>
 </div>

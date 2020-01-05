@@ -54,7 +54,6 @@ function editChapter($chapterTitle, $chapterContent, $chapterId)
     
     $affectedLines = $PostManager->updateChapter($chapterTitle, $chapterContent, $chapterId);
 
-    var_dump($affectedLines);
      if ($affectedLines === false) {
         throw new Exception('Impossible d\'editer le chapitre ! - frontend - l.85');
     }
@@ -89,5 +88,18 @@ function showReportedComment($commentId, $postId) {
     else{
         echo "pas de commentaire à modérer"; 
         header('Location: index.php?action=adminView&id='.$postId['id']);
+    } 
+}
+
+function showAllReportedComment($commentId) {
+    
+    $commentManager = new CommentManager();
+    $comments = $commentManager->showReportPending($commentId);
+    if ($comments->rowCount() != 0) { //test si la requete renvoie une ligne minimum
+        require(BACK_VIEW_DIR.'/adminAllComment.php');
+
+    }
+    else{
+        echo "pas de commentaire à modérer"; 
     } 
 }

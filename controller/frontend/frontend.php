@@ -6,7 +6,8 @@ require_once(MODEL_DIR.'/CommentManager.php');
 require_once(MODEL_DIR.'/AdminManager.php');
 
 
-function login(){
+
+function login(){  //page containing the connexion form
     require(FRONT_VIEW_DIR.'/loginView.php');
 }
 
@@ -19,21 +20,21 @@ function signIn(){
     throw new Exception('Impossible de se connecter !');
 }
 
-function SignOut(){
+function signOut(){
     $AdminManager = new AdminManager();
     $signOut = $AdminManager->signOut();
     
     header('Location: index.php');
 }
-function listPosts()
+function listPosts() //List the different chapter on IndexView
 {
-    $postManager = new PostManager(); // Création d'un objet
-    $posts = $postManager->showChapters(); // Appel d'une fonction de cet objet
+    $postManager = new PostManager(); 
+    $posts = $postManager->showChapters(); 
 
     require(FRONT_VIEW_DIR.'/indexView.php');
 }
 
-function postDetails()
+function postDetails() //Show the chapter and existing comment depending of
 {
     $postManager = new PostManager();
     $commentManager = new CommentManager();
@@ -44,7 +45,7 @@ function postDetails()
     require(FRONT_VIEW_DIR.'/postView.php');
 }
 
-function addComment($postId, $author, $comment)
+function addComment($postId, $author, $comment) 
 {
     $commentManager = new CommentManager();
 

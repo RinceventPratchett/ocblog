@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 <h1>Alaska</h1>
-<em><a href="index.php">Retour à la liste des billets</a></em>
+<em><a href="index.php" class="linkAdmin">Retour à la liste des billets</a></em>
 
 
 <div class="news">
@@ -45,7 +45,7 @@ while ($comment = $comments->fetch())
         <textarea id="comment" name="comment"></textarea>
     </div>
     <div>
-        <input type="submit" />
+        <input class="btn btn-secondary" type="submit" />
     </div>
 </form>
    

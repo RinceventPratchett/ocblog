@@ -17,7 +17,7 @@ try{
         if(($_GET['action'] == 'adminView' || $_GET['action'] == 'addChapterView' || 
                 $_GET['action'] == 'editChapterView' || $_GET['action'] == 'showReportedComment' || 
                 $_GET['action'] == 'addChapter' || $_GET['action'] == 'editChapter' || 
-                $_GET['action'] == 'moderateComment') && $_SESSION['adminLogged'] == true){
+                $_GET['action'] == 'moderateComment' || $_GET['action'] == 'showAllReportedComment' ) && $_SESSION['adminLogged'] == true){
             
             if ($_GET['action'] == 'adminView') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
@@ -39,6 +39,9 @@ try{
                 else {
                     throw new Exception('Aucun id de chapitre envoyé');
                 }
+            }
+            elseif ($_GET['action'] == 'showAllReportedComment') {
+                showAllReportedComment('$commentId');
             }
             elseif ($_GET['action'] == 'addChapter') {
                 if (!empty($_POST['title']) && !empty($_POST['content'])) {
@@ -85,6 +88,11 @@ try{
             elseif ($_GET['action'] == 'login') {
                 login();
             }
+             elseif ($_GET['action'] == 'signOut') {
+                if ($_SESSION['adminLogged']){
+                    signOut();
+                }
+             }    
             elseif ($_GET['action'] == 'signIn') {
                 signIn();
             }
@@ -93,7 +101,7 @@ try{
                     reportComment($_GET['id']);
                 }
             }
-            elseif ($_GET['action'] == 'post') {
+            elseif ($_GET['action'] == 'showPost') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
                     postDetails();
                 }
@@ -114,14 +122,6 @@ try{
                     throw new Exception('Aucun identifiant de chapitre envoyé (addComment)');
                 }
             }
-            elseif ($_GET['action'] == 'signOut') {
-                if ($_SESSION['adminLogged']){
-                    SignOut();
-                }
-                else {
-                    throw new Exception('Impossible de se déconnecter');
-                }               
-        }
             else {
                 listPosts(); //si aucune action front, on affiche l'index du site
             }

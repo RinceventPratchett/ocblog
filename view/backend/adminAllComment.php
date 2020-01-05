@@ -4,7 +4,7 @@
 <h1>Visualisation des commentaires reported</h1>
 
 <div class="linkAdmin">
-    <em><a href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">retour administration du billet</a></em><br />
+
     <em><a href="/index.php">Retour à la liste des billets</a></em>
 </div>
 
@@ -16,6 +16,7 @@ while ($comment = $comments->fetch())
 {
 ?>
     <div class="comment">
+        <strong>chapter n° <?= $comment['id_chapter'] ?></strong><br />
         <strong><?= htmlspecialchars($comment['author']) ?></strong><br />
         le <?= $comment['comment_date_fr'] ?><br />
         <?= nl2br(htmlspecialchars($comment['comment'])) ?><br />

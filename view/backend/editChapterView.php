@@ -16,16 +16,16 @@
 
         <form action="index.php?action=editChapter&amp;id=<?= $post['id'] ?>" method="post">
             <div>
-                <em>le <?= $post['creation_date_fr'] ?></em>
+                <em>le <?= $post['creation_date_fr'] ?></em><br />
                 
-                    <label for="title"><?= $post['title'] ?></label><br /> 
+                <strong><label for="title"><?= $post['title'] ?></label></strong><br /> 
                     <input type="text" id="title" name="title" value="" placeholder="title to be modified" /> <br />
                         <label id="content" for="content">Contenu du chapitre</label><br />
-                        <textarea type="text" class="default" name="content">
+                        <textarea type="text" class="default" name="content"> <!--class default called in template files-->
                             <?= $post['content'] ?>
                         </textarea>
 
-                        <input type="submit" /><br />
+                        <input class="btn btn-secondary" type="submit" /><br />
                         <em><a href="index.php?action=post&amp;id=<?= $post['id'] ?>">Commentaires</a></em>
                 
             </div>
