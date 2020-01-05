@@ -19,6 +19,12 @@ function signIn(){
     throw new Exception('Impossible de se connecter !');
 }
 
+function SignOut(){
+    $AdminManager = new AdminManager();
+    $signOut = $AdminManager->signOut();
+    
+    header('Location: index.php');
+}
 function listPosts()
 {
     $postManager = new PostManager(); // Création d'un objet

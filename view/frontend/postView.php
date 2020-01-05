@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 <h1>Alaska</h1>
-<p><a href="index.php">Retour à la liste des billets</a></p>
+<em><a href="index.php">Retour à la liste des billets</a></em>
 
 
 <div class="news">
@@ -24,8 +24,9 @@ while ($comment = $comments->fetch())
 {
 ?>
 <div class="comment">
-        <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-        <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+        <strong><?= htmlspecialchars($comment['author']) ?></strong>
+        le <?= $comment['comment_date_fr'] ?><br />
+        <?= nl2br(htmlspecialchars($comment['comment'])) ?> <br />
                 
         <form action="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>" method="post">
             <input type="submit" class="btn btn-danger" value="Signaler le commentaire"/>           
@@ -34,7 +35,7 @@ while ($comment = $comments->fetch())
 <?php
 }
 ?>
-<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post" class="addCommment">
     <div>
         <label for="author">Auteur</label><br />
         <input type="text" id="author" name="author" />
@@ -50,4 +51,4 @@ while ($comment = $comments->fetch())
    
 <?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+<?php require(FRONT_VIEW_DIR.'/template.php'); ?>

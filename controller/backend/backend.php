@@ -16,7 +16,7 @@ function adminView()
     $comments = $commentManager->showComments($_GET['id']);
     $reportedComment = $commentManager->reportPending($_GET['id']);
     
-    require('view/backend/adminView.php');
+    require(BACK_VIEW_DIR.'/adminView.php');
 }
 
 function editChapterView()
@@ -26,13 +26,13 @@ function editChapterView()
     $commentManager = new CommentManager();
     $comments = $commentManager->showComments($_GET['id']);
     
-    require('view/backend/editChapterView.php');
+    require(BACK_VIEW_DIR.'/editChapterView.php');
 }
 
 function addChapterView()
 {   
     
-    require('view/backend/addChapterView.php');
+    require(BACK_VIEW_DIR.'/addChapterView.php');
 }
 
 function addChapter($chapterTitle, $chapterContent)
@@ -84,7 +84,7 @@ function showReportedComment($commentId, $postId) {
     if ($comments->rowCount() != 0) { //test si la requete renvoie une ligne minimum
         $postManager = new PostManager(); 
         $post = $postManager->getPost($_GET['id']); 
-        require('view/backend/adminComment.php');
+        require(BACK_VIEW_DIR.'/adminComment.php');
     }
     else{
         echo "pas de commentaire à modérer"; 

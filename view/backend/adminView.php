@@ -3,11 +3,14 @@
 
 <?php ob_start(); ?>
 
-<h1>interface admin - modification du chapitre</h1>
-<em><a href="/index.php">Retour à la liste des billets</a></em><br />
-<em><a href="index.php?action=addChapterView">ajouter un chapitre</a></em><br />
-<em><a href="index.php?action=editChapterView&amp;id=<?= $post['id'] ?>">Editer le chapitre</a><br /></em>
-<em><a href="index.php?action=showReportedComment&amp;id=<?= $post['id'] ?>">administrer les commentaires reported</a></em>
+<h1>interface admin </h1>
+
+<div class="linkAdmin">
+    <em><a href="/index.php">Retour à la liste des billets</a></em><br />
+    <em><a href="index.php?action=addChapterView">ajouter un chapitre</a></em><br />
+    <em><a href="index.php?action=editChapterView&amp;id=<?= $post['id'] ?>">Editer le chapitre</a><br /></em>
+    <em><a href="index.php?action=showReportedComment&amp;id=<?= $post['id'] ?>">administrer les commentaires reported</a></em>
+</div>
 
 <div class="news">
     <h3>
@@ -22,22 +25,26 @@
 </div>
 
 <h2>Commentaires</h2>
+    <div class="col">
+        <?php
+        while ($comment = $comments->fetch())
+        {
+        ?>
 
-<?php
-while ($comment = $comments->fetch())
-{
-?>
-    <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-    <?php
-        if($comment['reported'] != 0){
-    ?>
-    <p>Commentaire signalé <strong><?= $comment['reported'] ?></strong> fois</p> <!--pour afficher le nombre de report des commentaires sur la session admin-->
-    <?php
-    }    
-}
-?>
+            <strong><?= htmlspecialchars($comment['author']) ?></strong><br />
+            le <?= $comment['comment_date_fr'] ?><br />
+            <?= nl2br(htmlspecialchars($comment['comment'])) ?><br />
+            <?php
+                if($comment['reported'] != 0){
+            ?>
+            Commentaire signalé <strong><?= $comment['reported'] ?></strong> fois <br /><!--pour afficher le nombre de report des commentaires sur la session admin-->
+            <?php
+                }    
+            }
+            ?>
+
+    </div>        
 <?php $content = ob_get_clean(); ?>
 
 
-<?php require('view/backend/template.php'); ?><!--attendre le chargement des données avant l'appel à template-->
+<?php require(BACK_VIEW_DIR.'/template.php'); ?><!--attendre le chargement des données avant l'appel à template-->

@@ -114,6 +114,14 @@ try{
                     throw new Exception('Aucun identifiant de chapitre envoyé (addComment)');
                 }
             }
+            elseif ($_GET['action'] == 'signOut') {
+                if ($_SESSION['adminLogged']){
+                    SignOut();
+                }
+                else {
+                    throw new Exception('Impossible de se déconnecter');
+                }               
+        }
             else {
                 listPosts(); //si aucune action front, on affiche l'index du site
             }

@@ -40,6 +40,11 @@
                         return false;
             }
         }
+        public function SignOut(){
+            if ($_SESSION['adminLogged']){
+                session_destroy();
+            }
+        }
     }    
 
     

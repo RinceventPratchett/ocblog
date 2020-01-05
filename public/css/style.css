@@ -13,6 +13,10 @@ h1, h3
     text-align:center;
     color: red;
 }
+h2{
+    position: relative;
+    left: 1rem;
+}
 h3
 {
     background-color:black;
@@ -41,8 +45,25 @@ input.btn.btn-danger{
 }
 div.comment{
     width: 15rem;
+    position: relative;
+    left: 1rem;
 }
 div.comment:hover input.btn.btn-danger{
         display: inline-block;
         width: 15rem;
+}
+.signInBtn{
+    position: relative;
+    left: 1rem;
+
+}
+
+.addCommment{
+    margin-left: 1rem;
+}
+
+.linkAdmin{
+    position: relative;
+    left: 1rem;
+    margin-bottom: 0.5rem;
 }

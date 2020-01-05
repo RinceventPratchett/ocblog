@@ -4,10 +4,12 @@
 
 <?php ob_start(); ?>
 <h1>interface admin - edition de chapitre</h1>
-<p><a href="index.php">Retour à la liste des billets</a></p>
-<em><a href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">retour administration du billet</a></em><br />
+<div class="linkAdmin">
+    <em><a href="index.php">Retour à la liste des billets</a></em><br />
+    <em><a href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">retour administration du billet</a></em><br />
+</div>
 
-<p>Derniers billets du blog :</p>
+<h2>Derniers billets du blog :</h2>
 
 
     <div class="news">
@@ -33,4 +35,4 @@
 <?php $content = ob_get_clean(); ?>
 
 
-<?php require('view/backend/template.php'); ?><!--attendre le chargement des données avant l'appel à template-->
+<?php require(BACK_VIEW_DIR.'/template.php'); ?><!--attendre le chargement des données avant l'appel à template-->
