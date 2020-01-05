@@ -5,6 +5,7 @@ define('CONTROLLER_DIR', ROOT_DIR.'/controller');
 define('MODEL_DIR', ROOT_DIR.'/model');
 define('VIEW_DIR', ROOT_DIR.'/view');
 define('FRONT_VIEW_DIR', VIEW_DIR.'/frontend');
+define('BACK_VIEW_DIR', VIEW_DIR.'/backend');
 
 define('ADMIN_USER', 'admin');
 
