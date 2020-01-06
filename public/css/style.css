@@ -41,23 +41,35 @@ a
     color: blue;
 }
 input.btn.btn-danger{
-    display: none;
+    visibility: hidden;
+
+}
+input.btn.btn-danger.adminchapter{
+    visibility: visible;
+}
+.container.adminComReported{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        max-width: 70%;
 }
 div.comment{
-    width: 15rem;
     position: relative;
     left: 1rem;
 }
 div.comment:hover input.btn.btn-danger{
-        display: inline-block;
+        visibility: visible;
         width: 15rem;
+}
+div.comment.adminComReported{
+    margin-top: 15px;
 }
 .signInBtn{
     position: relative;
     left: 1rem;
 
 }
-
 .addCommment{
     margin-left: 1rem;
 }

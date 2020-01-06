@@ -19,16 +19,19 @@
                 <em>le <?= $post['creation_date_fr'] ?></em><br />
                 
                 <strong><label for="title"><?= $post['title'] ?></label></strong><br /> 
-                    <input type="text" id="title" name="title" value="" placeholder="title to be modified" /> <br />
+                    <input type="text" id="title" name="title" value="<?= $post['title'] ?>" placeholder="title to be modified" /> <br />
                         <label id="content" for="content">Contenu du chapitre</label><br />
                         <textarea type="text" class="default" name="content"> <!--class default called in template files-->
                             <?= $post['content'] ?>
                         </textarea>
 
                         <input class="btn btn-secondary" type="submit" /><br />
-                        <em><a href="index.php?action=post&amp;id=<?= $post['id'] ?>">Commentaires</a></em>
+                        <em><a href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">Commentaires</a></em>
                 
             </div>
+        </form>
+        <form action="index.php?action=removeChapter&amp;id=<?= $post['id'] ?>" method="post">
+            <input type="submit" class="btn btn-danger adminchapter" value="Supprimer le chapitre"/>           
         </form>
     </div>
             

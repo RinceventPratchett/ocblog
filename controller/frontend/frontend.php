@@ -48,14 +48,13 @@ function postDetails() //Show the chapter and existing comment depending of
 function addComment($postId, $author, $comment) 
 {
     $commentManager = new CommentManager();
-
     $affectedLines = $commentManager->newComment($postId, $author, $comment);
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');
     }
     else {
-        header('Location: index.php?action=post&id=' . $postId);
+        header('Location: index.php?action=showPost&id=' . $postId);
     }
 }
 

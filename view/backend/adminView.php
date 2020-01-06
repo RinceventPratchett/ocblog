@@ -9,20 +9,27 @@
     <em><a href="/index.php">Retour à la liste des billets</a></em><br />
     <em><a href="index.php?action=addChapterView">ajouter un chapitre</a></em><br />
     <em><a href="index.php?action=editChapterView&amp;id=<?= $post['id'] ?>">Editer le chapitre</a><br /></em>
-    <em><a href="index.php?action=showReportedComment&amp;id=<?= $post['id'] ?>">administrer les commentaires reported</a></em>
+    <em><a href="index.php?action=showReportedComment&amp;id=<?= $post['id'] ?>">administrer les commentaires reported du chapitre en cours</a></em>
 </div>
 
 <div class="news">
     <h3>
-        <?= htmlspecialchars($post['title']) ?>
-        <em>le <?= $post['creation_date_fr'] ?></em>
+        <?= ($post['title']) ?>
+        <em>le <?= ($post['creation_date_fr']) ?></em>
     </h3>
     
     <p>
-        <?= nl2br ($post['content']) ?>
+        <?= nl2br (($post['content'])) ?>
     </p>
    
+    <form action="index.php?action=removeChapter&amp;id=<?= $post['id'] ?>" method="post">
+        <input type="submit" class="btn btn-danger adminchapter" value="Supprimer le chapitre"/>           
+    </form>
+
 </div>
+
+
+  
 
 <h2>Commentaires</h2>
     <div class="col">
@@ -31,9 +38,9 @@
         {
         ?>
 
-            <strong><?= htmlspecialchars($comment['author']) ?></strong><br />
+            <strong><?= ($comment['author']) ?></strong><br />
             le <?= $comment['comment_date_fr'] ?><br />
-            <?= nl2br(htmlspecialchars($comment['comment'])) ?><br />
+            <?= nl2br ($comment['comment']) ?><br />
             <?php
                 if($comment['reported'] != 0){
             ?>
@@ -43,7 +50,9 @@
             }
             ?>
 
-    </div>        
+    </div>
+    
+  
 <?php $content = ob_get_clean(); ?>
 
 

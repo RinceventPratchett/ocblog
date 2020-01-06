@@ -45,6 +45,15 @@
                 session_destroy();
             }
         }
+        
+        public function deleteChapter($postId) {
+            $db = $this->dbConnect();
+            $deleteChapter = $db->prepare('DELETE FROM chapter WHERE id=?');
+            $affectedLines = $deleteChapter->execute(array($postId));
+
+            return $affectedLines;
+            
+        }
     }    
 
     

@@ -103,3 +103,15 @@ function showAllReportedComment($commentId) {
         echo "pas de commentaire à modérer"; 
     } 
 }
+
+function removeChapter($postId) {
+    
+    $AdminManager = new AdminManager();
+    $affectedLines = $AdminManager->deleteChapter($postId);
+    if ($affectedLines === false) {
+        throw new Exception('Impossible de supprimer le chapitre ! - frontend');
+    }
+    else {
+        header('Location: index.php?action=indexView');
+    }
+}

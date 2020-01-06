@@ -61,8 +61,7 @@ class CommentManager extends Manager
         $db = $this->dbConnect();
         $reportInPending = $db->prepare('SELECT id, id_chapter, author, comment, reported, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%i\') AS comment_date_fr FROM comment WHERE reported <> 0 ORDER BY comment_date DESC'); //<> dans la requete SQL = different de
         $reportInPending->execute(array($commentId));
-        var_dump($reportInPending);
-        var_dump($reportInPending->errorInfo(), $reportInPending->rowCount()); //pour afficher les erreurs sql
+        
 
         return $reportInPending;
         }

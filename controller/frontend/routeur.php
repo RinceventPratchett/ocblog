@@ -17,7 +17,7 @@ try{
         if(($_GET['action'] == 'adminView' || $_GET['action'] == 'addChapterView' || 
                 $_GET['action'] == 'editChapterView' || $_GET['action'] == 'showReportedComment' || 
                 $_GET['action'] == 'addChapter' || $_GET['action'] == 'editChapter' || 
-                $_GET['action'] == 'moderateComment' || $_GET['action'] == 'showAllReportedComment' ) && $_SESSION['adminLogged'] == true){
+                $_GET['action'] == 'moderateComment' || $_GET['action'] == 'showAllReportedComment' || $_GET['action'] == 'removeChapter' ) && $_SESSION['adminLogged'] == true){
             
             if ($_GET['action'] == 'adminView') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
@@ -72,6 +72,15 @@ try{
                 else {
 
                     throw new Exception('impossible de supprimer le commentaire --> index.php');
+                }
+            }
+            elseif ($_GET['action'] == 'removeChapter') {
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    removeChapter($_GET['id']);
+                }
+                else {
+
+                    throw new Exception('impossible de supprimer le chapitre --> index.php');
                 }
             }
         }

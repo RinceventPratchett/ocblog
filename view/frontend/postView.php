@@ -7,12 +7,12 @@
 
 <div class="news">
     <h3>
-        <?= ($post['title']) ?>
+        <?= htmlspecialchars($post['title']) ?>
         <em>le <?= $post['creation_date_fr'] ?></em>
     </h3>
     
     <p>
-        <?= ($post['content']) ?>
+        <?= htmlspecialchars($post['content']) ?>
     </p>
    
 </div>
@@ -25,8 +25,8 @@ while ($comment = $comments->fetch())
 ?>
 <div class="comment">
         <strong><?= htmlspecialchars($comment['author']) ?></strong>
-        le <?= $comment['comment_date_fr'] ?><br />
-        <?= nl2br(htmlspecialchars($comment['comment'])) ?> <br />
+        le <?= htmlspecialchars($comment['comment_date_fr']) ?><br />
+        <?= (htmlspecialchars($comment['comment'])) ?> <br />
                 
         <form action="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>" method="post">
             <input type="submit" class="btn btn-danger" value="Signaler le commentaire"/>           
