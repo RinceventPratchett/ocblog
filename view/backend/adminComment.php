@@ -5,7 +5,6 @@
 
 <div class="linkAdmin">
     <em><a href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">retour administration du billet</a></em><br />
-    <em><a href="/index.php">Retour à la liste des billets</a></em>
 </div>
 
 

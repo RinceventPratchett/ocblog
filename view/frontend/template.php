@@ -1,11 +1,14 @@
 <!DOCTYPE html>
+<!--
+developed by Voy
+-->
 
 
 <html lang="fr">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title><?= $title ?></title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, initial-scale=1.0">
         <link href="public/css/style.css" rel="stylesheet" /> 
         <script src="https://kit.fontawesome.com/3b3ab33fc7.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -13,6 +16,10 @@
     </head>
         
     <body>
+        <header>
+            <h1>Billet simple pour l'Alaska</h1>;            
+        </header>
+        
         <?php
             if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {
         

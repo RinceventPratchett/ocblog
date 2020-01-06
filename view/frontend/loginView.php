@@ -7,7 +7,7 @@ $title= 'connection';
 
 <?php ob_start(); ?>
 
-<h1>IDENTIFICATION</h1>
+<h2>IDENTIFICATION</h2>
 
 <div class="container">
     <div class="col">

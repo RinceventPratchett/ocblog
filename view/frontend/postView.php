@@ -1,18 +1,18 @@
 <?php $title = htmlspecialchars($post['title']); ?>
 
 <?php ob_start(); ?>
-<h1>Alaska</h1>
+
 <em><a href="index.php" class="linkAdmin">Retour à la liste des billets</a></em>
 
 
 <div class="news">
     <h3>
-        <?= htmlspecialchars($post['title']) ?>
+        <?= ($post['title']) ?>
         <em>le <?= $post['creation_date_fr'] ?></em>
     </h3>
     
     <p>
-        <?= htmlspecialchars($post['content']) ?>
+        <?= ($post['content']) ?>
     </p>
    
 </div>
@@ -51,4 +51,14 @@ while ($comment = $comments->fetch())
    
 <?php $content = ob_get_clean(); ?>
 
-<?php require(FRONT_VIEW_DIR.'/template.php'); ?>
+<?php
+    if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {
+
+        require(BACK_VIEW_DIR.'/template.php');
+    }
+    else {
+        require(FRONT_VIEW_DIR.'/template.php'); 
+    }
+?>
+
+

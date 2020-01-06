@@ -1,17 +1,12 @@
-
-
 <div class="container">
     <div class="row">
 
-        <?php
-        $title = 'Billet simple pour l\'Alaska';
-        ?>
 
         <?php
         ob_start();
         ?>
         
-        <h1>Blog Alaska !</h1>
+
 
         
         <h2>Derniers billets du blog :</h2>

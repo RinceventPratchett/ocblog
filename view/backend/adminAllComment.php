@@ -3,10 +3,6 @@
 <?php ob_start(); ?>
 <h1>Visualisation des commentaires reported</h1>
 
-<div class="linkAdmin">
-
-    <em><a href="/index.php">Retour à la liste des billets</a></em>
-</div>
 
 <h2>Commentaires</h2>
 
@@ -20,6 +16,7 @@
     <div class="row comment adminComReported">
         <div class="col">
             <strong>chapter n° <?= $comment['id_chapter'] ?></strong><br />
+        <em><a href="index.php?action=showPost&amp;id=<?= $comment['id_chapter'] ?>" class="btn btn-secondary">rejoindre le chapitre</a></em><br />
             <strong><?= htmlspecialchars($comment['author']) ?></strong><br />
             le <?= $comment['comment_date_fr'] ?><br />
             <?= nl2br(htmlspecialchars($comment['comment'])) ?><br />

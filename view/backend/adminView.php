@@ -6,10 +6,8 @@
 <h1>interface admin </h1>
 
 <div class="linkAdmin">
-    <em><a href="/index.php">Retour à la liste des billets</a></em><br />
-    <em><a href="index.php?action=addChapterView">ajouter un chapitre</a></em><br />
     <em><a href="index.php?action=editChapterView&amp;id=<?= $post['id'] ?>">Editer le chapitre</a><br /></em>
-    <em><a href="index.php?action=showReportedComment&amp;id=<?= $post['id'] ?>">administrer les commentaires reported du chapitre en cours</a></em>
+    <em><a href="index.php?action=showReportedComment&amp;id=<?= $post['id'] ?>">modérer les commentaires signalés du chapitre</a></em>
 </div>
 
 <div class="news">

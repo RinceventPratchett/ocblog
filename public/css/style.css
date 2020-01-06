@@ -40,10 +40,6 @@ a
     text-decoration: none;
     color: blue;
 }
-input.btn.btn-danger{
-    visibility: hidden;
-
-}
 input.btn.btn-danger.adminchapter{
     visibility: visible;
 }
@@ -57,6 +53,11 @@ input.btn.btn-danger.adminchapter{
 div.comment{
     position: relative;
     left: 1rem;
+    width: 20rem;
+}
+input.btn.btn-danger{
+    visibility: hidden;
+
 }
 div.comment:hover input.btn.btn-danger{
         visibility: visible;
