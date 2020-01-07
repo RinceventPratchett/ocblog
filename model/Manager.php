@@ -19,4 +19,3 @@ class Manager
         return $db;
     }
 }
-

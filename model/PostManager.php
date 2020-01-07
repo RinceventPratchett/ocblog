@@ -12,9 +12,13 @@
  */
 
 require_once("model/Manager.php");
-
+    function confirm_data($pdata){
+            $pdata = htmlspecialchars($pdata);
+            return $pdata;
+        }
 class PostManager extends Manager
-{
+{   
+
     public function showChapters()
     {
         $db = $this->dbConnect();
@@ -43,16 +47,20 @@ class PostManager extends Manager
     public function updateChapter($chapterTitle, $chapterContent, $chapterId)
     {
         $db = $this->dbConnect();
+        
+        
+//        
         $updatedChapter = $db->prepare('UPDATE chapter SET title=?, content=? WHERE id=?');
-        echo 'updateChapter PostManager';
-        echo $chapterTitle;
-        echo $chapterContent;
+        $chapterTitle = confirm_data($_POST['title']);
+        $chapterContent = confirm_data($_POST['content']);
         $affectedLines = $updatedChapter->execute(array($chapterTitle, $chapterContent, $chapterId));
 //            var_dump($affectedLines);
 //            var_dump($updatedChapter); 
 //            var_dump($db);
 //            var_dump($updatedChapter->errorInfo(), $updatedChapter->rowCount()); //pour afficher les erreurs sql
-
+//            echo 'updateChapter PostManager';
+//            echo $chapterTitle;
+//            echo $chapterContent;  
         return $affectedLines;
     }
 }

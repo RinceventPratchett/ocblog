@@ -13,8 +13,13 @@
  */
 require_once("model/Manager.php");
 
+    function valid_data($data){
+        $data = htmlspecialchars($data);
+        return $data;
+    }
 class CommentManager extends Manager 
 {
+    
     public function showComments($postId)
     {
         $db = $this->dbConnect();
@@ -27,7 +32,15 @@ class CommentManager extends Manager
     public function newComment($postId, $author, $comment)
     {
         $db = $this->dbConnect();
+        
+
+        $id_chapter = valid_data($_POST["id_chapter"]);
+        $author = valid_data($_POST["author"]);
+        $comment = valid_data($_POST["comment"]);
+        $comment_date = valid_data($_POST["comment_date"]);
+        
         $comments = $db->prepare('INSERT INTO comment(id_chapter, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
+                
         $affectedLines = $comments->execute(array($postId, $author, $comment));
 
         return $affectedLines;

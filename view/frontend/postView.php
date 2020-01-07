@@ -24,9 +24,9 @@ while ($comment = $comments->fetch())
 {
 ?>
 <article class="comment">
-        <strong><?= htmlspecialchars($comment['author']) ?></strong>
-        le <?= htmlspecialchars($comment['comment_date_fr']) ?><br />
-        <?= (htmlspecialchars($comment['comment'])) ?> <br />
+        <strong><?= ($comment['author']) ?></strong>
+        le <?= $comment['comment_date_fr'] ?><br />
+        <?= $comment['comment'] ?> <br />
                 
         <form action="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>" method="post">
             <input type="submit" class="btn btn-danger" value="Signaler le commentaire" onclick="confirmer()" />           
@@ -41,7 +41,7 @@ while ($comment = $comments->fetch())
 <?php
 }
 ?>
-<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post" class="addCommment">
+<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="POST" class="addCommment">
     <div>
         <label for="author">Auteur</label><br />
         <input type="text" id="author" name="author" />

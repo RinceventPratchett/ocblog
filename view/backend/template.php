@@ -30,7 +30,7 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nav-item nav-link active" href="/index.php">Retour à la liste des billets <span class="sr-only">(current)</span></a>
+                            <a class="nav-item nav-link active" href="/index.php">Retour à la liste des billets</a>
                             <a class="nav-item nav-link" href="index.php?action=addChapterView">Ajouter un chapitre</a>
                             <a class="nav-item nav-link" href="index.php?action=showAllReportedComment">administrer les commentaires reported</a>
                             <form action="index.php?action=signOut" method="post" class="signInBtn">
