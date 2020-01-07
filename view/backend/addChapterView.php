@@ -6,10 +6,6 @@
 
 <h1>interface admin - Ajout de chapitre</h1>
 
-<div class="linkAdmin">
-    <em><a href="/index.php">Retour à la liste des billets</a></em><br />
-</div>
-
 <div class="news">
 
     <form action="index.php?action=addChapter" method="post">
