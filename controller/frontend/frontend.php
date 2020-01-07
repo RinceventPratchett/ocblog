@@ -68,6 +68,7 @@ function reportComment($commentId) {
     }
     else {
         header('Location: /view/frontend/confirmationReport.php');
+//        header('Location: '.FRONT_VIEW_DIR.'/confirmationReport.php');
     }
     
 }

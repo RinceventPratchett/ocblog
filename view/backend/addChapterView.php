@@ -6,12 +6,12 @@
 
 <h1>interface admin - Ajout de chapitre</h1>
 
-<div class="news">
+<article class="news">
 
     <form action="index.php?action=addChapter" method="post">
         <div>
 
-            <p>Ajouter un chapitre</p>
+            <h2>Ajouter un chapitre<h2>
             <label for="title">Titre</label><br />
             <input type="text" id="title" name="title" />
         </div>
@@ -23,7 +23,7 @@
             <input class="btn btn-secondary" type="submit" />
         </div>
     </form>
-</div>
+</article>
    
 <?php $content = ob_get_clean(); ?>
 

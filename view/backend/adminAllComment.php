@@ -13,7 +13,7 @@
     {
     ?>
 
-    <div class="row comment adminComReported">
+    <article  class="row comment adminComReported">
         <div class="col">
             <strong>chapter n° <?= $comment['id_chapter'] ?></strong><br />
             <strong><?= htmlspecialchars($comment['author']) ?></strong><br />
@@ -25,7 +25,7 @@
             </form>
             <em><a href="index.php?action=showPost&amp;id=<?= $comment['id_chapter'] ?>" class="btn btn-secondary">rejoindre le chapitre</a></em><br />
         </div>
-    </div>
+    </article>
     <?php
     }
     ?>

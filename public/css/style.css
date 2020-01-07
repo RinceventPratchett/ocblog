@@ -50,16 +50,16 @@ input.btn.btn-danger.adminchapter{
 
         max-width: 70%;
 }
-div.comment{
+article.comment{
     position: relative;
     left: 1rem;
     width: 20rem;
 }
-input.btn.btn-danger{
+article.comment form input.btn.btn-danger{
     visibility: hidden;
 
 }
-div.comment:hover input.btn.btn-danger{
+article.comment:hover form input.btn.btn-danger{
         visibility: visible;
         width: 15rem;
 }

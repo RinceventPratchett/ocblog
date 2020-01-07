@@ -12,7 +12,7 @@
 <h2>Derniers billets du blog :</h2>
 
 
-    <div class="news">
+    <article class="news">
 
         <form action="index.php?action=editChapter&amp;id=<?= $post['id'] ?>" method="post">
             <div>
@@ -33,7 +33,7 @@
         <form action="index.php?action=removeChapter&amp;id=<?= $post['id'] ?>" method="post">
             <input type="submit" class="btn btn-danger adminchapter" value="Supprimer le chapitre"/>           
         </form>
-    </div>
+    </article>
             
 <?php $content = ob_get_clean(); ?>
 

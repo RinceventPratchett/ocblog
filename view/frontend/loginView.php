@@ -9,7 +9,7 @@ $title= 'connection';
 
 <h2>IDENTIFICATION</h2>
 
-<div class="container">
+<article class="container">
     <div class="col">
         <form action="index.php?action=signIn" method="post">
             Veuillez entrer vos identifiants pour vous connecter:<br />
@@ -20,7 +20,7 @@ $title= 'connection';
             </div>
         </form>
     </div>
-</div>
+</article>
 
 
 <?php $content = ob_get_clean(); ?>

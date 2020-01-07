@@ -101,6 +101,9 @@ function showAllReportedComment($commentId) {
     }
     else{
         echo "pas de commentaire à modérer"; 
+?>
+        <br /><a class="btn btn-secondary" href="/index.php">Retour à la liste des billets</a>
+<?php
     } 
 }
 

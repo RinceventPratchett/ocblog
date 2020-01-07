@@ -5,7 +5,7 @@
 <em><a href="index.php" class="linkAdmin">Retour à la liste des billets</a></em>
 
 
-<div class="news">
+<article class="news">
     <h3>
         <?= ($post['title']) ?>
         <em>le <?= $post['creation_date_fr'] ?></em>
@@ -15,7 +15,7 @@
         <?= ($post['content']) ?>
     </p>
    
-</div>
+</article>
 
 <h2>Commentaires</h2>
 
@@ -23,15 +23,21 @@
 while ($comment = $comments->fetch())
 {
 ?>
-<div class="comment">
+<article class="comment">
         <strong><?= htmlspecialchars($comment['author']) ?></strong>
         le <?= htmlspecialchars($comment['comment_date_fr']) ?><br />
         <?= (htmlspecialchars($comment['comment'])) ?> <br />
                 
         <form action="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>" method="post">
-            <input type="submit" class="btn btn-danger" value="Signaler le commentaire"/>           
+            <input type="submit" class="btn btn-danger" value="Signaler le commentaire" onclick="confirmer()" />           
         </form>
-    </div>
+        <script>
+            function confirmer(){
+                var res = alert("Commentaire signalé, merci !");
+                res;
+            }
+        </script>
+</article>
 <?php
 }
 ?>

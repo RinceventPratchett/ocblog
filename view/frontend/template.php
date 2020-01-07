@@ -6,7 +6,7 @@ developed by Voy
 
 <html lang="fr">
     <head>
-        <title><?= $title ?></title>
+        <title>Billet simple pour l'Alaska</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, initial-scale=1.0">
         <link href="public/css/style.css" rel="stylesheet" /> 

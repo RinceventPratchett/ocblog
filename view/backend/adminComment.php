@@ -14,7 +14,7 @@
 while ($comment = $comments->fetch())
 {
 ?>
-    <div class="comment">
+    <article class="comment">
         <strong><?= htmlspecialchars($comment['author']) ?></strong><br />
         le <?= $comment['comment_date_fr'] ?><br />
         <?= nl2br(htmlspecialchars($comment['comment'])) ?><br />
@@ -22,7 +22,7 @@ while ($comment = $comments->fetch())
         <form action="index.php?action=moderateComment&amp;id=<?= $comment['id'] ?>" method="post" class='deletecom'>
             <input class="btn btn-secondary" type="submit" value="supprimer commentaire" />
         </form>        
-    </div>
+    </article>
 <?php
 }
 ?>

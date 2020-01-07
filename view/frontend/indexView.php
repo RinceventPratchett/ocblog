@@ -4,19 +4,21 @@
 
         <?php
         ob_start();
+        
+        if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {
         ?>
-        
-
-
-        
+            <h1>Espace administration</h1> 
+        <?php
+        }
+        ?>        
         <h2>Derniers billets du blog :</h2>
 
         <?php
         while ($data = $posts->fetch()) {
             ?>
-            <div class="news col">
+            <article class="news col">
                 <h3>
-                    <?= htmlspecialchars($data['title']) ?>
+                    <?= ($data['title']) ?>
                     <em>le <?= $data['creation_date_fr'] ?></em>
                 </h3>
 
@@ -31,7 +33,7 @@
                     <?php
                 }
                 ?>
-            </div>
+            </article>
 
             <?php
         }

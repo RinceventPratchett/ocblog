@@ -10,7 +10,7 @@
     <em><a href="index.php?action=showReportedComment&amp;id=<?= $post['id'] ?>">modérer les commentaires signalés du chapitre</a></em>
 </div>
 
-<div class="news">
+<article class="news">
     <h3>
         <?= ($post['title']) ?>
         <em>le <?= ($post['creation_date_fr']) ?></em>
@@ -24,7 +24,7 @@
         <input type="submit" class="btn btn-danger adminchapter" value="Supprimer le chapitre"/>           
     </form>
 
-</div>
+</article>
 
 
   
