@@ -86,7 +86,7 @@ function showReportedComment($commentId, $postId) {
         require(BACK_VIEW_DIR.'/adminComment.php');
     }
     else{
-        echo "pas de commentaire à modérer"; 
+
         header('Location: index.php?action=adminView&id='.$postId['id']);
     } 
 }
