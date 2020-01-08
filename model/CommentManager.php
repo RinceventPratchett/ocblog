@@ -56,7 +56,7 @@ class CommentManager extends Manager
     
     public function reportComment($commentId) {
         $db = $this->dbConnect();
-        $reportedComment= $db->prepare('UPDATE comment SET reported=reported+1 WHERE id='.$commentId.' AND id_chapter=?');
+        $reportedComment= $db->prepare('UPDATE comment SET reported=reported+1 WHERE id='.$commentId);
         $affectedLines = $reportedComment->execute(array($commentId));
         
         return $affectedLines;
