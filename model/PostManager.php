@@ -12,10 +12,7 @@
  */
 
 require_once("model/Manager.php");
-    function confirm_data($pdata){
-            $pdata = htmlspecialchars($pdata);
-            return $pdata;
-        }
+
 class PostManager extends Manager
 {   
 
@@ -51,8 +48,6 @@ class PostManager extends Manager
         
 //        
         $updatedChapter = $db->prepare('UPDATE chapter SET title=?, content=? WHERE id=?');
-        $chapterTitle = confirm_data($_POST['title']);
-        $chapterContent = confirm_data($_POST['content']);
         $affectedLines = $updatedChapter->execute(array($chapterTitle, $chapterContent, $chapterId));
 //            var_dump($affectedLines);
 //            var_dump($updatedChapter); 

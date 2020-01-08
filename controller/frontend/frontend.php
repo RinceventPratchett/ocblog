@@ -37,9 +37,9 @@ function listPosts() //List the different chapter on IndexView
 function postDetails() //Show the chapter and existing comment depending of
 {
     $postManager = new PostManager();
+    $post = $postManager->getPost($_GET['id']);
     $commentManager = new CommentManager();
 
-    $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->showComments($_GET['id']);
 
     require(FRONT_VIEW_DIR.'/postView.php');
@@ -59,16 +59,15 @@ function addComment($postId, $author, $comment)
 }
 
 
-function reportComment($commentId) {
+function reportComment($commentId, $postId) {
     
     $CommentManager = new CommentManager();
-    $affectedLines = $CommentManager->reportComment($commentId);
+    $affectedLines = $CommentManager->reportComment($commentId, $postId);
     if ($affectedLines === false) {
         throw new Exception('Impossible de signaler le commentaire (reportComment->frontend)');
     }
     else {
-        header('Location: /view/frontend/confirmationReport.php');
-//        header('Location: '.FRONT_VIEW_DIR.'/confirmationReport.php');
+        header('Location: index.php?action=showPost&id='. $postId);
     }
-    
 }
+    
