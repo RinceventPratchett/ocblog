@@ -107,7 +107,7 @@ try{
             }
             elseif ($_GET['action'] == 'reportComment') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
-                    reportComment($_GET['id'], $_GET['id']);
+                    reportComment($_GET['id']);
                 }
             }
             elseif ($_GET['action'] == 'showPost') {

@@ -65,14 +65,15 @@ function editChapter($chapterTitle, $chapterContent, $chapterId)
 
 function moderateComment($commentId, $postId) {
     
-    
+    $postManager = new PostManager(); // Création d'un objet
+    $post = $postManager->getPost($_GET['id']); // Appel d'une fonction de cet objet
     $CommentManager = new CommentManager();
     $affectedLines = $CommentManager->deleteComment($commentId);
     if ($affectedLines === false) {
         throw new Exception('Impossible de supprimer le commentaire ! - frontend - l.104');
     }
     else {
-        header('Location: index.php?action=adminView&id='.$postId['id']);
+        header('Location: index.php?action=adminView&id='.$post['id']);
     }
 }
 

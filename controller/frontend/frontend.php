@@ -59,7 +59,7 @@ function addComment($postId, $author, $comment)
 }
 
 
-function reportComment($commentId, $postId) {
+function reportComment($commentId) {
     
     $CommentManager = new CommentManager();
     $affectedLines = $CommentManager->reportComment($commentId, $postId);

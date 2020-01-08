@@ -6,7 +6,7 @@
     if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {
         } else { 
         ?>
-    <em><a href="index.php" class="linkAdmin">Retour à la liste des billets</a></em>
+            <em><a href="index.php" class="linkAdmin">Retour à la liste des billets</a></em>
         <?php 
         }
         ?>
@@ -33,19 +33,19 @@
                 <strong><?= ($comment['author']) ?></strong>
                 le <?= $comment['comment_date_fr'] ?><br />
                 <?= $comment['comment'] ?> <br />
-
+        
         <!--        <form action="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>" method="post">
                     <input type="submit" class="btn btn-danger" value="Signaler le commentaire" onclick="confirmer()" />           
                 </form>-->
-            <a href="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>" class="btn btn-danger" value="" onclick="confirmer(<?= $post['id']?>)">Signaler le commentaire</a>Signaler le commentaire</a>
+            <a href="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>" class="btn btn-danger" value="" onclick="confirmer(<?= $comment['id']?>, <?= $post['id'] ?>)">Signaler le commentaire</a>
         </article>
     <?php
     }
     ?>
     
     <script>
-        function confirmer(postId){
-            var res = alert("Commentaire signalé, merci ! " + postId) ;
+        function confirmer(commentId,postId){
+            var res = alert("Commentaire signalé, merci ! " + commentId + " / " + postId) ;
             res;
         }
     </script>
