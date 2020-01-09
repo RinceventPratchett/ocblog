@@ -33,11 +33,8 @@
                 <strong><?= ($comment['author']) ?></strong>
                 le <?= $comment['comment_date_fr'] ?><br />
                 <?= $comment['comment'] ?> <br />
-        
-        <!--        <form action="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>" method="post">
-                    <input type="submit" class="btn btn-danger" value="Signaler le commentaire" onclick="confirmer()" />           
-                </form>-->
-            <a href="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>" class="btn btn-danger" value="" onclick="confirmer(<?= $comment['id']?>, <?= $post['id'] ?>)">Signaler le commentaire</a>
+
+                <a href="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>&postId=<?= $post['id'] ?> " class="btn btn-danger" value="" onclick="confirmer(<?= $comment['id']?>, <?= $post['id'] ?>)">Signaler le commentaire</a>
         </article>
     <?php
     }

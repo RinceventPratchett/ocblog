@@ -32,7 +32,6 @@ class CommentManager extends Manager
     public function newComment($postId, $author, $comment)
     {
         $db = $this->dbConnect();
-        
 
         $id_chapter = valid_data($_POST["id_chapter"]);
         $author = valid_data($_POST["author"]);
@@ -47,15 +46,19 @@ class CommentManager extends Manager
     }
     
     public function deleteComment($commentId) {
+
         $db = $this->dbConnect();
+
         $deleteComment = $db->prepare('DELETE FROM comment WHERE id=?');
         $affectedLines = $deleteComment->execute(array($commentId));
 
         return $affectedLines;
     }
     
-    public function reportComment($commentId, $postId) {
+    public function reportComment($commentId) {
+
         $db = $this->dbConnect();
+
         $reportedComment= $db->prepare('UPDATE comment SET reported=reported+1 WHERE id='.$commentId);
         $affectedLines = $reportedComment->execute(array($commentId));
         
@@ -63,7 +66,9 @@ class CommentManager extends Manager
     }
     
     public function reportPending($commentId) {
+
         $db = $this->dbConnect();
+
         $reportInPending = $db->prepare('SELECT id, author, comment, reported, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%i\') AS comment_date_fr FROM comment WHERE id_chapter = ? AND reported <> 0 ORDER BY reported DESC'); //<> dans la requete SQL = different de
         $reportInPending->execute(array($commentId));
 
@@ -72,6 +77,7 @@ class CommentManager extends Manager
     public function showReportPending($commentId) {
     
         $db = $this->dbConnect();
+
         $reportInPending = $db->prepare('SELECT id, id_chapter, author, comment, reported, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%i\') AS comment_date_fr FROM comment WHERE reported <> 0 ORDER BY comment_date DESC'); //<> dans la requete SQL = different de
         $reportInPending->execute(array($commentId));
         

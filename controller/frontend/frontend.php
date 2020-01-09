@@ -39,8 +39,8 @@ function postDetails() //Show the chapter and existing comment depending of
     $postManager = new PostManager();
     $post = $postManager->getPost($_GET['id']);
     $commentManager = new CommentManager();
-
     $comments = $commentManager->showComments($_GET['id']);
+
 
     require(FRONT_VIEW_DIR.'/postView.php');
 }
@@ -59,15 +59,20 @@ function addComment($postId, $author, $comment)
 }
 
 
-function reportComment($commentId) {
+function reportComment($commentId, $chapterId) {
     
+   
     $CommentManager = new CommentManager();
-    $affectedLines = $CommentManager->reportComment($commentId, $postId);
+    $affectedLines = $CommentManager->reportComment($commentId, $chapterId);
+    
     if ($affectedLines === false) {
         throw new Exception('Impossible de signaler le commentaire (reportComment->frontend)');
     }
     else {
-        header('Location: index.php?action=showPost&id='. $postId);
+ //       var_dump($post->errorInfo(), $post->rowCount()); //pour afficher les erreurs sql
+        header('Location: index.php?action=showPost&id='.$chapterId);
+    
+        
     }
 }
     

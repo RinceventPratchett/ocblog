@@ -1,7 +1,3 @@
-<div class="container">
-    <div class="row">
-
-
         <?php
         ob_start();
         
@@ -22,9 +18,9 @@
                     <em>le <?= $data['creation_date_fr'] ?></em>
                 </h3>
 
-                <p>
+                <div>
                     <?= nl2br($data['content']) ?>
-                </p>
+                </div>
                 <em><a href="index.php?action=showPost&amp;id=<?= $data['id'] ?>">Commentaires</a></em><br />
                 <?php
                 if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {

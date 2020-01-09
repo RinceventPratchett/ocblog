@@ -106,8 +106,8 @@ try{
                 signIn();
             }
             elseif ($_GET['action'] == 'reportComment') {
-                if (isset($_GET['id']) && $_GET['id'] > 0) {
-                    reportComment($_GET['id']);
+                if (isset($_GET['id']) && $_GET['id'] > 0 && isset($_GET['postId']) && $_GET['postId'] > 0) {
+                    reportComment($_GET['id'], $_GET['postId']);
                 }
             }
             elseif ($_GET['action'] == 'showPost') {
