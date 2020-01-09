@@ -1,21 +1,21 @@
 
 <?php 
-$title= 'connection'; 
+$title= 'connexion'; 
 ?>
-<em><a href="index.php" class="linkAdmin">Retour à la liste des billets</a></em>
+<em><a href="index.php" class="linkAdmin loginView">Retour à la liste des billets</a></em>
 
 
 <?php ob_start(); ?>
 
-<h2>IDENTIFICATION</h2>
 
 <article class="container">
     <div class="col">
+        <h2>IDENTIFICATION</h2>
         <form action="index.php?action=signIn" method="post">
             Veuillez entrer vos identifiants pour vous connecter:<br />
             <div>
-                <label for="pseudo">Nom d'utilisateur</label><input type="text" name="pseudo" /><br />
-                <label for="password">Mot de passe</label><input type="password" name="password" /><br />
+                <label for="pseudo" class="loginView">Nom d'utilisateur</label><input type="text" name="pseudo" /><br />
+                <label for="password" class="loginView">Mot de passe</label><input type="password" name="password" /><br />
                 <input class="btn btn-secondary" type="submit" value="Connection" />
             </div>
         </form>

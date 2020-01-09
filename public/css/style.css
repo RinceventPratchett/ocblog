@@ -1,38 +1,75 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /* 
     Created on : 29 déc. 2019, 21:30:55
     Author     : Voy
 */
 
-h1, h3
-{
+header h1 {
     text-align:center;
     color: red;
+    position: relative;
+    top: 1rem;
 }
-h2{
+
+h2 {
     position: relative;
     left: 1rem;
 }
-h3
-{
+
+h3 {
     background-color:black;
     color:white;
-    font-size:0.9em;
-    margin-bottom:0px;
+    margin: auto;
+    text-align: center;
+}
+input.btn.btn-secondary.specific.front{
+    position: relative;
+
+top: 4rem;
+
+left: 95%;
+}
+.intro{
+    background-image: url("../images/night.jpg"); 
+    background-size: cover;
+    height: 77rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.intro p {
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+}
+.back section article.news{
+    text-align: center;
 }
 .news p
 {
     background-color:#CCCCCC;
     margin-top:0px;
 }
-.news
-{
-    width:70%;
-    margin:auto;
+
+.chapter{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+article.news.col-3 {
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+    margin: 5px;
+    max-width: 30%;
+    height: 20rem;
+    overflow-y: auto;   
+    border: solid blueviolet 0.2px;
+}
+article h3 {
+    margin-top: 5px;
 }
 
 a
@@ -50,6 +87,7 @@ input.btn.btn-danger.adminchapter{
 
         max-width: 70%;
 }
+
 article.comment{
     position: relative;
     left: 1rem;
@@ -60,17 +98,13 @@ article.comment form input.btn.btn-danger{
 
 }
 article.comment:hover form input.btn.btn-danger{
-        visibility: visible;
-        width: 15rem;
+    visibility: visible;
+    width: 15rem;
 }
 div.comment.adminComReported{
     margin-top: 15px;
 }
-.signInBtn{
-    position: relative;
-    left: 1rem;
 
-}
 .addCommment{
     margin-left: 1rem;
 }
@@ -81,6 +115,29 @@ div.comment.adminComReported{
     margin-bottom: 0.5rem;
 }
 
-.specific{
+.linkAdmin.loginView{
+    top: 5rem;
+}
+
+label.loginView{
+    margin-right: 3px; 
+}
+.pagin{
+    text-align: center;
+    font-size: 2rem;
+}
+/*--------------------------------specific backend-----------------------------*/
+
+.back h1{
+    text-align:center;
+    color: red;
+    position: relative;
+    top: .3rem;
+}
+
+input.btn.btn-secondary.specific.back{
+    position: relative;
+    left: 60rem;
     width: 85px;
 }
+

@@ -17,7 +17,7 @@
     </h3>
     
     <div>
-        <?= nl2br (($post['content'])) ?>
+        <?= nl2br(($post['content'])) ?>
     </div>
    
     <form action="index.php?action=removeChapter&amp;id=<?= $post['id'] ?>" method="post">
@@ -38,7 +38,7 @@
 
             <strong><?= ($comment['author']) ?></strong><br />
             le <?= $comment['comment_date_fr'] ?><br />
-            <?= nl2br ($comment['comment']) ?><br />
+            <?= nl2br($comment['comment']) ?><br />
             <?php
                 if($comment['reported'] != 0){
             ?>

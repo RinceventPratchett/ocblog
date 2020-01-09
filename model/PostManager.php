@@ -15,11 +15,11 @@ require_once("model/Manager.php");
 
 class PostManager extends Manager
 {   
-
-    public function showChapters()
+    
+    public function showChapters($cPage, $postsPerPage)
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%i\') AS creation_date_fr FROM chapter ORDER BY creation_date DESC');// LIMIT 0, 0
+        $req = $db->query("SELECT id, title, content, DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date_fr FROM chapter ORDER BY creation_date DESC LIMIT $cPage, $postsPerPage");
 
         return $req;
     }

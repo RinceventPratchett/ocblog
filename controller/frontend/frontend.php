@@ -4,6 +4,7 @@
 require_once(MODEL_DIR.'/PostManager.php');
 require_once(MODEL_DIR.'/CommentManager.php');
 require_once(MODEL_DIR.'/AdminManager.php');
+require_once(MODEL_DIR.'/Pagination.php');
 
 
 
@@ -26,11 +27,28 @@ function signOut(){
     
     header('Location: index.php');
 }
-function listPosts() //List the different chapter on IndexView
-{
-    $postManager = new PostManager(); 
-    $posts = $postManager->showChapters(); 
 
+function listPosts() {//List the different chapter on IndexView
+    
+    $postManager = new PostManager();
+    $pagination = new Pagination();
+
+	$postsPerPage = 6;
+	$nbPosts = $pagination->getPostsPagination();
+	$nbPage = $pagination->getPostsPages($nbPosts, $postsPerPage);
+	if (!isset($_GET['page'])) {
+		$cPage = 0;
+	} else {
+		if (isset($_GET['page']) && $_GET['page'] > 0 && $_GET['page'] <= $nbPage) {
+			$cPage = (intval($_GET['page']) - 1) * $postsPerPage;
+		}
+	}
+	
+    $posts = $postManager->showChapters($cPage, $postsPerPage);
+//    echo $posts;
+//    var_dump($posts);
+//    print_r($posts);
+    
     require(FRONT_VIEW_DIR.'/indexView.php');
 }
 
@@ -70,9 +88,7 @@ function reportComment($commentId, $chapterId) {
     }
     else {
  //       var_dump($post->errorInfo(), $post->rowCount()); //pour afficher les erreurs sql
-        header('Location: index.php?action=showPost&id='.$chapterId);
-    
-        
+        header('Location: index.php?action=showPost&id='.$chapterId);       
     }
 }
     

@@ -5,7 +5,7 @@
 require_once(MODEL_DIR.'/AdminManager.php');
 require_once(MODEL_DIR.'/PostManager.php');
 require_once(MODEL_DIR.'/CommentManager.php');
-
+require_once(MODEL_DIR.'/Pagination.php');
 
 
 function adminView()
