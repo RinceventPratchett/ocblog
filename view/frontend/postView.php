@@ -17,9 +17,9 @@
             <em>le <?= $post['creation_date_fr'] ?></em>
         </h3>
 
-        <p>
+        <div>
             <?= ($post['content']) ?>
-        </p>
+        </div>
 
     </article>
 
@@ -34,7 +34,7 @@
                 le <?= $comment['comment_date_fr'] ?><br />
                 <?= $comment['comment'] ?> <br />
 
-                <a href="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>&postId=<?= $post['id'] ?> " class="btn btn-danger" value="" onclick="confirmer(<?= $comment['id']?>, <?= $post['id'] ?>)">Signaler le commentaire</a>
+                <a href="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>&postId=<?= $post['id'] ?> " class="btn btn-danger" onclick="confirmer(<?= $comment['id']?>, <?= $post['id'] ?>)">Signaler le commentaire</a>
         </article>
     <?php
     }

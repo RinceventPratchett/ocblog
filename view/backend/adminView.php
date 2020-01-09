@@ -16,9 +16,9 @@
         <em>le <?= ($post['creation_date_fr']) ?></em>
     </h3>
     
-    <p>
+    <div>
         <?= nl2br (($post['content'])) ?>
-    </p>
+    </div>
    
     <form action="index.php?action=removeChapter&amp;id=<?= $post['id'] ?>" method="post">
         <input type="submit" class="btn btn-danger adminchapter" value="Supprimer le chapitre"/>           
