@@ -111,6 +111,7 @@ article.comment{
     border: solid blueviolet 0.2px;
     background-color: white;
     padding: 3px;
+    text-align: center;
 }
 .postView article.comment a.btn.btn-danger{
     visibility: hidden;
@@ -171,12 +172,13 @@ h2.adminView{
 }
 
 div.col.commentAdminView{
-    border: solid blueviolet 0.2px;
-    
-    position: relative;
-    bottom: 20rem;
-    max-width: 15rem;
-    left: 1rem;
+    border: solid blueviolet 0.2px;    
+    position: absolute;
+    top: 14rem;;
+    max-width: 17rem;
+    max-height: 25rem;;
+    left : 1rem;
+    overflow-y: auto;
 }
 input.btn.btn-danger.adminchapter{
     visibility: visible;

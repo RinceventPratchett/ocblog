@@ -22,6 +22,7 @@
         </div>
 
     </article>
+    
     <div class="commentView">
         <h2 class="comment">Commentaires</h2>
 

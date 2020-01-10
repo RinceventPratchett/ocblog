@@ -19,7 +19,7 @@ while ($comment = $comments->fetch())
         <?= nl2br(htmlspecialchars($comment['comment'])) ?><br />
         
         commentaire signalé <strong><?= nl2br(htmlspecialchars($comment['reported'])) ?></strong> fois<br />
-        <form action="index.php?action=moderateComment&amp;id=<?= $commentId ?>&postId=<?= $postId ?>" method="POST" class='deletecom'>
+        <form action="index.php?action=moderateComment&amp;id=<?= $comment['id'] ?>&postId=<?= $post['id'] ?>" method="POST" class='deletecom'>
             <input class="btn btn-secondary" type="submit" value="supprimer commentaire" />
         </form>        
     </article>
