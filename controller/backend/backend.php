@@ -86,7 +86,7 @@ function showReportedComment($commentId, $postId) {
     }
     else{
 
-        header('Location: index.php?action=adminView&id='.$postId['id']);
+        header('Location: index.php?action=adminView&id='.$commentId);
     } 
 }
 

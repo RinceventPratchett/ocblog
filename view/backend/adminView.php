@@ -6,11 +6,11 @@
 <h1>interface admin </h1>
 
 <div class="linkAdmin">
-    <em><a href="index.php?action=editChapterView&amp;id=<?= $post['id'] ?>">Editer le chapitre</a><br /></em>
+    <em><a href="index.php?action=editChapterView&amp;id=<?= $post['id'] ?>">éditer le chapitre</a><br /></em>
     <em><a href="index.php?action=showReportedComment&amp;id=<?= $post['id'] ?>">modérer les commentaires signalés du chapitre</a></em>
 </div>
 
-<article class="news">
+<article class="news col-3 postDetails">
     <h3>
         <?= ($post['title']) ?>
         <em>le <?= ($post['creation_date_fr']) ?></em>

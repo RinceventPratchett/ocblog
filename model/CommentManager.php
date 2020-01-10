@@ -17,6 +17,7 @@ require_once("model/Manager.php");
         $data = htmlspecialchars($data);
         return $data;
     }
+    
 class CommentManager extends Manager 
 {
     

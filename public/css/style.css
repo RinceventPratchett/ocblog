@@ -2,12 +2,15 @@
     Created on : 29 déc. 2019, 21:30:55
     Author     : Voy
 */
-
+body{
+    overflow-x: hidden;
+}
 header h1 {
     text-align:center;
     color: red;
     position: relative;
     top: 1rem;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 h2 {
@@ -21,13 +24,19 @@ h3 {
     margin: auto;
     text-align: center;
 }
+
+
+section.postView{
+    background-image: url("../images/summer.jpg"); 
+    background-size: cover;
+    height: 55rem;
+}
 input.btn.btn-secondary.specific.front{
     position: relative;
-
-top: 4rem;
-
-left: 95%;
+    top: 5rem;
+    left: 95%;
 }
+
 .intro{
     background-image: url("../images/night.jpg"); 
     background-size: cover;
@@ -43,10 +52,9 @@ left: 95%;
     color: white;
     font-size: 3rem;
     text-align: center;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
-.back section article.news{
-    text-align: center;
-}
+
 .news p
 {
     background-color:#CCCCCC;
@@ -68,6 +76,12 @@ article.news.col-3 {
     overflow-y: auto;   
     border: solid blueviolet 0.2px;
 }
+article.news.col-3.postDetails{
+    position: relative;
+    height: auto;
+    top: 3rem;
+    left: 35%;
+}
 article h3 {
     margin-top: 5px;
 }
@@ -79,6 +93,7 @@ a
 }
 input.btn.btn-danger.adminchapter{
     visibility: visible;
+    margin-bottom: 0.5rem;
 }
 .container.adminComReported{
         display: flex;
@@ -106,17 +121,22 @@ div.comment.adminComReported{
 }
 
 .addCommment{
-    margin-left: 1rem;
+    position: relative;
+    bottom: 22rem;
+    left: 1rem;
 }
 
 .linkAdmin{
     position: relative;
     left: 1rem;
     margin-bottom: 0.5rem;
+
 }
 
-.linkAdmin.loginView{
-    top: 5rem;
+a.loginView{
+    position: relative;
+    left: 1rem;
+
 }
 
 label.loginView{
@@ -127,6 +147,9 @@ label.loginView{
     font-size: 2rem;
 }
 /*--------------------------------specific backend-----------------------------*/
+.back section article.news{
+    text-align: center;
+}
 
 .back h1{
     text-align:center;

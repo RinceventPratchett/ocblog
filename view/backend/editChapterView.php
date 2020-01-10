@@ -12,7 +12,7 @@
 <h2>Derniers billets du blog :</h2>
 
 
-    <article class="news">
+    <article class="news col-3">
 
         <form action="index.php?action=editChapter&amp;id=<?= $post['id'] ?>" method="post">
             <div>

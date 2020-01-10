@@ -10,14 +10,14 @@
 
         public function signIn() {
            
-            $id_admin = check_data($_POST["id"]);
+
             $pseudo = check_data($_POST["pseudo"]);
             $password = check_data($_POST["password"]);
         
             if (!empty($pseudo) && !empty($password)) {
                 $db = $this->dbConnect();
                 //  Récupération de l'utilisateur et de son pass hashé
-                $req = $db->prepare('SELECT id, password FROM admin WHERE pseudo = :pseudo');
+                $req = $db->prepare('SELECT password FROM admin WHERE pseudo = :pseudo');
                 $req->execute(array('pseudo' => $pseudo));
                 $resultat = $req->fetch();
                 // Comparaison du pass envoyé via le formulaire avec la base
@@ -32,7 +32,7 @@
                 {
                     if ($isPasswordCorrect) {
                         
-                        $_SESSION['id'] = $resultat['id'];
+
                         $_SESSION['pseudo'] = $pseudo;
                         $_SESSION['adminLogged'] = true;
                         return true;

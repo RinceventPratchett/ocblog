@@ -22,7 +22,7 @@
             commentaire signalé <strong><?= nl2br(htmlspecialchars($comment['reported'])) ?></strong> fois<br />
             <form action="index.php?action=moderateComment&amp;id=<?= $comment['id'] ?>" method="post">
                 <input class="btn btn-secondary" type="submit" value="supprimer commentaire" />
-            </form>
+            </form><br />
             <em><a href="index.php?action=showPost&amp;id=<?= $comment['id_chapter'] ?>" class="btn btn-secondary">rejoindre le chapitre</a></em><br />
         </div>
     </article>

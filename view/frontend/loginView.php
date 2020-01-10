@@ -2,11 +2,11 @@
 <?php 
 $title= 'connexion'; 
 ?>
-<em><a href="index.php" class="linkAdmin loginView">Retour à la liste des billets</a></em>
 
 
 <?php ob_start(); ?>
 
+<em><a href="index.php" class="loginView">Retour à la liste des billets</a></em>
 
 <article class="container">
     <div class="col">

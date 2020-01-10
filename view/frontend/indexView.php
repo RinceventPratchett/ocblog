@@ -27,10 +27,13 @@
         </h3>
 
         <div>
-            <?= nl2br($data['content']) ?>
+            <?php $extract = substr($data['content'], 0, 500);
+				echo $extract . " ...";
+			?>
+
         </div>
 
-        <em><a href="index.php?action=showPost&amp;id=<?= $data['id'] ?>">Visualiser le chapitre ou laisser un commentaire</a></em><br />
+        <em><a href="index.php?action=showPost&amp;id=<?= $data['id'] ?>">Visualiser le chapitre et/ou laisser un commentaire</a></em><br />
 
         <?php
             if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {

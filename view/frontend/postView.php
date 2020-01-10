@@ -10,8 +10,8 @@
         <?php 
         }
         ?>
-<section>
-    <article class="news">
+<section class="postView">
+    <article class="news col-3 postDetails">
         <h3>
             <?= ($post['title']) ?>
             <em>le <?= $post['creation_date_fr'] ?></em>
