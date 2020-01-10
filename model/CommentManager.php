@@ -37,7 +37,6 @@ class CommentManager extends Manager
         $id_chapter = valid_data($_POST["id_chapter"]);
         $author = valid_data($_POST["author"]);
         $comment = valid_data($_POST["comment"]);
-        $comment_date = valid_data($_POST["comment_date"]);
         
         $comments = $db->prepare('INSERT INTO comment(id_chapter, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
                 

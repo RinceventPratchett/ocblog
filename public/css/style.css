@@ -174,7 +174,7 @@ h2.adminView{
 div.col.commentAdminView{
     border: solid blueviolet 0.2px;    
     position: absolute;
-    top: 14rem;;
+    top: 14rem;
     max-width: 17rem;
     max-height: 25rem;;
     left : 1rem;
@@ -184,10 +184,34 @@ input.btn.btn-danger.adminchapter{
     visibility: visible;
     margin-bottom: 2.5rem;
 }
-
+.titleAdminComReported{
+    position: relative;
+    top: 7rem;
+}
 .container.adminComReported{
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        max-width: 70%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 70%;
+}
+.addChapView{
+    width: 80%;
+    margin-left: 10%;
+    box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+article.news.col-3.edChapView{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    max-width: 80%;
+    margin-left: 10%;
+    margin-top: 10px;
+    border: solid blueviolet 0.2px;
+    background-color: white;
+    box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.tox{ /*class of tinyMCE field*/
+    margin-bottom: 5px;
 }

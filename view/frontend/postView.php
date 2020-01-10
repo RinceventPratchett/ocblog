@@ -10,7 +10,9 @@
         <?php 
         }
         ?>
+            
 <section class="postView">
+    
     <article class="news col-3 postDetails">
         <h3>
             <?= ($post['title']) ?>

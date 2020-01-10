@@ -12,12 +12,12 @@
 <h2>Derniers billets du blog :</h2>
 
 
-    <article class="news col-3">
+    <article class="news col-3 edChapView">
 
-        <form action="index.php?action=editChapter&amp;id=<?= $post['id'] ?>" method="post">
+        <form action="index.php?action=editChapter&amp;id=<?= $post['id'] ?>" method="POST">
             <div>
-                <em>le <?= $post['creation_date_fr'] ?></em><br />
                 <strong><label for="title"><?= $post['title'] ?></label></strong><br /> 
+                <em>le <?= $post['creation_date_fr'] ?></em><br />
                 <input type="text" id="title" name="title" value="<?= $post['title'] ?>" /> <br />
                 <label id="content" for="content">Contenu du chapitre</label><br />
                 <textarea type="text" class="default" name="content"><?= $post['content'] ?></textarea>

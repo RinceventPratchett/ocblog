@@ -4,7 +4,7 @@
 <h1>Visualisation des commentaires reported</h1>
 
 
-<h2>Commentaires</h2>
+<h2 class="titleAdminComReported">Commentaires</h2>
 
 <div class="container adminComReported">
     <?php
