@@ -16,12 +16,12 @@ header h1 {
 h2 {
     position: relative;
     left: 1rem;
+
 }
 
 h3 {
     background-color:black;
     color:white;
-    margin: auto;
     text-align: center;
 }
 
@@ -72,15 +72,18 @@ article.news.col-3 {
     flex-basis: auto;
     margin: 5px;
     max-width: 30%;
-    height: 20rem;
+    /*height: 20rem;*/
     overflow-y: auto;   
     border: solid blueviolet 0.2px;
+    background-color: white;
+    box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 article.news.col-3.postDetails{
     position: relative;
-    height: auto;
+    /*height: 40rem;*/
     top: 3rem;
     left: 35%;
+    justify-content: space-around;
 }
 article h3 {
     margin-top: 5px;
@@ -91,28 +94,29 @@ a
     text-decoration: none;
     color: blue;
 }
-input.btn.btn-danger.adminchapter{
-    visibility: visible;
-    margin-bottom: 0.5rem;
-}
-.container.adminComReported{
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
 
-        max-width: 70%;
+h2.comment{
+    position: relative;
+}
+
+.commentView{
+    position: absolute;
+    top: 9rem;
 }
 
 article.comment{
     position: relative;
     left: 1rem;
-    width: 20rem;
+    width: 22rem;
+    border: solid blueviolet 0.2px;
+    background-color: white;
+    padding: 3px;
 }
-article.comment form input.btn.btn-danger{
+.postView article.comment a.btn.btn-danger{
     visibility: hidden;
-
 }
-article.comment:hover form input.btn.btn-danger{
+
+.postView article.comment:hover a.btn.btn-danger{
     visibility: visible;
     width: 15rem;
 }
@@ -122,7 +126,6 @@ div.comment.adminComReported{
 
 .addCommment{
     position: relative;
-    bottom: 22rem;
     left: 1rem;
 }
 
@@ -157,10 +160,32 @@ label.loginView{
     position: relative;
     top: .3rem;
 }
-
 input.btn.btn-secondary.specific.back{
     position: relative;
     left: 60rem;
     width: 85px;
 }
 
+h2.adminView{
+    position: initial
+}
+
+div.col.commentAdminView{
+    border: solid blueviolet 0.2px;
+    
+    position: relative;
+    bottom: 20rem;
+    max-width: 15rem;
+    left: 1rem;
+}
+input.btn.btn-danger.adminchapter{
+    visibility: visible;
+    margin-bottom: 2.5rem;
+}
+
+.container.adminComReported{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 70%;
+}

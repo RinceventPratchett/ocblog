@@ -67,7 +67,7 @@ try{
             }
             elseif ($_GET['action'] == 'moderateComment') {
                 if (isset($_GET['id']) && $_GET['id'] > 0 && isset($_GET['postId']) && $_GET['postId'] > 0) {
-                    moderateComment($_GET['id'],$_GET['postId']);
+                    moderateComment($_GET['id'], $_GET['postId']);
                 }
                 else {
 

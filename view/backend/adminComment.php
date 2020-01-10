@@ -7,7 +7,6 @@
     <em><a href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">retour administration du billet</a></em><br />
 </div>
 
-
 <h2>Commentaires</h2>
 
 <?php
@@ -18,8 +17,9 @@ while ($comment = $comments->fetch())
         <strong><?= htmlspecialchars($comment['author']) ?></strong><br />
         le <?= $comment['comment_date_fr'] ?><br />
         <?= nl2br(htmlspecialchars($comment['comment'])) ?><br />
+        
         commentaire signalé <strong><?= nl2br(htmlspecialchars($comment['reported'])) ?></strong> fois<br />
-        <form action="index.php?action=moderateComment&amp;id=<?= $comment['id'] ?>&postId=<?= $post['id'] ?>" method="POST" class='deletecom'>
+        <form action="index.php?action=moderateComment&amp;id=<?= $commentId ?>&postId=<?= $postId ?>" method="POST" class='deletecom'>
             <input class="btn btn-secondary" type="submit" value="supprimer commentaire" />
         </form>        
     </article>
@@ -28,5 +28,6 @@ while ($comment = $comments->fetch())
 ?>
 
 <?php $content = ob_get_clean(); ?>
+
 
 <?php require(BACK_VIEW_DIR.'/template.php'); ?>

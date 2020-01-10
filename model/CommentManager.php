@@ -50,7 +50,7 @@ class CommentManager extends Manager
 
         $db = $this->dbConnect();
 
-        $deleteComment = $db->prepare('DELETE FROM comment WHERE id=?');
+        $deleteComment = $db->prepare('DELETE FROM comment WHERE id='.$commentId);
         $affectedLines = $deleteComment->execute(array($commentId));
 
         return $affectedLines;

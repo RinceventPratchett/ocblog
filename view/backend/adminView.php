@@ -20,6 +20,8 @@
         <?= nl2br(($post['content'])) ?>
     </div>
    
+    
+    
     <form action="index.php?action=removeChapter&amp;id=<?= $post['id'] ?>" method="post">
         <input type="submit" class="btn btn-danger adminchapter" value="Supprimer le chapitre"/>           
     </form>
@@ -29,8 +31,8 @@
 
   
 
-<h2>Commentaires</h2>
-    <div class="col">
+<div class="col commentAdminView">
+    <h2 class="adminView">Commentaires</h2>
         <?php
         while ($comment = $comments->fetch())
         {
