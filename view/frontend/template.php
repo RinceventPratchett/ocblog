@@ -21,16 +21,12 @@ developed by Voy
         </header>
         
         
-        <section class='front'>
+        <section class='frontend'>
         <?php
-            if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {  
-            
-                
+            if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {                
             }else{
         ?>
-            <form action="index.php?action=login" method="post" class="signInBtn">
-                <input class="btn btn-secondary specific front" type="submit" value="sign-in" />
-            </form>
+            <a href="index.php?action=login" class="signInBtn btn btn-secondary specific front">sign-in</a>
         <?php
             }
         ?>

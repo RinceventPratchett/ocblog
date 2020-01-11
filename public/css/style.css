@@ -29,16 +29,18 @@ h3 {
     text-align: center;
 }
 
-
+section.frontend{
+    margin-top: -15px;
+}
 section.postView{
     background-image: url("../images/summer.jpg"); 
     background-size: cover;
     height: 55rem;
 }
-input.btn.btn-secondary.specific.front{
+.btn.btn-secondary.specific.front{
     position: relative;
-    top: 7.5rem;
-    left: 95%;
+    top: 3.25rem;
+    left: 1rem;
     box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
@@ -102,7 +104,7 @@ a
 
 .commentView{
     position: absolute;
-    top: 4rem;
+    top: 6rem;
     right: 1rem;
 }
 
@@ -140,7 +142,7 @@ form.addCommment{
     width: 22rem;
     position: absolute;
     left: 1rem;
-    top: 7rem;
+    top: 9rem;
 }
 #comment{
     margin: 3px;
@@ -194,10 +196,14 @@ label{
     position: relative;
     top: .3rem;
 }
-input.btn.btn-secondary.specific.back{
-    position: relative;
-    left: 60rem;
-    width: 85px;
+html body header.backend nav.navbar.navbar-expand-lg.navbar-light.bg-light{
+    padding-top: 1.325rem;
+    padding-bottom: 1.325rem;
+    text-align: center;
+}
+
+.specific.back{
+
     box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 h2.chapterView{
@@ -209,6 +215,11 @@ h2.adminView{
     position: initial
 }
 
+header.backend{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
 div.col.commentAdminView{
 
     position: absolute;
@@ -235,6 +246,7 @@ input.btn.btn-danger.adminchapter{
 }
 .addChapView{
     width: 80%;
+    margin-bottom: 10px;
     margin-left: 10%;
     box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     border: solid blueviolet 0.2px;

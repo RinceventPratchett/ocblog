@@ -20,10 +20,21 @@
             <?= nl2br(($post['content'])) ?>
         </div>
 
-        <form action="index.php?action=removeChapter&amp;id=<?= $post['id'] ?>" method="POST" onclick="confirmer(<?= $post['id'] ?>)">
-            <input type="submit" class="btn btn-danger adminchapter" value="Supprimer le chapitre"/>           
+        <form action="index.php?action=removeChapter&amp;id=<?= $post['id'] ?>" method="POST" >
+            <input type="submit" class="btn btn-danger adminchapter" value="Supprimer le chapitre" onclick="confirmed(<?= $post['id'] ?>)"/>           
         </form>
-
+        
+        <script>
+            function confirmed(){
+                var del = confirm("Voulez vous supprimer le chapitre ?");
+                if ( confirm( "chapitre supprimé" ) ) {
+                    // Code à éxécuter si le l'utilisateur clique sur "OK"
+                } else {
+                    // Code à éxécuter si l'utilisateur clique sur "Annuler" 
+                }
+                del;
+            }
+        </script>
     </article>  
 
     <div class="col commentAdminView">
