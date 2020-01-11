@@ -6,7 +6,7 @@
 <div class="linkAdmin">
     <em><a href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">retour administration du billet</a></em><br />
 </div>
-<section>
+<div class="adminCommentReportedByChapter">
     <h2>Commentaires</h2>
 
     <?php
@@ -26,7 +26,7 @@
     <?php
     }
     ?>
-</section>
+</div>
 
 <?php $content = ob_get_clean(); ?>
 

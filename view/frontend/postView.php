@@ -49,7 +49,7 @@
                 res;
             }
         </script>
-        
+    </div>
         
         <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="POST" class="addCommment">
                         <div>
@@ -64,7 +64,7 @@
                             <input class="btn btn-secondary" type="submit" />
                         </div>
         </form>
-    </div>
+
 </section>
 
 <?php $content = ob_get_clean(); ?>

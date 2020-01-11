@@ -42,7 +42,7 @@
                 <?php
                 if($comment['reported'] != 0){
                 ?>
-                    Commentaire signalé <strong><?= $comment['reported'] ?></strong> fois <br /><!--pour afficher le nombre de report des commentaires sur la session admin-->
+                    <strong>Commentaire signalé <?= $comment['reported'] ?> fois </strong><br /><!--pour afficher le nombre de report des commentaires sur la session admin-->
                 <?php
                 }    
             }

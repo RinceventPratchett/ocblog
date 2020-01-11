@@ -85,7 +85,7 @@ article.news.col-3 {
 }
 article.news.col-3.postDetails{
     position: relative;
-    /*height: 40rem;*/
+    margin-bottom: 4rem;
     top: 3rem;
     left: 35%;
     justify-content: space-around;
@@ -102,8 +102,8 @@ a
 
 .commentView{
     position: absolute;
-    top: 8rem;
-    right: 12rem;
+    top: 4rem;
+    right: 1rem;
 }
 
 article.comment{
@@ -112,6 +112,7 @@ article.comment{
     overflow-y: auto;
     width: 22rem;
     border: solid blueviolet 0.2px;
+    box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     background-color: white;
     padding: 3px;
     text-align: center;
@@ -135,12 +136,21 @@ article.comment{
     padding-bottom: 3px;
     background-color: graytext;
 }
+form.addCommment{
+    width: 22rem;
+    position: absolute;
+    left: 1rem;
+    top: 7rem;
+}
 #comment{
     margin: 3px;
 }
 
 div.comment.adminComReported{
     margin-top: 15px;
+}
+.adminCommentReportedByChapter{
+    margin-left: 1rem;
 }
 
 .linkAdmin{
@@ -168,6 +178,7 @@ label.loginView{
 }
 .btn{
     box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin-bottom: 3px;
 }
 label{
     font-weight: bold;
@@ -199,13 +210,13 @@ h2.adminView{
 }
 
 div.col.commentAdminView{
-    border: solid blueviolet 0.2px;    
+
     position: absolute;
-    top: 13.5rem;
-    max-width: 24rem;
+    top: 11rem;
+    width: 24rem;
     right: 12rem;
     overflow-y: auto;
-    box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
 }
 input.btn.btn-danger.adminchapter{
     visibility: visible;
@@ -214,6 +225,7 @@ input.btn.btn-danger.adminchapter{
 .titleAdminComReported{
     position: relative;
     top: 7rem;
+    left: 1rem;
 }
 .container.adminComReported{
     display: flex;
@@ -225,8 +237,11 @@ input.btn.btn-danger.adminchapter{
     width: 80%;
     margin-left: 10%;
     box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border: solid blueviolet 0.2px;
 }
 .addChapView.title{
+    border: solid blueviolet 0.2px;
+    box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 5px;
