@@ -99,10 +99,13 @@ function showAllReportedComment($commentId) {
 
     }
     else{
-        echo "pas de commentaire à modérer"; 
-?>
+        ?>
+        <script>alert("pas de commentaire à modérer");</script>
+        <?php
+
+        ?>
         <br /><a class="btn btn-secondary" href="/index.php">Retour à la liste des billets</a>
-<?php
+        <?php
     } 
 }
 

@@ -44,12 +44,13 @@
         ?>
 
         <script>
-            function confirmer(commentId,postId){
-                var res = alert("Commentaire signalé, merci ! " + commentId + " / " + postId) ;
+            function confirmer(){
+                var res = alert("Commentaire signalé, merci !");
                 res;
             }
         </script>
-
+        
+        
         <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="POST" class="addCommment">
                         <div>
                             <label for="author">Auteur</label><br />

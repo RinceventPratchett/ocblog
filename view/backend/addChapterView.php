@@ -10,18 +10,18 @@
 <article class="news">
     <form action="index.php?action=addChapter" method="POST">
 
-        <div class="addChapView">
+        <div class="addChapView title">
             <h2>Ajouter un chapitre<h2>
             <label for="title">Titre</label><br />
             <input type="text" id="title" name="title" />
         </div>
 
         <div class="addChapView">
-            <label for content ="content">Contenu du chapitre</label><br />
+            <label class="addChapViewLabel" for="" content="content">Contenu du chapitre</label><br />
             <textarea type="text" class="default" name="content"></textarea>
         </div>
 
-        <div>
+        <div class="addChapViewBtn">
             <input class="btn btn-secondary" type="submit" />
         </div>
 

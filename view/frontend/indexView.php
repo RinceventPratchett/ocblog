@@ -14,7 +14,7 @@
 </div>
 
 
-<h2>Billets du blog :</h2>
+<h2 class="indexView">Billets du blog :</h2>
 
 <div class="chapter">
     <?php

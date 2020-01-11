@@ -9,7 +9,7 @@
     <em><a href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">retour administration du billet</a></em><br />
 </div>
 
-<h2>Derniers billets du blog :</h2>
+<h2 class="chapterView">Derniers billets du blog :</h2>
 
 
     <article class="news col-3 edChapView">
@@ -21,9 +21,9 @@
                 <input type="text" id="title" name="title" value="<?= $post['title'] ?>" /> <br />
                 <label id="content" for="content">Contenu du chapitre</label><br />
                 <textarea type="text" class="default" name="content"><?= $post['content'] ?></textarea>
+                <em><a href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">Commentaires</a></em><br />
 
                 <input class="btn btn-secondary" type="submit" /><br />
-                <em><a href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">Commentaires</a></em>
                 
             </div>
         </form>

@@ -8,7 +8,7 @@ $title= 'connexion';
 
 <em><a href="index.php" class="loginView">Retour à la liste des billets</a></em>
 
-<article class="container">
+<article class="container login">
     <div class="col">
         <h2>IDENTIFICATION</h2>
         <form action="index.php?action=signIn" method="post">

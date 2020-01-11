@@ -23,7 +23,9 @@ developed by Voy
         
         <section class='front'>
         <?php
-            if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {        
+            if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {  
+            
+                
             }else{
         ?>
             <form action="index.php?action=login" method="post" class="signInBtn">

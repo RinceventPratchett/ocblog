@@ -3,55 +3,51 @@
 
 <?php ob_start(); ?>
 
-<h1>interface admin </h1>
+    <h1>interface admin </h1>
 
-<div class="linkAdmin">
-    <em><a href="index.php?action=editChapterView&amp;id=<?= $post['id'] ?>">éditer le chapitre</a><br /></em>
-    <em><a href="index.php?action=showReportedComment&amp;id=<?= $post['id'] ?>">modérer les commentaires signalés du chapitre</a></em>
-</div>
-
-<article class="news col-3 postDetails">
-    <h3>
-        <?= ($post['title']) ?>
-        <em>le <?= ($post['creation_date_fr']) ?></em>
-    </h3>
-    
-    <div>
-        <?= nl2br(($post['content'])) ?>
+    <div class="linkAdmin">
+        <em><a href="index.php?action=editChapterView&amp;id=<?= $post['id'] ?>">éditer le chapitre</a><br /></em>
+        <em><a href="index.php?action=showReportedComment&amp;id=<?= $post['id'] ?>">modérer les commentaires signalés du chapitre</a></em>
     </div>
-   
-    
-    
-    <form action="index.php?action=removeChapter&amp;id=<?= $post['id'] ?>" method="post">
-        <input type="submit" class="btn btn-danger adminchapter" value="Supprimer le chapitre"/>           
-    </form>
 
-</article>
+    <article class="news col-3 postDetails">
+        <h3>
+            <?= ($post['title']) ?>
+            <em>le <?= ($post['creation_date_fr']) ?></em>
+        </h3>
 
+        <div>
+            <?= nl2br(($post['content'])) ?>
+        </div>
 
-  
+        <form action="index.php?action=removeChapter&amp;id=<?= $post['id'] ?>" method="POST" onclick="confirmer(<?= $post['id'] ?>)">
+            <input type="submit" class="btn btn-danger adminchapter" value="Supprimer le chapitre"/>           
+        </form>
 
-<div class="col commentAdminView">
-    <h2 class="adminView">Commentaires</h2>
-        <?php
-        while ($comment = $comments->fetch())
-        {
-        ?>
+    </article>  
 
-            <strong><?= ($comment['author']) ?></strong><br />
-            le <?= $comment['comment_date_fr'] ?><br />
-            <?= nl2br($comment['comment']) ?><br />
+    <div class="col commentAdminView">
+        <h2 class="adminView">Commentaires</h2>
             <?php
-                if($comment['reported'] != 0){
+            while ($comment = $comments->fetch())
+            {
             ?>
-            Commentaire signalé <strong><?= $comment['reported'] ?></strong> fois <br /><!--pour afficher le nombre de report des commentaires sur la session admin-->
-            <?php
+                <article class="comment">
+                    <strong><?= ($comment['author']) ?></strong>
+                    le <?= $comment['comment_date_fr'] ?><br />
+                    <?= $comment['comment'] ?> <br />
+
+                </article>
+
+                <?php
+                if($comment['reported'] != 0){
+                ?>
+                    Commentaire signalé <strong><?= $comment['reported'] ?></strong> fois <br /><!--pour afficher le nombre de report des commentaires sur la session admin-->
+                <?php
                 }    
             }
-            ?>
-
+        ?>
     </div>
-    
   
 <?php $content = ob_get_clean(); ?>
 
