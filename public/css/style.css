@@ -200,6 +200,7 @@ form.addCommment{
 
 .container.login{
     margin-top: 5rem;
+    max-width: 40%;
 }
 .btn.btn-info.loginView{
     position: relative;
@@ -226,7 +227,7 @@ a.loginView{
 
 
 .form-control.loginView{
-    width: 60%;
+    width: 35%;
     margin: 5px;
 }
 
@@ -385,6 +386,38 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
 /*-------------------------------Queries 1120px--------------------------------*/
 
 @media all and (max-width: 1120px){
+    .back{
+        text-align: center;
+    }
+    .frontend{
+        text-align: center;
+    }
+    
+    .btn.btn-info.loginView {
+        left: 0;
+    }
+    
+    .btn.btn-light.specific.front{
+        left: 0;
+    }
+    
+    .btn.btn-info.linkAdmin{
+        top: 3.5rem;
+        left: 0;
+    }
+    
+    .btn.btn-info.linkAdmin.editChapter{
+        margin-top: 2rem;
+    }
+    
+    .container.login{
+        max-width: 100%;
+    }
+    
+    .form-control.loginView{
+        width: 80%
+    }
+    
     section.frontend{
         margin-top: 0;
     }
@@ -435,12 +468,22 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
     
     article.news.col-3{
         max-width: 100%;
+        margin: 0;
     }
     
     article.comment{
-        width: auto;
+        width: 100%;
     }
-    
+    .container.adminComReported{
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .row.comment.adminComReported{
+        width: 100%;
+        max-height: none;
+        margin: 0;
+    }
     h2.adminCommentReportedByChapter{
     position: initial;
     margin: 0;
@@ -448,6 +491,9 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
     }
     .comment.adminCommentReportedByChapter{
         text-align: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
     .adminCommentReportedByChapter{
         max-height: initial;
@@ -455,6 +501,7 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+        margin-left: 0; 
     }
     div.col.commentAdminView {
         position: initial;
@@ -463,9 +510,10 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
         flex-direction: column;
         align-items: center;
         width: 100%;
+        padding: 0;
     }
     div.col.commentAdminView article.comment{
-        position: initial
+        position: initial;
     }
     
     .titleAdminComReported{
@@ -473,6 +521,19 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
         text-align: center;
         margin-top: 2rem;
         margin-bottom: 1rem;
+    }
+    
+    .addChapView{
+        margin-left: 0;
+        margin-top: 1rem;
+        width: 100%
+    }
+    .addChapView.title{
+        margin-top: 3rem;
+    }
+    
+    #title{
+        max-width: 95%;
     }
     
 }

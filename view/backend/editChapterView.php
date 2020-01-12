@@ -25,9 +25,10 @@
                 
             </div>
         </form>
-        <form action="index.php?action=removeChapter&amp;id=<?= $post['id'] ?>" method="post">
-            <input type="submit" class="btn btn-danger adminchapter" value="Supprimer le chapitre"/>           
+        <form onsubmit="return confirm('Voulez vous supprimer le chapitre ?')" action="index.php?action=removeChapter&amp;id=<?= $post['id'] ?>" method="POST" >
+            <input type="submit" class="btn btn-danger adminchapter" value="Supprimer le chapitre" />           
         </form>
+        
     </article>
             
 <?php $content = ob_get_clean(); ?>
