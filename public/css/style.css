@@ -395,7 +395,8 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
     }
     
     .btn.btn-info.loginView {
-        left: 0;
+        left: 1rem;
+        width: 80%;
     }
     
     .btn.btn-light.specific.front{
@@ -405,7 +406,12 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
     
     .btn.btn-info.linkAdmin{
         top: 3.5rem;
-
+        width: 80%;
+        left: 1rem;
+    }
+    .btn.btn-info.linkAdmin.adminCommentReportedByChapter{
+        left: 0;
+        margin-top: 2rem;
     }
     
     .btn.btn-info.linkAdmin.editChapter{
@@ -466,6 +472,7 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
     article.news.col-3.postDetails {
         margin-top: 1rem;
         max-width: 100%;
+        width: 100%;
         left: 0;
     }
     
