@@ -390,7 +390,8 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
         text-align: center;
     }
     .frontend{
-        text-align: center;
+        display: flex;
+        flex-direction: column;
     }
     
     .btn.btn-info.loginView {
@@ -398,16 +399,18 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
     }
     
     .btn.btn-light.specific.front{
-        left: 0;
+        left: 1rem;;
+        width: 5rem;
     }
     
     .btn.btn-info.linkAdmin{
         top: 3.5rem;
-        left: 0;
+
     }
     
     .btn.btn-info.linkAdmin.editChapter{
         margin-top: 2rem;
+        position: initial;
     }
     
     .container.login{
