@@ -5,10 +5,6 @@
 
     <h1>interface admin </h1>
 
-    <div class="linkAdmin">
-        <em><a href="index.php?action=editChapterView&amp;id=<?= $post['id'] ?>">éditer le chapitre</a><br /></em>
-        <em><a href="index.php?action=showReportedComment&amp;id=<?= $post['id'] ?>">modérer les commentaires signalés du chapitre</a></em>
-    </div>
 
     <article class="news col-3 postDetails">
         <h3>
@@ -20,21 +16,10 @@
             <?= nl2br(($post['content'])) ?>
         </div>
 
-        <form action="index.php?action=removeChapter&amp;id=<?= $post['id'] ?>" method="POST" >
-            <input type="submit" class="btn btn-danger adminchapter" value="Supprimer le chapitre" onclick="confirmed(<?= $post['id'] ?>)"/>           
+        <form onsubmit="return confirm('Voulez vous supprimer le chapitre ?')" action="index.php?action=removeChapter&amp;id=<?= $post['id'] ?>" method="POST" >
+            <input type="submit" class="btn btn-danger adminchapter" value="Supprimer le chapitre" />           
         </form>
-        
-        <script>
-            function confirmed(){
-                var del = confirm("Voulez vous supprimer le chapitre ?");
-                if ( confirm( "chapitre supprimé" ) ) {
-                    // Code à éxécuter si le l'utilisateur clique sur "OK"
-                } else {
-                    // Code à éxécuter si l'utilisateur clique sur "Annuler" 
-                }
-                del;
-            }
-        </script>
+    
     </article>  
 
     <div class="col commentAdminView">

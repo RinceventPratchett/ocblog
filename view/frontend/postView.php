@@ -4,14 +4,16 @@
 
 <?php
     if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {
-        } else { 
+         } else { 
         ?>
-            <em><a href="index.php" class="linkAdmin">Retour à la liste des billets</a></em>
+            <a href="index.php" class="btn btn-info linkAdmin">Retour à la liste des billets</a>
         <?php 
         }
-        ?>
-            
-<section class="postView">
+?>
+        
+<div class="backGroundPostView"></div>
+                
+<div class="postView">
     
     <article class="news col-3 postDetails">
         <h3>
@@ -65,7 +67,7 @@
                         </div>
         </form>
 
-</section>
+</div>
 
 <?php $content = ob_get_clean(); ?>
 

@@ -6,18 +6,22 @@ $title= 'connexion';
 
 <?php ob_start(); ?>
 
-<em><a href="index.php" class="loginView">Retour à la liste des billets</a></em>
+<a class="btn btn-info loginView" href="index.php" class="loginView">Retour à la liste des billets</a>
 
 <article class="container login">
     <div class="col">
         <h2>IDENTIFICATION</h2>
-        <form action="index.php?action=signIn" method="post">
+        <form class="form-group" action="index.php?action=signIn" method="post">
             Veuillez entrer vos identifiants pour vous connecter:<br />
-            <div>
-                <label for="pseudo" class="loginView">Nom d'utilisateur</label><input type="text" name="pseudo" /><br />
-                <label for="password" class="loginView">Mot de passe</label><input type="password" name="password" /><br />
-                <input class="btn btn-secondary" type="submit" value="Connection" />
-            </div>
+
+                <label for="pseudo">Nom d'utilisateur</label>
+                <input class="form-control loginView" type="text" name="pseudo" /><br />
+                
+                <label for="password" >Mot de passe</label>
+                <input class="form-control loginView" type="password" name="password" /><br />
+                
+                <input class="btn btn-secondary loginView" type="submit" value="Connection" />
+
         </form>
     </div>
 </article>

@@ -5,6 +5,25 @@
 body{
     overflow-x: hidden;
 }
+.backgroundIndex{
+    background-image: url("../images/night.jpg"); 
+    background-size: cover;
+    left: 0;
+    height: 59rem;
+    position: sticky;
+    top: 0;
+
+}
+.backGroundPostView{
+    background-image: url("../images/summer.jpg"); 
+    background-size: cover;
+    left: 0;
+    height: 59rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
 h1 {
     text-align:center;
     color: red;
@@ -12,11 +31,17 @@ h1 {
     top: 1rem;
     font-weight: bolder;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    z-index: 1;
 }
 
 h2.indexView {
     position: relative;
     left: 2rem;
+    position: relative;
+    bottom: 15rem;
+    font-weight: bolder;
+    color: grey;
+    text-shadow: -1px 0 white, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 h2.comment{
@@ -32,27 +57,27 @@ h3 {
 section.frontend{
     margin-top: -15px;
 }
-section.postView{
-    background-image: url("../images/summer.jpg"); 
-    background-size: cover;
-    height: 55rem;
+div.postView{
+    
+    
 }
-.btn.btn-secondary.specific.front{
+.btn.btn-light.specific.front{
     position: relative;
     top: 3.25rem;
     left: 1rem;
     box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border-radius: 3px;
+    z-index: 99;
 }
 
 .intro{
-    background-image: url("../images/night.jpg"); 
-    background-size: cover;
-    height: 77rem;
+    position: relative;
+    bottom: 46rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 3rem;
+
 }
 
 .intro p {
@@ -73,6 +98,8 @@ section.postView{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    position: relative;
+    bottom: 15rem;
 }
 article.news.col-3 {
     display: flex;
@@ -84,6 +111,7 @@ article.news.col-3 {
     border: solid blueviolet 0.2px;
     background-color: white;
     box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border-radius: 3px;
 }
 article.news.col-3.postDetails{
     position: relative;
@@ -104,7 +132,7 @@ a
 
 .commentView{
     position: absolute;
-    top: 6rem;
+    top: 11rem;
     right: 1rem;
 }
 
@@ -119,8 +147,9 @@ article.comment{
     padding: 3px;
     text-align: center;
     margin-bottom: 5px;
-    
+    border-radius: 3px;
 }
+
 .postView article.comment a.btn.btn-danger{
     visibility: hidden;
 }
@@ -137,12 +166,13 @@ article.comment{
     text-align: center;
     padding-bottom: 3px;
     background-color: graytext;
+    border-radius: 3px;
 }
 form.addCommment{
     width: 22rem;
     position: absolute;
     left: 1rem;
-    top: 9rem;
+    top: 14rem;
 }
 #comment{
     margin: 3px;
@@ -155,11 +185,20 @@ div.comment.adminComReported{
     margin-left: 1rem;
 }
 
-.linkAdmin{
+.btn.btn-info.linkAdmin{
     position: relative;
-    left: 1rem;
-    margin-bottom: 0.5rem;
+    left: 1.1rem;
+    top: 3.25rem;
+    z-index: 2;
+}
 
+.container.login{
+    margin-top: 5rem;
+}
+.btn.btn-info.loginView{
+    position: relative;
+    left: 1.1rem;
+    top: 3.25rem;
 }
 
 a.loginView{
@@ -168,23 +207,51 @@ a.loginView{
 
 }
 
+.form-group {
+
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    boxt-shadow: -1px 0 #212529, 0 1px #212529, 1px 0 #212529, 0 -1px #212529;
+    border: solid blueviolet 0.2px;
+    border-radius: 3px;
+}
+
+
+.form-control.loginView{
+    width: 60%;
+    margin: 5px;
+}
+
 label.loginView{
     margin-right: 3px; 
 }
-.container.login{
-    text-align: center;
-}
+
 .pagin{
     text-align: center;
     font-size: 2rem;
+    position: relative;
+    bottom: 10rem;
+    left: 48%;
+    text-shadow: -1px 0 #212529, 0 1px #212529, 1px 0 #212529, 0 -1px #212529;
+    border: solid blueviolet 0.2px;
+    width: max-content;
+    border-radius: 3px;
+    max-width: 10%;
+    background-color: blueviolet;    
 }
+
 .btn{
     box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     margin-bottom: 3px;
+    border-radius: 3px
 }
+
 label{
     font-weight: bold;
 }
+
 /*--------------------------------specific backend-----------------------------*/
 .back section article.news{
     text-align: center;
@@ -203,9 +270,10 @@ html body header.backend nav.navbar.navbar-expand-lg.navbar-light.bg-light{
 }
 
 .specific.back{
-
     box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border-radius: 3px;
 }
+
 h2.chapterView{
     position: relative;
     left: 12rem;
@@ -220,6 +288,11 @@ header.backend{
     top: 0;
     z-index: 999;
 }
+
+.row.comment.adminComReported{
+    margin: 5px;
+}
+
 div.col.commentAdminView{
 
     position: absolute;
@@ -244,13 +317,16 @@ input.btn.btn-danger.adminchapter{
     flex-wrap: wrap;
     max-width: 70%;
 }
+
 .addChapView{
     width: 80%;
     margin-bottom: 10px;
     margin-left: 10%;
     box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     border: solid blueviolet 0.2px;
+    border-radius: 3px;
 }
+
 .addChapView.title{
     border: solid blueviolet 0.2px;
     box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -279,6 +355,7 @@ article.news.col-3.edChapView{
     border: solid blueviolet 0.2px;
     background-color: white;
     box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border-radius: 3px;
 }
 
 .tox{ /*class of tinyMCE field*/
@@ -288,3 +365,43 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
  margin-bottom: 3px;    
 }
 
+/*-------------------------------Queries 1120px--------------------------------*/
+
+@media all and (max-width: 1120px){
+    section.frontend{
+        margin-top: 0;
+    }
+    .linkAdmin{
+        top: 3.125rem;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+    .postView{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .commentView{
+        position: initial;
+        display: flex;
+        flex-direction: column;
+        margin-left: 10%;
+    }
+    .commentView h2{
+        font-size: 2rem;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+    }
+    
+    form.addCommment{
+        position: initial;
+        margin-left: 10%;
+    }
+    
+    article.news.col-3.postDetails {
+        left: 10%;
+    }
+    
+    article.news.col-3{
+        max-width: 80%;
+    }
+}

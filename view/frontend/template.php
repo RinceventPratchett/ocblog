@@ -26,7 +26,7 @@ developed by Voy
             if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {                
             }else{
         ?>
-            <a href="index.php?action=login" class="signInBtn btn btn-secondary specific front">sign-in</a>
+            <a href="index.php?action=login" class="signInBtn btn btn-light specific front">sign-in</a>
         <?php
             }
         ?>
@@ -40,4 +40,3 @@ developed by Voy
         
     </body>
 </html>
-

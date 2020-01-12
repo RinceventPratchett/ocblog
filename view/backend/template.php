@@ -31,8 +31,12 @@
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
                             <a class="nav-item nav-link active" href="/index.php">Retour à la liste des billets</a>
+                            <?php if (isset($_GET['id']) && $_GET['id'] > 0) { ?>
+                            <a class="nav-item nav-link" href="index.php?action=editChapterView&amp;id=<?= $post['id'] ?>">éditer le chapitre</a>
+                            <a class="nav-item nav-link" href="index.php?action=showReportedComment&amp;id=<?= $post['id'] ?>">modérer les commentaires signalés du chapitre</a>
+                            <?php } ?>
+                            <a class="nav-item nav-link" href="index.php?action=showAllReportedComment">modérer tous les commentaires signalés</a>
                             <a class="nav-item nav-link" href="index.php?action=addChapterView">Ajouter un chapitre</a>
-                            <a class="nav-item nav-link " href="index.php?action=showAllReportedComment">administrer les commentaires reported</a>
                             <a class="nav-item nav-link specific back" href="index.php?action=signOut">sign-out</a>
                         </div>
                     </div>
