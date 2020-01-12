@@ -3,12 +3,11 @@
 <?php $title = "interface admin"; ?>
 
 <?php ob_start(); ?>
-<h1>interface admin - edition de chapitre</h1>
-<div class="linkAdmin">
-    <em><a href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">retour administration du billet</a></em><br />
-</div>
+    <h1>interface admin - edition de chapitre</h1>
 
-<h2 class="chapterView">Derniers billets du blog :</h2>
+    <a class="btn btn-info linkAdmin editChapter" href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">retour administration du billet</a><br />
+
+    <h2 class="chapterView">Derniers billets du blog :</h2>
 
 
     <article class="news col-3 edChapView">
@@ -20,7 +19,7 @@
                 <input type="text" id="title" name="title" value="<?= $post['title'] ?>" /> <br />
                 <label id="content" for="content">Contenu du chapitre</label><br />
                 <textarea type="text" class="default" name="content"><?= $post['content'] ?></textarea>
-                <em><a href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">Commentaires</a></em><br />
+                <a class="btn btn-info" href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">Commentaires</a><br />
 
                 <input class="btn btn-secondary" type="submit" /><br />
                 

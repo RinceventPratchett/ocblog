@@ -1,19 +1,19 @@
-<?php $title = "Visualisation des commentaires reported"; ?>
+<?php $title = "Visualisation des commentaires signalés"; ?>
 
 <?php ob_start(); ?>
-<h1>Visualisation des commentaires reported</h1>
+<h1>Visualisation des commentaires signalés du chapitre n°<?= $post['id'] ?></h1>
 
-<div class="linkAdmin">
-    <em><a href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">retour administration du billet</a></em><br />
-</div>
+
+<a class="btn btn-info linkAdmin" href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">retour administration du billet</a><br />
+
 <div class="adminCommentReportedByChapter">
-    <h2>Commentaires</h2>
+    <h2 class="adminCommentReportedByChapter">Commentaires</h2>
 
     <?php
     while ($comment = $comments->fetch())
     {
     ?>
-        <article class="comment">
+        <article class="comment adminCommentReportedByChapter">
             <strong><?= htmlspecialchars($comment['author']) ?></strong><br />
             le <?= $comment['comment_date_fr'] ?><br />
             <?= nl2br(htmlspecialchars($comment['comment'])) ?><br />

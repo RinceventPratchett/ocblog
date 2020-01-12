@@ -19,7 +19,7 @@ function signIn(){
        header('Location: index.php');
     }
     throw new Exception('Impossible de se connecter !');
-    echo '<em><a href="index.php" class="linkAdmin">Retour à la liste des billets</a></em>';
+    echo '<a class="btn btn-info linkAdmin" href="index.php">Retour à la liste des billets</a>';
 }
 
 function signOut(){

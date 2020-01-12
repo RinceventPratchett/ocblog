@@ -1,7 +1,7 @@
-<?php $title = "Visualisation des commentaires reported"; ?>
+<?php $title = "Visualisation des commentaires signalés"; ?>
 
 <?php ob_start(); ?>
-<h1>Visualisation des commentaires reported</h1>
+<h1>Visualisation des commentaires signalés</h1>
 
 
 <h2 class="titleAdminComReported">Commentaires</h2>
