@@ -39,7 +39,7 @@
                             <input class="btn btn-secondary" type="submit" />
                         </div>
         </form>
-
+    
     <div class="commentView">
         <h2 class="comment">Commentaires</h2>
 
@@ -66,7 +66,20 @@
         </script>
     </div>
         
-       
+        <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="POST" class="addCommment">
+                        <div>
+                            <label for="author">Auteur</label><br />
+                            <input type="text" id="author" name="author" />
+                        </div>
+                        <div>
+                            <label for="comment">Commentaire</label><br />
+                            <textarea id="comment" name="comment"></textarea>
+                        </div>
+                        <div>
+                            <input class="btn btn-secondary" type="submit" />
+                        </div>
+        </form>
+
 </div>
 
 <?php $content = ob_get_clean(); ?>
