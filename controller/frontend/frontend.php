@@ -1,6 +1,6 @@
 <?php
 
-// Chargement des classes
+// class loading
 require_once(MODEL_DIR.'/PostManager.php');
 require_once(MODEL_DIR.'/CommentManager.php');
 require_once(MODEL_DIR.'/AdminManager.php');
@@ -12,7 +12,7 @@ function login(){  //page containing the connexion form
     require(FRONT_VIEW_DIR.'/loginView.php');
 }
 
-function signIn(){
+function signIn(){ 
     $AdminManager = new AdminManager();
     $signIn = $AdminManager->signIn();
     if ($signIn){
@@ -29,7 +29,7 @@ function signOut(){
     header('Location: index.php');
 }
 
-function listPosts() {//List the different chapter on IndexView
+function listPosts() {//List the different chapters on IndexView
     
     $postManager = new PostManager();
     $pagination = new Pagination();
@@ -46,14 +46,12 @@ function listPosts() {//List the different chapter on IndexView
 	}
 	
     $posts = $postManager->showChapters($cPage, $postsPerPage);
-//    echo $posts;
-//    var_dump($posts);
-//    print_r($posts);
+
     
     require(FRONT_VIEW_DIR.'/indexView.php');
 }
 
-function postDetails() //Show the chapter and existing comment depending of
+function postDetails() //Show one chapter and existing comments depending of
 {
     $postManager = new PostManager();
     $post = $postManager->getPost($_GET['id']);

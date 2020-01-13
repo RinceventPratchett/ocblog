@@ -1,5 +1,4 @@
 
-
 <?php $title = "interface admin"; ?>
 
 <?php ob_start(); ?>

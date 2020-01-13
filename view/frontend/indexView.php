@@ -35,7 +35,7 @@
 
         </div>
 
-        <a class="btn btn-info" href="index.php?action=showPost&amp;id=<?= $data['id'] ?>">Visualiser le chapitre et/ou laisser un commentaire</a><br />
+        <a class="btn btn-info" href="index.php?action=showPost&amp;id=<?= $data['id'] ?>">Visualiser le chapitre et/ou laisser un commentaire</a>
 
         <?php
             if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {

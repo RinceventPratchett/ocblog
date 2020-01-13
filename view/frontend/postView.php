@@ -48,7 +48,7 @@
         {
         ?>
                 <article class="comment">
-                    <strong><?= ($comment['author']) ?></strong>
+                    <h3><strong><?= ($comment['author']) ?></strong></h3>
                     le <?= $comment['comment_date_fr'] ?><br />
                     <?= $comment['comment'] ?> <br />
 
@@ -66,19 +66,6 @@
         </script>
     </div>
         
-        <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="POST" class="addCommment">
-                        <div>
-                            <label for="author">Auteur</label><br />
-                            <input type="text" id="author" name="author" />
-                        </div>
-                        <div>
-                            <label for="comment">Commentaire</label><br />
-                            <textarea id="comment" name="comment"></textarea>
-                        </div>
-                        <div>
-                            <input class="btn btn-secondary" type="submit" />
-                        </div>
-        </form>
 
 </div>
 

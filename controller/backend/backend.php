@@ -1,6 +1,6 @@
 <?php
 
-// Chargement des classes
+//class loading
 
 require_once(MODEL_DIR.'/AdminManager.php');
 require_once(MODEL_DIR.'/PostManager.php');
@@ -8,21 +8,22 @@ require_once(MODEL_DIR.'/CommentManager.php');
 require_once(MODEL_DIR.'/Pagination.php');
 
 
-function adminView()
+function adminView() //Equivalent of postView, qtty of reports done if existing
 {
-    $postManager = new PostManager(); // Création d'un objet
-    $post = $postManager->getPost($_GET['id']); // Appel d'une fonction de cet objet
+    $postManager = new PostManager(); 
+    $post = $postManager->getPost($_GET['id']); 
     $commentManager = new CommentManager();
     $comments = $commentManager->showComments($_GET['id']);
-    $reportedComment = $commentManager->reportPending($_GET['id']);
+    $AdminManager = new AdminManager();
+    $reportedComment = $AdminManager->reportPending($_GET['id']);
     
     require(BACK_VIEW_DIR.'/adminView.php');
 }
 
-function editChapterView()
+function editChapterView() 
 {
-    $postManager = new PostManager(); // Création d'un objet
-    $post = $postManager->getPost($_GET['id']); // Appel d'une fonction de cet objet
+    $postManager = new PostManager(); 
+    $post = $postManager->getPost($_GET['id']); 
     $commentManager = new CommentManager();
     $comments = $commentManager->showComments($_GET['id']);
     
@@ -30,16 +31,17 @@ function editChapterView()
 }
 
 function addChapterView()
-{   
-    
+{     
     require(BACK_VIEW_DIR.'/addChapterView.php');
 }
 
+
 function addChapter($chapterTitle, $chapterContent)
 {
-    $PostManager = new PostManager();
-    $affectedLines = $PostManager->newChapter($chapterTitle, $chapterContent);
-     if ($affectedLines === false) {
+    $AdminManager = new AdminManager();
+    $affectedLines = $AdminManager->newChapter($chapterTitle, $chapterContent);
+
+    if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le chapitre !');
     }
     else {
@@ -50,12 +52,11 @@ function addChapter($chapterTitle, $chapterContent)
 
 function editChapter($chapterTitle, $chapterContent, $chapterId)
 {
-    $PostManager = new PostManager();
+    $AdminManager = new AdminManager();
+    $affectedLines = $AdminManager->updateChapter($chapterTitle, $chapterContent, $chapterId);
     
-    $affectedLines = $PostManager->updateChapter($chapterTitle, $chapterContent, $chapterId);
-
      if ($affectedLines === false) {
-        throw new Exception('Impossible d\'editer le chapitre ! - frontend - l.85');
+        throw new Exception('Impossible d\'editer le chapitre !');
     }
     else {
         header('Location: index.php');
@@ -63,22 +64,23 @@ function editChapter($chapterTitle, $chapterContent, $chapterId)
     }
 }
 
-function moderateComment($commentId, $postId) {
 
-    $CommentManager = new CommentManager();
-    $affectedLines = $CommentManager->deleteComment($commentId);
+function moderateComment($commentId, $postId) { //to delete a comment reported
+
+    $AdminManager = new AdminManager();
+    $affectedLines = $AdminManager->deleteComment($commentId);
     if ($affectedLines === false) {
-        throw new Exception('Impossible de supprimer le commentaire ! - frontend - l.104');
+        throw new Exception('Impossible de supprimer le commentaire !');
     }
     else {
         header('Location: index.php?action=adminView&id='.$postId);
     }
 }
 
-function showReportedComment($commentId, $postId) {
+function showReportedComment($commentId, $postId) { //show the reported comments depending of 1 chapter 
 
-    $commentManager = new CommentManager();
-    $comments = $commentManager->reportPending($_GET['id']);
+    $AdminManager = new AdminManager();
+    $comments = $AdminManager->reportPending($_GET['id']);
     if ($comments->rowCount() != 0) { //test si la requete renvoie une ligne minimum
         $postManager = new PostManager(); 
         $post = $postManager->getPost($_GET['id']); 
@@ -90,10 +92,10 @@ function showReportedComment($commentId, $postId) {
     } 
 }
 
-function showAllReportedComment($commentId) {
+function showAllReportedComment($commentId) { //resume of all reported comments existing
     
-    $commentManager = new CommentManager();
-    $comments = $commentManager->showReportPending($commentId);
+    $AdminManager = new AdminManager();
+    $comments = $AdminManager->showReportPending($commentId);
     if ($comments->rowCount() != 0) { //test si la requete renvoie une ligne minimum
         require(BACK_VIEW_DIR.'/adminAllComment.php');
 
@@ -109,12 +111,12 @@ function showAllReportedComment($commentId) {
     } 
 }
 
-function removeChapter($postId) {
+function removeChapter($postId) {  //feature to delete an existing chapter
     
     $AdminManager = new AdminManager();
     $affectedLines = $AdminManager->deleteChapter($postId);
     if ($affectedLines === false) {
-        throw new Exception('Impossible de supprimer le chapitre ! - frontend');
+        throw new Exception('Impossible de supprimer le chapitre !');
     }
     else {
         header('Location: index.php?action=indexView');

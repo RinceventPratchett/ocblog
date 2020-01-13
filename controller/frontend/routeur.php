@@ -2,18 +2,16 @@
 
 session_start();
 
-//check si session admin est ouverte
+if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']){//control if admin session is already open
 
-if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']){
     require(CONTROLLER_DIR.'/backend/backend.php');
 }
 
 try{
     
     if (isset($_GET['action'])) {
-        
-        
-        //action du backend        
+               
+        //backend features with admin logged compulsory   
         if(($_GET['action'] == 'adminView' || $_GET['action'] == 'addChapterView' || 
                 $_GET['action'] == 'editChapterView' || $_GET['action'] == 'showReportedComment' || 
                 $_GET['action'] == 'addChapter' || $_GET['action'] == 'editChapter' || 
@@ -48,7 +46,7 @@ try{
                     addChapter($_POST['title'], $_POST['content']);
                 }
                 else {
-                    throw new Exception('un des champs requis est manquant  (addChapter)');
+                    throw new Exception('un des champs requis est manquant');
                 }
             }
             elseif ($_GET['action'] == 'editChapter') {
@@ -58,11 +56,11 @@ try{
                     }
                     else
                     {
-                        throw new Exception('un de champs est reconnu comme vide - controler - editChapter - l55');
+                        throw new Exception('un de champs est reconnu comme vide');
                     }    
                 }    
                 else {
-                    throw new Exception('pas d\'id de chapitre retourné (controler editChapter)');
+                    throw new Exception('pas d\'id de chapitre retourné');
                 }
             }
             elseif ($_GET['action'] == 'moderateComment') {
@@ -71,7 +69,7 @@ try{
                 }
                 else {
 
-                    throw new Exception('impossible de supprimer le commentaire --> index.php');
+                    throw new Exception('impossible de supprimer le commentaire');
                 }
             }
             elseif ($_GET['action'] == 'removeChapter') {
@@ -80,21 +78,21 @@ try{
                 }
                 else {
 
-                    throw new Exception('impossible de supprimer le chapitre --> index.php');
+                    throw new Exception('impossible de supprimer le chapitre');
                 }
             }
         }
         
         
-        //action du frontend                 
+        //frontend features
         else {   
             
-            require(CONTROLLER_DIR.'/frontend/frontend.php');
+            require(CONTROLLER_DIR.'/frontend/frontend.php'); 
             
             if ($_GET['action'] == 'listPosts') {
                 listPosts();
             }
-            elseif ($_GET['action'] == 'login') {
+            elseif ($_GET['action'] == 'login') { //page containing the sign-in form
                 login();
             }
              elseif ($_GET['action'] == 'signOut') {
@@ -103,7 +101,9 @@ try{
                 }
              }    
             elseif ($_GET['action'] == 'signIn') {
-                signIn();
+                if (!empty($_POST['pseudo']) && !empty($_POST['password'])) {
+                    signIn();
+                }
             }
             elseif ($_GET['action'] == 'reportComment') {
                 if (isset($_GET['id']) && $_GET['id'] > 0 && isset($_GET['postId']) && $_GET['postId'] > 0) {

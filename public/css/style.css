@@ -5,6 +5,12 @@
 body{
     overflow-x: hidden;
 }
+
+section.frontend{
+    margin-top: -15px;
+}
+
+
 .backgroundIndex{
     background-image: url("../images/night.jpg"); 
     background-size: cover;
@@ -35,6 +41,15 @@ h1 {
     z-index: 1;
 }
 
+.btn.btn-light.specific.front{
+    box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border-radius: 3px;
+    z-index: 99;
+    position: relative;
+    left: 1rem;
+    top: -2rem;
+}
+
 h2.indexView {
     position: relative;
     left: 2rem;
@@ -58,22 +73,6 @@ h3 {
     border-radius: 3px; 
 }
 
-section.frontend{
-    margin-top: -15px;
-}
-div.postView{
-    
-    
-}
-.btn.btn-light.specific.front{
-    box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    border-radius: 3px;
-    z-index: 99;
-    position: relative;
-    left: 1rem;
-    top: -2rem;
-}
-
 .intro{
     position: relative;
     bottom: 46rem;
@@ -82,9 +81,6 @@ div.postView{
     align-items: center;
     justify-content: center;
 
-}
-article.news{
-    max-width: 100%; 
 }
 
 .intro p {
@@ -101,13 +97,10 @@ article.news{
     word-wrap: break-word;
 }
 
-.chapter{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    position: relative;
-    bottom: 15rem;
+article.news{
+    max-width: 100%; 
 }
+
 article.news.col-3 {
     display: flex;
     flex-direction: column;
@@ -134,14 +127,22 @@ article.news.col-3.indexView{
 }
 
 article h3 {
-    margin-top: 5px;
+    margin-top: 0.6rem;
+    padding-bottom: 5px;
     font-weight: bold;
-    font-size: 2rem;
-    background-color: #DCDCDC;
+    font-size: 1.5rem;
+    background-color: #FFF;
 }
 
-a
-{
+.chapter{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+    bottom: 15rem;
+}
+
+a{
     text-decoration: none;
     color: blue;
 }
@@ -194,27 +195,6 @@ form.addCommment{
 }
 #comment{
     margin: 3px;
-}
-
-.adminCommentReportedByChapter{
-    margin-left: 1rem;
-    display: flex;
-    margin-top: 5rem;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    position: relative;
-    
-}
-
-.btn.btn-info.linkAdmin{
-    position: relative;
-    left: 1.1rem;
-    top: 3.25rem;
-    z-index: 2;
-}
-.btn.btn-info.linkAdmin.editChapter{
-    top: 0;
 }
 
 .container.login{
@@ -279,8 +259,16 @@ label{
 }
 
 /*--------------------------------specific backend-----------------------------*/
-.back section article.news{
+html body header.backend nav.navbar.navbar-expand-lg.navbar-light.bg-light{
+    padding-top: 1.325rem;
+    padding-bottom: 1.325rem;
     text-align: center;
+}
+
+header.backend{
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .back h1{
@@ -289,17 +277,6 @@ label{
     position: relative;
     top: .3rem;
 }
-html body header.backend nav.navbar.navbar-expand-lg.navbar-light.bg-light{
-    padding-top: 1.325rem;
-    padding-bottom: 1.325rem;
-    text-align: center;
-}
-
-.specific.back{
-    box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    border-radius: 3px;
-}
-
 h2.adminCommentReportedByChapter{
     position: absolute;
     left: 42%;
@@ -314,11 +291,36 @@ h2.adminView{
     position: initial
 }
 
-header.backend{
-    position: sticky;
-    top: 0;
-    z-index: 999;
+.adminCommentReportedByChapter{
+    margin-left: 1rem;
+    display: flex;
+    margin-top: 5rem;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    position: relative;
+    
 }
+
+.btn.btn-info.linkAdmin{
+    position: relative;
+    left: 1.1rem;
+    top: 3.25rem;
+    z-index: 2;
+}
+.btn.btn-info.linkAdmin.editChapter{
+    top: 0;
+}
+
+.specific.back{
+    box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border-radius: 3px;
+}
+
+.back section article.news{
+    text-align: center;
+}
+
 
 .row.comment.adminComReported{
     margin: 5px;

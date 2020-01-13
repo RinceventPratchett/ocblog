@@ -29,7 +29,7 @@
             {
             ?>
                 <article class="comment">
-                    <strong><?= ($comment['author']) ?></strong>
+                    <h3><strong><?= ($comment['author']) ?></strong></h3>
                     le <?= $comment['comment_date_fr'] ?><br />
                     <?= $comment['comment'] ?> <br />
 
