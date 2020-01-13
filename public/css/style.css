@@ -417,7 +417,7 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
     
     .btn.btn-info.linkAdmin{
         top: 3.5rem;
-
+        width: 14rem;
         left: 1rem;
     }
     .btn.btn-info.linkAdmin.adminCommentReportedByChapter{
@@ -448,6 +448,7 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
     .postView{
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
     
     .commentView{
@@ -476,7 +477,7 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
     }    
     form.addCommment{
         position: initial;
-        width: auto;
+
         z-index: 2;
     }
     
