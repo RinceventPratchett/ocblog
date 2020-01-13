@@ -79,6 +79,9 @@ div.postView{
     justify-content: center;
 
 }
+article.news{
+    max-width: 100%; 
+}
 
 .intro p {
     color: white;
@@ -303,6 +306,14 @@ header.backend{
 
 .row.comment.adminComReported{
     margin: 5px;
+    max-height: 100%;
+
+
+}
+.row.comment.adminComReported div.col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 div.col.commentAdminView{
@@ -310,7 +321,7 @@ div.col.commentAdminView{
     position: absolute;
     top: 11rem;
     width: 24rem;
-    right: 12rem;
+    right: 0.8rem;
     overflow-y: auto;
 
 }
@@ -319,13 +330,13 @@ input.btn.btn-danger.adminchapter{
     margin-bottom: 2.5rem;
 }
 .titleAdminComReported{
-    position: relative;
-    top: 7rem;
-    left: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 .container.adminComReported{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     max-width: 70%;
 }
@@ -406,7 +417,7 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
     
     .btn.btn-info.linkAdmin{
         top: 3.5rem;
-        width: 80%;
+
         left: 1rem;
     }
     .btn.btn-info.linkAdmin.adminCommentReportedByChapter{
@@ -493,11 +504,19 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
         width: 100%;
         max-height: none;
         margin: 0;
+        display: flex;
+        flex-direction: column;
     }
+    
+    div.col.commentAdminView{
+        position: initial;
+        display: flex;
+        flex-direction: column;    }
+        
     h2.adminCommentReportedByChapter{
-    position: initial;
-    margin: 0;
-    text-align: center;
+        position: initial;
+        margin: 0;
+        text-align: center;
     }
     .comment.adminCommentReportedByChapter{
         text-align: center;
