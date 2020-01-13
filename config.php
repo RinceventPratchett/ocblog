@@ -15,7 +15,6 @@ define('BACK_VIEW_DIR', VIEW_DIR.'/backend');
 define('ADMIN_USER', 'admin');
 
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASSWORD', 'C4m1lle69!');
-
+define('DB_USER', 'voy');
+define('DB_PASSWORD', '5_Ow9sG4MYxX');
 
