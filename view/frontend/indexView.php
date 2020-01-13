@@ -22,7 +22,7 @@
     <?php
         while ($data = $posts->fetch()) {
     ?>
-    <article class="news col-3">
+    <article class="news col-3 indexView">
         <h3>
             <?= ($data['title']) ?>
             <em>le <?= $data['creation_date_fr'] ?></em>

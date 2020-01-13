@@ -17,19 +17,20 @@ developed by Voy
         
     <body>
         <header>
-            <h1>Billet simple pour l'Alaska</h1>            
+            <h1>Billet simple pour l'Alaska</h1>    
+            <?php
+                if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {                
+                }else{
+            ?>
+                <a href="index.php?action=login" class="signInBtn btn btn-light specific front">sign-in</a>
+            <?php
+                }
+            ?>
         </header>
         
         
         <section class='frontend'>
-        <?php
-            if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {                
-            }else{
-        ?>
-            <a href="index.php?action=login" class="signInBtn btn btn-light specific front">sign-in</a>
-        <?php
-            }
-        ?>
+
             <?= $content ?>
         </section>
         
