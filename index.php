@@ -1,6 +1,7 @@
 <?php 
 
 require('config.php');
-require(CONTROLLER_DIR.'/frontend/routeur.php');
+
+require(ROUTEUR_DIR.'/routeur.php');
 
 

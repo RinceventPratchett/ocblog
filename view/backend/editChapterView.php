@@ -31,7 +31,6 @@
         
     </article>
             
-<?php $content = ob_get_clean(); ?>
+<?php $content = ob_get_clean();
 
-
-<?php require(BACK_VIEW_DIR.'/template.php'); ?><!--attendre le chargement des données avant l'appel à template-->
+require(BACK_VIEW_DIR.'/template.php');

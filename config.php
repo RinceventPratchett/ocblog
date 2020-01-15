@@ -1,6 +1,8 @@
 <?php
 
-define('ROOT_DIR', dirname(__FILE__)); //pour adresser tous mes chemins de fichiers par rapport a ma racine de site
+define('ROOT_DIR', dirname(__FILE__)); //pour adresser tous mes chemins de fichiers par rapport a ma racine de site  / able to root all files according their root addresses
+
+define('ROUTEUR_DIR', ROOT_DIR.'/routeur');
 
 define('CONTROLLER_DIR', ROOT_DIR.'/controller');
 

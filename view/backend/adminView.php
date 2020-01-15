@@ -45,7 +45,5 @@
         ?>
     </div>
   
-<?php $content = ob_get_clean(); ?>
-
-
-<?php require(BACK_VIEW_DIR.'/template.php'); ?><!--attendre le chargement des données avant l'appel à template-->
+<?php $content = ob_get_clean();
+require(BACK_VIEW_DIR.'/template.php');

@@ -27,6 +27,5 @@ $title= 'connexion';
 </article>
 
 
-<?php $content = ob_get_clean(); ?>
-
-<?php require(FRONT_VIEW_DIR.'/template.php'); ?>
+<?php $content = ob_get_clean();
+require(FRONT_VIEW_DIR.'/template.php');

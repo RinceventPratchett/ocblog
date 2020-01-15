@@ -32,6 +32,5 @@
     ?>
 </div>
 
-<?php $content = ob_get_clean(); ?>
-
-<?php require(BACK_VIEW_DIR.'/template.php'); ?>
+<?php $content = ob_get_clean();
+require(BACK_VIEW_DIR.'/template.php');

@@ -11,8 +11,8 @@
 
         <div class="addChapView title">
             <h2>Ajouter un chapitre<h2>
-            <label for="title">Titre</label><br />
-            <input type="text" id="title" name="title" />
+                    <label for="title">Titre</label><br />
+                    <input type="text" id="title" name="title" />
         </div>
 
         <div class="addChapView">
@@ -28,6 +28,5 @@
 </article>
 
 
-<?php $content = ob_get_clean(); ?>
-
-<?php require(BACK_VIEW_DIR.'/template.php'); ?><!--attendre le chargement des données avant l'appel à template-->
+<?php $content = ob_get_clean();
+ require(BACK_VIEW_DIR . '/template.php');

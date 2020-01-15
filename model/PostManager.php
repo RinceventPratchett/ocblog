@@ -1,25 +1,22 @@
 <?php
+
 /**
  * Description of PostManager
  *
  * @author Voy
  */
-
 require_once("model/Manager.php");
 
-class PostManager extends Manager
-{   
-    
-    public function showChapters($cPage, $postsPerPage)
-    {
+class PostManager extends Manager {
+
+    public function showChapters($cPage, $postsPerPage) {
         $db = $this->dbConnect();
         $req = $db->query("SELECT id, title, content, DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date_fr FROM chapter ORDER BY creation_date DESC LIMIT $cPage, $postsPerPage");
 
         return $req;
     }
 
-    public function getPost($postId)
-    {
+    public function getPost($postId) {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%i\') AS creation_date_fr FROM chapter WHERE id = ?');
         $req->execute(array($postId));
@@ -27,4 +24,5 @@ class PostManager extends Manager
 
         return $post;
     }
+
 }

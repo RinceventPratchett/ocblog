@@ -78,6 +78,5 @@
     else {
         require(FRONT_VIEW_DIR.'/template.php'); 
     }
-?>
 
 
