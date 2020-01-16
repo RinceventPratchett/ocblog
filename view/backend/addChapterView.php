@@ -6,7 +6,7 @@
 <h1>interface admin - Ajout de chapitre</h1>
 
 
-<article class="news">
+<article class="news addChapView">
     <form action="index.php?action=addChapter" method="POST">
 
         <div class="addChapView title">
