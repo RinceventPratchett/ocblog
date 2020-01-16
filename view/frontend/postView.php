@@ -50,7 +50,7 @@
                 <article class="comment">
                     <h3><strong><?= ($comment['author']) ?></strong></h3>
                     le <em><?= $comment['comment_date_fr'] ?></em><br />
-                    <?= $comment['comment'] ?> <br />
+                    <?= $comment['comment'] ?>
 
                     <a href="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>&postId=<?= $post['id'] ?> " class="btn btn-danger" onclick="confirmer(<?= $comment['id']?>, <?= $post['id'] ?>)">Signaler le commentaire</a>
                 </article>

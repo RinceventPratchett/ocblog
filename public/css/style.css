@@ -174,13 +174,13 @@ article.comment{
 }
 
 .postView article.comment a.btn.btn-danger{
+    margin-top: 3px;
     visibility: hidden;
 }
 
 .postView article.comment:hover a.btn.btn-danger{
     visibility: visible;
     width: 15rem;
-    margin-bottom: 0.5rem;
 }
 
 .addCommment{
