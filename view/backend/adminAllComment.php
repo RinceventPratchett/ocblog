@@ -21,10 +21,12 @@
             le <em><?= $comment['comment_date_fr'] ?></em><br />
             <?= nl2br(htmlspecialchars($comment['comment'])) ?><br />
             commentaire signalé <strong><?= nl2br(htmlspecialchars($comment['reported'])) ?></strong> fois<br />
-            <form action="index.php?action=moderateComment&amp;id=<?= $comment['id'] ?>&postId=<?= $comment['id_chapter'] ?>" onsubmit="return confirm('Voulez vous supprimer le commentaire ?')" method="POST">
-                <input class="btn btn-danger" type="submit" value="supprimer commentaire" />
-            </form><br />
-            <a href="index.php?action=showPost&amp;id=<?= $comment['id_chapter'] ?>" class="btn btn-info">rejoindre le chapitre</a><br />
+            <div>
+                <form action="index.php?action=moderateComment&amp;id=<?= $comment['id'] ?>&postId=<?= $comment['id_chapter'] ?>" onsubmit="return confirm('Voulez vous supprimer le commentaire ?')" method="POST">
+                    <input class="btn btn-danger" type="submit" value="supprimer commentaire" />
+                </form>
+                <a href="index.php?action=showPost&amp;id=<?= $comment['id_chapter'] ?>" class="btn btn-info">rejoindre le chapitre</a><br />
+            </div>
         </div>
     </article>
     <?php
