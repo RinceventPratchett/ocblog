@@ -286,11 +286,6 @@ header.backend{
     width: 100%;
 }
 
-h2.adminCommentReportedByChapter{
-    position: absolute;
-    left: 42%;
-    bottom: 40rem;
-}
 h2.chapterView{
     position: relative;
     left: 12rem;
@@ -303,6 +298,7 @@ h2.adminView{
 .adminCommentReportedByChapter{
     margin-left: 1rem;
     display: flex;
+    flex-direction: column;
     margin-top: 3rem;
     justify-content: center;
     align-items: center;
