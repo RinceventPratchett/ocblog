@@ -369,10 +369,9 @@ input.btn.btn-danger.adminchapter{
 }
 
 .addChapView{
-    max-width: 80%;
-    overflow-x: hidden;
+    max-width: 90%;
+    margin-left: 5%;
     margin-bottom: 10px;
-    margin-left: 10%;
     box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     border: solid 0.2px;
     border-radius: 3px;
@@ -402,8 +401,8 @@ article.news.col-3.edChapView{
     display: flex;
     flex-direction: column;
     margin: 5px;
-    max-width: 80%;
-    margin-left: 10%;
+    max-width: 90%;
+    margin-left: 5%;
     margin-top: 10px;
     border: solid 0.2px;
     background-color: white;
