@@ -281,6 +281,11 @@ header.backend{
     position: relative;
     top: .3rem;
 }
+
+.indexView div a.btn.btn-dark {
+    width: 100%;
+}
+
 h2.adminCommentReportedByChapter{
     position: absolute;
     left: 42%;

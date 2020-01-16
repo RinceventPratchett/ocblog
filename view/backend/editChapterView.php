@@ -19,10 +19,10 @@
                 <input type="text" id="title" name="title" value="<?= $post['title'] ?>" /> <br />
                 <label id="content" for="content">Contenu du chapitre</label><br />
                 <textarea type="text" id="default" name="content"><?= $post['content'] ?></textarea>
-                <a class="btn btn-info" href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">Commentaires</a><br />
-
+                
                 <input class="btn btn-secondary" type="submit" /><br />
                 
+                <a class="btn btn-info" href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">voir les commentaires</a><br />
             </div>
         </form>
         <form onsubmit="return confirm('Voulez vous supprimer le chapitre ?')" action="index.php?action=removeChapter&amp;id=<?= $post['id'] ?>" method="POST" >

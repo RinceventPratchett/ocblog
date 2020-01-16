@@ -35,18 +35,20 @@ ob_start();
                 ?>
 
             </div>
-
-            <a class="btn btn-info" href="index.php?action=showPost&amp;id=<?= $data['id'] ?>">Visualiser le chapitre et/ou laisser un commentaire</a>
-
-            <?php
-            if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {
-                ?>
-
-                <a class="btn btn-dark" href="index.php?action=adminView&amp;id=<?= $data['id'] ?>">administration du chapitre</a>
+            
+            <div>
+                <a class="btn btn-info" href="index.php?action=showPost&amp;id=<?= $data['id'] ?>">Visualiser le chapitre et/ou laisser un commentaire</a>
 
                 <?php
-            }
-            ?>
+                if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {
+                    ?>
+
+                    <a class="btn btn-dark" href="index.php?action=adminView&amp;id=<?= $data['id'] ?>">administration du chapitre</a>
+
+                    <?php
+                }
+                ?>
+            </div>
         </article>
         <?php
     }
