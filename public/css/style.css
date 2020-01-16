@@ -286,6 +286,10 @@ header.backend{
     width: 100%;
 }
 
+.indexView div a.btn.btn-info{
+    width: 100%;    
+}
+
 h2.chapterView{
     position: relative;
     left: 12rem;
@@ -465,6 +469,7 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
     .btn.btn-info.linkAdmin.adminCommentReportedByChapter{
         left: 0;
         margin-top: 2rem;
+        margin-bottom: 1rem;
     }
 
     .btn.btn-info.linkAdmin.editChapter{
