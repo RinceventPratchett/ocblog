@@ -15,7 +15,7 @@
     ?>
         <article class="comment adminCommentReportedByChapter">
             <strong><?= htmlspecialchars($comment['author']) ?></strong><br />
-            le <?= $comment['comment_date_fr'] ?><br />
+            le <em><?= $comment['comment_date_fr'] ?></em><br />
             <?= nl2br(htmlspecialchars($comment['comment'])) ?><br />
 
             commentaire signalé <strong><?= nl2br(htmlspecialchars($comment['reported'])) ?></strong> fois<br />

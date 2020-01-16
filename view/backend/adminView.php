@@ -30,7 +30,7 @@
             ?>
                 <article class="comment">
                     <h3><strong><?= ($comment['author']) ?></strong></h3>
-                    le <?= $comment['comment_date_fr'] ?><br />
+                    le <em><?= $comment['comment_date_fr'] ?></em><br />
                     <?= $comment['comment'] ?> <br />
 
                 </article>

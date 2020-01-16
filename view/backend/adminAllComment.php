@@ -18,7 +18,7 @@
         <div class="col">
             <strong>chapter n° <?= $comment['id_chapter'] ?></strong><br />
             <strong><?= htmlspecialchars($comment['author']) ?></strong><br />
-            le <?= $comment['comment_date_fr'] ?><br />
+            le <em><?= $comment['comment_date_fr'] ?></em><br />
             <?= nl2br(htmlspecialchars($comment['comment'])) ?><br />
             commentaire signalé <strong><?= nl2br(htmlspecialchars($comment['reported'])) ?></strong> fois<br />
             <form action="index.php?action=moderateComment&amp;id=<?= $comment['id'] ?>&postId=<?= $comment['id_chapter'] ?>" onsubmit="return confirm('Voulez vous supprimer le commentaire ?')" method="POST">
