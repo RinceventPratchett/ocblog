@@ -11,7 +11,7 @@ $title= 'connexion';
 <article class="container login">
     <div class="col">
         <h2>IDENTIFICATION</h2>
-        <form class="form-group" action="index.php?action=signIn" method="post">
+        <form class="form-group" action="index.php?action=signIn" method="POST">
             Veuillez entrer vos identifiants pour vous connecter:<br />
 
                 <label for="pseudo">Nom d'utilisateur</label>

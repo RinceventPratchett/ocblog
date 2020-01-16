@@ -9,10 +9,10 @@
     <article class="news col-3 postDetails">
         <h3>
             <?= ($post['title']) ?>
-            <em>le <?= ($post['creation_date_fr']) ?></em>
         </h3>
 
         <div>
+            <em>le <?= ($post['creation_date_fr']) ?></em>
             <?= nl2br(($post['content'])) ?>
         </div>
 

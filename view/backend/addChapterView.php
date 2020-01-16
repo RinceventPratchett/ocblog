@@ -17,7 +17,7 @@
 
         <div class="addChapView">
             <label class="addChapViewLabel" for="" content="content">Contenu du chapitre</label><br />
-            <textarea type="text" class="default" name="content"></textarea>
+            <textarea type="text" id="default" name="content"></textarea>
         </div>
 
         <div class="addChapViewBtn">

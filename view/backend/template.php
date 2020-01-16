@@ -7,13 +7,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Billet simple pour l'Alaska</title>
         <link href="public/css/style.css" rel="stylesheet" /> 
-        <script src="https://kit.fontawesome.com/3b3ab33fc7.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://cdn.tiny.cloud/1/s7z0p4uql3il9souj198c05m21nigwpt2id8e5e6oymvr5n5/tinymce/5/tinymce.min.js"></script> 
         <script>
             tinymce.init({
-                selector: '.default'
+                selector: '#default'
             });
         </script>
     </head>

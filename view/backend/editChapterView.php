@@ -18,7 +18,7 @@
                 <em>le <?= $post['creation_date_fr'] ?></em><br />
                 <input type="text" id="title" name="title" value="<?= $post['title'] ?>" /> <br />
                 <label id="content" for="content">Contenu du chapitre</label><br />
-                <textarea type="text" class="default" name="content"><?= $post['content'] ?></textarea>
+                <textarea type="text" id="default" name="content"><?= $post['content'] ?></textarea>
                 <a class="btn btn-info" href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">Commentaires</a><br />
 
                 <input class="btn btn-secondary" type="submit" /><br />
