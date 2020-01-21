@@ -18,5 +18,5 @@ define('ADMIN_USER', 'admin');
 
 define('DB_HOST', 'localhost');
 define('DB_USER', 'voy');
-define('DB_PASSWORD', '5_Ow9sG4MYxX!');
+define('DB_PASSWORD', '5_Ow9sG4MYxX');
 
