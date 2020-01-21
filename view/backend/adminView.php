@@ -24,10 +24,9 @@
 
     <div class="col commentAdminView">
         <h2 class="adminView">Commentaires</h2>
-            <?php
-            while ($comment = $comments->fetch())
-            {
-            ?>
+
+            <?php foreach ($comments as $comment) { ?>
+        
                 <article class="comment">
                     <h3><strong><?= ($comment['author']) ?></strong></h3>
                     le <em><?= $comment['comment_date_fr'] ?></em><br />
@@ -35,14 +34,12 @@
 
                 </article>
 
-                <?php
-                if($comment['reported'] != 0){
-                ?>
+                <?php if($comment['reported'] != 0){ ?>
                     <strong>Commentaire signalé <?= $comment['reported'] ?> fois </strong><br /><!--pour afficher le nombre de report des commentaires sur la session admin-->
-                <?php
+            <?php
                 }    
             }
-        ?>
+            ?>
     </div>
   
 <?php $content = ob_get_clean();

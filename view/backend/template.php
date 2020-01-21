@@ -19,9 +19,7 @@
         
     <body>
         <header class="backend">
-            <?php
-                if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {
-            ?>
+            <?php if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) { ?>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <span class="navbar-brand" href="#">Administration</span>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,13 +34,11 @@
                             <?php } ?>
                             <a class="nav-item nav-link" href="index.php?action=showAllReportedComment">modérer tous les commentaires signalés</a>
                             <a class="nav-item nav-link" href="index.php?action=addChapterView">Ajouter un chapitre</a>
-                            <a class="nav-item nav-link specific back" href="index.php?action=signOut">sign-out</a>
+                            <a class="nav-item nav-link specific back" href="index.php?action=signOut">déconnection</a>
                         </div>
                     </div>
                 </nav>
-            <?php
-                }
-            ?>
+            <?php } ?>
         </header>
         
         <section class='back'>

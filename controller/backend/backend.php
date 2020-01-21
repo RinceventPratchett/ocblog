@@ -7,6 +7,8 @@ require_once(MODEL_DIR . '/PostManager.php');
 require_once(MODEL_DIR . '/CommentManager.php');
 require_once(MODEL_DIR . '/Pagination.php');
 
+
+
 function adminView() { //Equivalent of postView, qtty of reports done if existing
     $postManager = new PostManager();
     $post = $postManager->getPost($_GET['id']);
@@ -65,11 +67,15 @@ function moderateComment($commentId, $postId) { //to delete a comment reported
 
 function showReportedComment($commentId, $postId) { //show the reported comments depending of 1 chapter 
     $AdminManager = new AdminManager();
-    $comments = $AdminManager->reportPending($_GET['id']);
-    if ($comments->rowCount() != 0) { //test si la requete renvoie une ligne minimum
+    $req = $AdminManager->reportPending($_GET['id']);
+    if ($req->rowCount() != 0) { //test si la requete renvoie une ligne minimum
         $postManager = new PostManager();
         $post = $postManager->getPost($_GET['id']);
+        $comments = $req->fetchAll();    
+        
+        
         require(BACK_VIEW_DIR . '/adminComment.php');
+        
     } else {
 
         header('Location: index.php?action=adminView&id=' . $commentId);

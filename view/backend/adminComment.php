@@ -9,23 +9,20 @@
 <div class="adminCommentReportedByChapter">
     <h2 class="adminCommentReportedByChapter">Commentaires</h2>
 
-    <?php
-    while ($comment = $comments->fetch())
-    {
-    ?>
+    <?php foreach ($comments as $comment) { ?>
+    
         <article class="comment adminCommentReportedByChapter">
-            <strong><?= htmlspecialchars($comment['author']) ?></strong><br />
+            <strong><?= ($comment['author']) ?></strong><br />
             le <em><?= $comment['comment_date_fr'] ?></em><br />
-            <?= nl2br(htmlspecialchars($comment['comment'])) ?><br />
+            <?= nl2br($comment['comment']) ?><br />
 
-            commentaire signalé <strong><?= nl2br(htmlspecialchars($comment['reported'])) ?></strong> fois<br />
+            commentaire signalé <strong><?= nl2br(($comment['reported'])) ?></strong> fois<br />
             <form action="index.php?action=moderateComment&amp;id=<?= $comment['id'] ?>&postId=<?= $post['id'] ?>" onsubmit="return confirm('Voulez vous supprimer le commentaire ?')" method="POST" class='deletecom'>
-                <input class="btn btn-danger" type="submit" value="supprimer commentaire" />
-            </form>        
+                <input class="btn btn-danger" type="submit" value="supprimer le commentaire" />
+            </form>         
         </article>
-    <?php
-    }
-    ?>
+    
+    <?php }?>
 </div>
 
 <?php $content = ob_get_clean();

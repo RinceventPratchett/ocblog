@@ -1,7 +1,5 @@
 
-<?php 
-$title= 'connexion'; 
-?>
+<?php $title= 'connection'; ?>
 
 
 <?php ob_start(); ?>

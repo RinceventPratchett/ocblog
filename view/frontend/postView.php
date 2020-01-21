@@ -1,15 +1,12 @@
-<?php $title = htmlspecialchars($post['title']); ?>
+<?php $title = $post['title']; ?>
 
 <?php ob_start(); ?>
 
-<?php
-    if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {
-         } else { 
-        ?>
+<?php if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {
+    
+         } else { ?>
             <a href="index.php" class="btn btn-info linkAdmin">Retour à la liste des billets</a>
-        <?php 
-        }
-?>
+        <?php } ?>
         
 <div class="backGroundPostView"></div>
                 
@@ -43,10 +40,7 @@
     <div class="commentView">
         <h2 class="comment">Commentaires</h2>
 
-        <?php
-        while ($comment = $comments->fetch())
-        {
-        ?>
+       <?php foreach ($comments as $comment) { ?>
                 <article class="comment">
                     <h3><strong><?= ($comment['author']) ?></strong></h3>
                     le <em><?= $comment['comment_date_fr'] ?></em><br />
@@ -54,9 +48,7 @@
 
                     <a href="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>&postId=<?= $post['id'] ?> " class="btn btn-danger" onclick="confirmer(<?= $comment['id']?>, <?= $post['id'] ?>)">Signaler le commentaire</a>
                 </article>
-        <?php
-        }
-        ?>
+        <?php } ?>
 
         <script>
             function confirmer(){

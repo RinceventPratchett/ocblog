@@ -2,19 +2,15 @@
 
 require_once(MODEL_DIR . '/Manager.php');
 
-function check_data($cdata) {
-    $cdata = htmlspecialchars($cdata);
-    return $cdata;
-}
 
 class AdminManager extends Manager 
 {
-
+    
     public function signIn() 
     {
-
-        $pseudo = check_data($_POST["pseudo"]);
-        $password = check_data($_POST["password"]);
+        
+        $pseudo = $this->clean_data($_POST["pseudo"]);
+        $password = $this->clean_data($_POST["password"]);
 
         if (!empty($pseudo) && !empty($password)) {
             $db = $this->dbConnect();
@@ -45,9 +41,7 @@ class AdminManager extends Manager
 
     public function SignOut() 
     {
-        if ($_SESSION['adminLogged']) {
-            session_destroy();
-        }
+            session_destroy();  
     }
 
     public function deleteChapter($postId) 

@@ -17,14 +17,11 @@ developed by Voy
     <body>
         <header>
             <h1>Billet simple pour l'Alaska</h1>    
-            <?php
-                if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {                
-                }else{
-            ?>
-                <a href="index.php?action=login" class="signInBtn btn btn-light specific front">sign-in</a>
-            <?php
-                }
-            ?>
+            <?php if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {
+                
+                }else{ ?>
+                    <a href="index.php?action=login" class="signInBtn btn btn-light specific front">connection</a>
+                <?php } ?>
         </header>
         
         

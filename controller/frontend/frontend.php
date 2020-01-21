@@ -6,6 +6,7 @@ require_once(MODEL_DIR . '/CommentManager.php');
 require_once(MODEL_DIR . '/AdminManager.php');
 require_once(MODEL_DIR . '/Pagination.php');
 
+
 function login() {  //page containing the connexion form
     require(FRONT_VIEW_DIR . '/loginView.php');
 }
@@ -21,10 +22,13 @@ function signIn() {
 }
 
 function signOut() {
-    $AdminManager = new AdminManager();
-    $signOut = $AdminManager->signOut();
+    if ($_SESSION['adminLogged']){
+        
+        $AdminManager = new AdminManager();
+        $signOut = $AdminManager->signOut();
+        header('Location: index.php');
+    }
 
-    header('Location: index.php');
 }
 
 function listPosts() {//List the different chapters on IndexView
@@ -43,8 +47,7 @@ function listPosts() {//List the different chapters on IndexView
     }
 
     $posts = $postManager->showChapters($cPage, $postsPerPage);
-
-
+    
     require(FRONT_VIEW_DIR . '/indexView.php');
 }
 
