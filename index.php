@@ -1,7 +1,7 @@
 <?php 
 
-require('routeur/config.php');
+require('cfg/config.php');
 
-require(ROUTEUR_DIR.'/routeur.php');
+require(CONFIG_DIR.'/routeur.php');
 
 
