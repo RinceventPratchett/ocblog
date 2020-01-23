@@ -303,7 +303,7 @@ h2.adminView{
 .adminCommentReportedByChapter{
     margin-left: 1rem;
     display: flex;
-    flex-direction: column;
+    margin-bottom: 1rem;
     margin-top: 3rem;
     justify-content: center;
     align-items: center;
@@ -561,6 +561,7 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
         width: 100%;
         max-height: none;
         margin: 0;
+        margin-bottom: 0.5rem;
         display: flex;
         flex-direction: column;
     }
@@ -579,6 +580,7 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
         text-align: center;
         width: 100%;
         margin: 0;
+        margin-bottom: 0.5rem;
         padding: 0;
     }
     .adminCommentReportedByChapter{

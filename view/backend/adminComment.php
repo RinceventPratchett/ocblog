@@ -7,7 +7,7 @@
 <a class="btn btn-info linkAdmin adminCommentReportedByChapter" href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">retour administration du billet</a><br />
 
 <div class="adminCommentReportedByChapter">
-    <h2 class="adminCommentReportedByChapter">Commentaires</h2>
+    <h2 class="adminCommentReportedByChapter">Commentaires signalés : </h2>
 
     <?php foreach ($comments as $comment) { ?>
     
