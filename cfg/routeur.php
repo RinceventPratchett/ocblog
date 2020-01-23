@@ -142,8 +142,8 @@ try {
         
     } else {
         require(CONTROLLER_DIR . '/frontend/frontend.php');
-            $VueFrontEnd = new FrontEndController();
-            $VueFrontEnd->listPosts();
+        $VueFrontEnd = new FrontEndController();
+        $VueFrontEnd->listPosts();
     }
     
 } catch (Exception $e) {
