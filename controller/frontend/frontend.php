@@ -60,8 +60,11 @@ class FrontEndController {
         $commentManager = new CommentManager();
         $comments = $commentManager->showComments($_GET['id']);
 
-
-        require(FRONT_VIEW_DIR . '/postView.php');
+        if (isset($_GET['id']) && $_GET['id'] > 0 && $_GET['id'] <= $post){        
+            require(FRONT_VIEW_DIR . '/postView.php');
+        } else {
+            header('Location: index.php');
+        }        
     }
 
     function addComment($postId, $author, $comment) {
