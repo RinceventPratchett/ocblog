@@ -67,9 +67,9 @@ ob_start();
 
     </div>
 
-<?php $content = ob_get_clean(); ?>
+<?php $content = ob_get_clean(); 
 
-<?php if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {
+if (IsAdminLogedIn()){
     require(BACK_VIEW_DIR . '/template.php');
 } else {
     require(FRONT_VIEW_DIR . '/template.php');

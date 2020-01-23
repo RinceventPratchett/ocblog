@@ -17,7 +17,7 @@ developed by Voy
     <body>
         <header>
             <h1>Billet simple pour l'Alaska</h1>    
-            <?php if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {
+            <?php if (IsAdminLogedIn()) {
                 
                 }else{ ?>
                     <a href="index.php?action=login" class="signInBtn btn btn-light specific front">connexion</a>

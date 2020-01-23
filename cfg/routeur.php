@@ -2,12 +2,18 @@
 
 session_start();
 
-if (isset($_SESSION['adminLogged']) && $_SESSION['adminLogged']) {//control if admin session is already open
+require(CONFIG_DIR . '/helpers.php');
+
+if (IsAdminLogedIn()){//control if admin session is already open
     require(CONTROLLER_DIR . '/backend/backend.php');
 }
 
-try {
+require(CONTROLLER_DIR . '/frontend/frontend.php');
 
+
+
+
+try {
     if (isset($_GET['action'])) {
 
         //backend features with admin logged compulsory   
@@ -77,7 +83,6 @@ try {
         //frontend features
         else {
 
-            require(CONTROLLER_DIR . '/frontend/frontend.php');
 
             if ($_GET['action'] == 'listPosts') {
                 (new FrontEndController)->listPosts();
@@ -124,7 +129,6 @@ try {
         }
         
     } else {
-        require(CONTROLLER_DIR . '/frontend/frontend.php');
         (new FrontEndController)->listPosts();
     }
     
