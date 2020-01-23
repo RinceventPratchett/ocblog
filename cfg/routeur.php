@@ -109,7 +109,7 @@ try {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
                     (new FrontEndController)->postDetails();
                 } else {
-                    throw new Exception('Aucun id de chapitre envoyé');
+                    throw new Exception('Aucun id de chapitre envoyé ou id renseigné inexistant');
                 }
                 
             } elseif ($_GET['action'] == 'addComment') {
