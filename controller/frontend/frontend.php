@@ -46,9 +46,11 @@ class FrontEndController {
                 $cPage = (intval($_GET['page']) - 1) * $postsPerPage;
             }
         }
-
-        $posts = $postManager->showChapters($cPage, $postsPerPage);
-
+        if (isset($cPage)) {
+            $posts = $postManager->showChapters($cPage, $postsPerPage);
+        }else{
+            header('Location: index.php');
+        }
         require(FRONT_VIEW_DIR . '/indexView.php');
     }
 
