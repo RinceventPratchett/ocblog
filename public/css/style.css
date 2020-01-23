@@ -168,7 +168,7 @@ article.comment{
     background-color: white;
     padding: 3px;
     text-align: center;
-    margin-bottom: 5px;
+    margin-top: 5px;
     border-radius: 3px;
     background-color: #DCDCDC;
 }
@@ -440,6 +440,10 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
 
 #comment{
     width: 80%;
+}
+
+.commentAdminView strong{
+    margin-bottom: 0.5rem;
 }
 
 /*-------------------------------Queries 1120px--------------------------------*/
