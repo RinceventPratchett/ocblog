@@ -543,6 +543,7 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
     }
     article.news.col-3.indexView{
         max-width: 100%;
+        margin-bottom: 0.5rem;
     }    
     article.news.col-3{
         max-width: 100%;
