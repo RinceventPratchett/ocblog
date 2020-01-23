@@ -574,6 +574,7 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
     h2.adminCommentReportedByChapter{
         position: initial;
         margin: 0;
+        margin-bottom: 0.5rem;
         text-align: center;
     }
     .comment.adminCommentReportedByChapter{
