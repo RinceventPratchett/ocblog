@@ -18,35 +18,29 @@ try {
 
             if ($_GET['action'] == 'adminView') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
-                    $VueBackend = new BackendController();
-                    $VueBackend->adminView();
+                    (new BackendController)->adminView();
                     }
                     
             } elseif ($_GET['action'] == 'addChapterView') {
-                    $VueBackend = new BackendController();
-                    $VueBackend->addChapterView();
+                    (new BackendController)->addChapterView();
                 } elseif ($_GET['action'] == 'editChapterView') {
                     if (isset($_GET['id']) && $_GET['id'] > 0) {
-                        $VueBackend = new BackendController();
-                        $VueBackend->editChapterView();
+                        (new BackendController)->editChapterView();
                 }
                 
             } elseif ($_GET['action'] == 'showReportedComment') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
-                    $VueBackend = new BackendController();
-                    $VueBackend->showReportedComment($_GET['id'], $_GET['id']);
+                    (new BackendController)->showReportedComment($_GET['id'], $_GET['id']);
                 } else {
                     throw new Exception('Aucun id de chapitre envoyé');
                 }
                 
             } elseif ($_GET['action'] == 'showAllReportedComment') {
-                $VueBackend = new BackendController();
-                $VueBackend->showAllReportedComment('$commentId');
+               (new BackendController)->showAllReportedComment('$commentId');
                 
             } elseif ($_GET['action'] == 'addChapter') {
                 if (!empty($_POST['title']) && !empty($_POST['content'])) {
-                    $VueBackend = new BackendController();
-                    $VueBackend->addChapter($_POST['title'], $_POST['content']);
+                    (new BackendController)->addChapter($_POST['title'], $_POST['content']);
                 } else {
                     throw new Exception('un des champs requis est manquant');
                 }
@@ -54,8 +48,7 @@ try {
             } elseif ($_GET['action'] == 'editChapter') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
                     if (!empty($_POST['title']) && !empty($_POST['content'])) {
-                        $VueBackend = new BackendController();
-                        $VueBackend->editChapter($_POST['title'], $_POST['content'], $_GET['id']);
+                        (new BackendController)->editChapter($_POST['title'], $_POST['content'], $_GET['id']);
                     } else {
                         throw new Exception('un de champs est reconnu comme vide');
                     }
@@ -65,8 +58,7 @@ try {
                 
             } elseif ($_GET['action'] == 'moderateComment') {
                 if (isset($_GET['id']) && $_GET['id'] > 0 && isset($_GET['postId']) && $_GET['postId'] > 0) {
-                    $VueBackend = new BackendController();
-                    $VueBackend->moderateComment($_GET['id'], $_GET['postId']);
+                    (new BackendController)->moderateComment($_GET['id'], $_GET['postId']);
                 } else {
 
                     throw new Exception('impossible de supprimer le commentaire');
@@ -74,8 +66,7 @@ try {
                 
             } elseif ($_GET['action'] == 'removeChapter') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
-                    $VueBackend = new BackendController();
-                    $VueBackend->removeChapter($_GET['id']);
+                    (new BackendController)->removeChapter($_GET['id']);
                 } else {
                     throw new Exception('impossible de supprimer le chapitre');
                 }
@@ -89,35 +80,29 @@ try {
             require(CONTROLLER_DIR . '/frontend/frontend.php');
 
             if ($_GET['action'] == 'listPosts') {
-                $VueFrontEnd = new FrontEndController();
-                $VueFrontEnd->listPosts();
+                (new FrontEndController)->listPosts();
                 
             } elseif ($_GET['action'] == 'login') { //page containing the sign-in form
-                $VueFrontEnd = new FrontEndController();
-                $VueFrontEnd->login();
+                (new FrontEndController)->login();
                 
             } elseif ($_GET['action'] == 'signOut') {
                 if ($_SESSION['adminLogged']) {
-                    $VueFrontEnd = new FrontEndController();
-                    $VueFrontEnd->signOut();
+                    (new FrontEndController)->signOut();
                 }
                 
             } elseif ($_GET['action'] == 'signIn') {
                 if (!empty($_POST['pseudo']) && !empty($_POST['password'])) {
-                    $VueFrontEnd = new FrontEndController();
-                    $VueFrontEnd->signIn();
+                    (new FrontEndController)->signIn();
                 }
                 
             } elseif ($_GET['action'] == 'reportComment') {
                 if (isset($_GET['id']) && $_GET['id'] > 0 && isset($_GET['postId']) && $_GET['postId'] > 0) {
-                    $VueFrontEnd = new FrontEndController();
-                    $VueFrontEnd->reportComment($_GET['id'], $_GET['postId']);
+                    (new FrontEndController)->reportComment($_GET['id'], $_GET['postId']);
                 }
                 
             } elseif ($_GET['action'] == 'showPost') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
-                    $VueFrontEnd = new FrontEndController();
-                    $VueFrontEnd->postDetails();
+                    (new FrontEndController)->postDetails();
                 } else {
                     throw new Exception('Aucun id de chapitre envoyé');
                 }
@@ -125,8 +110,7 @@ try {
             } elseif ($_GET['action'] == 'addComment') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
                     if (!empty($_POST['author']) && !empty($_POST['comment'])) {
-                        $VueFrontEnd = new FrontEndController();
-                        $VueFrontEnd->addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+                        (new FrontEndController)->addComment($_GET['id'], $_POST['author'], $_POST['comment']);
                     } else {
                         throw new Exception('Tous les champs ne sont pas remplis');
                     }
@@ -135,15 +119,13 @@ try {
                 }
                 
             } else {
-                $VueFrontEnd = new FrontEndController();
-                $VueFrontEnd->listPosts(); //si aucune action front, on affiche l'index du site
+                (new FrontEndController)->listPosts(); //si aucune action front, on affiche l'index du site
             }
         }
         
     } else {
         require(CONTROLLER_DIR . '/frontend/frontend.php');
-        $VueFrontEnd = new FrontEndController();
-        $VueFrontEnd->listPosts();
+        (new FrontEndController)->listPosts();
     }
     
 } catch (Exception $e) {

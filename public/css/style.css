@@ -250,6 +250,7 @@ label.loginView{
     border-radius: 3px;
     max-width: 20%;
     background-color: #DCDCDC;    
+    padding: 4px;
 }
 
 .btn{
@@ -460,7 +461,7 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
     .btn.btn-light.specific.front{
         left: 1rem;
         top: 3.125rem;
-        width: 5rem;
+        width: 6rem;
     }
 
     .btn.btn-info.linkAdmin{
