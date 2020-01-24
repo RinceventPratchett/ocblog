@@ -47,7 +47,7 @@ class AdminManager extends Manager
     public function deleteChapter($postId) 
     {
         $db = $this->dbConnect();
-        $deleteChapter = $db->prepare('DELETE FROM chapter WHERE id=?');
+        $deleteChapter = $db->prepare('DELETE FROM chapter WHERE id='.$postId);
         $affectedLines = $deleteChapter->execute(array($postId));
 
         return $affectedLines;
@@ -76,7 +76,7 @@ class AdminManager extends Manager
 
         $db = $this->dbConnect();
 
-        $deleteComment = $db->prepare('DELETE FROM comment WHERE id=' . $commentId);
+        $deleteComment = $db->prepare('DELETE FROM comment WHERE id='.$commentId);
         $affectedLines = $deleteComment->execute(array($commentId));
 
         return $affectedLines;
@@ -86,7 +86,9 @@ class AdminManager extends Manager
     { 
         $db = $this->dbConnect();
 
-        $reportInPending = $db->prepare('SELECT id, author, comment, reported, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%i\') AS comment_date_fr FROM comment WHERE id_chapter = ? AND reported <> 0 ORDER BY reported DESC'); //<> dans la requete SQL = different de
+        $reportInPending = $db->prepare('SELECT id, author, comment, reported, '
+                . 'DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%i\') AS comment_date_fr '
+                . 'FROM comment WHERE id_chapter = ? AND reported <> 0 ORDER BY reported DESC'); //SQL language meaning different of
         $reportInPending->execute(array($commentId));
 
         return $reportInPending;
@@ -96,7 +98,8 @@ class AdminManager extends Manager
     { 
         $db = $this->dbConnect();
 
-        $reportInPending = $db->prepare('SELECT id, id_chapter, author, comment, reported, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%i\') AS comment_date_fr FROM comment WHERE reported <> 0 ORDER BY comment_date DESC'); //<> dans la requete SQL = different de
+        $reportInPending = $db->prepare('SELECT id, id_chapter, author, comment, reported, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%i\') '
+                . 'AS comment_date_fr FROM comment WHERE reported <> 0 ORDER BY comment_date DESC'); 
         $reportInPending->execute(array($commentId));
 
 

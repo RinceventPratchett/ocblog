@@ -70,7 +70,7 @@ class FrontEndController {
 
     function addComment($postId, $author, $comment) {
 
-        $affectedLines = (new CommentManager)->showComments($postId, $author, $comment);
+        $affectedLines = (new CommentManager)->newComment($postId, $author, $comment);
         
         if ($affectedLines === false) {
             throw new Exception('Impossible d\'ajouter le commentaire !');

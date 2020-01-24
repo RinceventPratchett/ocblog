@@ -435,7 +435,7 @@ article.news.col-3.edChapView form div input.btn.btn-secondary{
 }
 
 .comment.adminCommentReportedByChapter{
-    max-height: initial;
+    max-height: 15rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
