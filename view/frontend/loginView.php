@@ -12,13 +12,13 @@
         <form class="form-group" action="index.php?action=signIn" method="POST">
             Veuillez entrer vos identifiants pour vous connecter:<br />
 
-                <label for="pseudo">Nom d'utilisateur</label>
-                <input class="form-control loginView" type="text" name="pseudo" /><br />
-                
-                <label for="password" >Mot de passe</label>
-                <input class="form-control loginView" type="password" name="password" /><br />
-                
-                <input class="btn btn-secondary loginView" type="submit" value="Connection" />
+            <label for="pseudo">Nom d'utilisateur</label>
+            <input class="form-control loginView" type="text" name="pseudo" /><br />
+
+            <label for="password" >Mot de passe</label>
+            <input class="form-control loginView" type="password" name="password" /><br />
+
+            <input class="btn btn-secondary loginView" type="submit" value="Connection" />
 
         </form>
     </div>
@@ -26,4 +26,5 @@
 
 
 <?php $content = ob_get_clean();
+
 require(FRONT_VIEW_DIR.'/template.php');

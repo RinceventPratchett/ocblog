@@ -23,9 +23,8 @@ ob_start();
     <?php foreach ($posts as $data) { ?>
         
         <article class="news col-3 indexView">
-            <h3>
-                <?= ($data['title']) ?>
-            </h3>
+            
+            <h3><?= ($data['title']) ?></h3>
 
             <div>
                 <em>le <?= $data['creation_date_fr'] ?></em>
@@ -51,21 +50,22 @@ ob_start();
 </div>
 
 <?php if ($nbPage >= 2) { ?>
+
     <div class="pagin">
-        <?php
-        for ($i = 1; $i <= $nbPage; $i++) {
+        
+        <?php for ($i = 1; $i <= $nbPage; $i++) {
             if ((!isset($_GET['page']) && $i == 1) || (isset($_GET['page']) && $_GET['page'] == $i)) {
                 echo "<span class='cPageFrame'>$i</span>";
             } else {
                 echo "<a class='pageBlock' href=\"index.php?page=$i\">$i</a>";
             }
             
-        }
-            
-} ?>
-
-
+        } ?>
     </div>
+            
+<?php } ?>
+
+
 
 <?php $content = ob_get_clean(); 
 

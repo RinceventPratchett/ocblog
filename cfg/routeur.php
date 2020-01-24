@@ -4,7 +4,7 @@ session_start();
 
 require(CONFIG_DIR . '/helpers.php');
 
-if (IsAdminLogedIn()){//control if admin session is already open
+if (IsAdminLogedIn()) {  //control if admin session is already open
     require(CONTROLLER_DIR . '/backend/backend.php');
 }
 
@@ -20,19 +20,21 @@ try {
         if (($_GET['action'] == 'adminView' || $_GET['action'] == 'addChapterView' ||
                 $_GET['action'] == 'editChapterView' || $_GET['action'] == 'showReportedComment' ||
                 $_GET['action'] == 'addChapter' || $_GET['action'] == 'editChapter' ||
-                $_GET['action'] == 'moderateComment' || $_GET['action'] == 'showAllReportedComment' || $_GET['action'] == 'removeChapter' ) && $_SESSION['adminLogged'] == true) {
+                $_GET['action'] == 'moderateComment' || $_GET['action'] == 'showAllReportedComment' ||
+                $_GET['action'] == 'removeChapter' ) && $_SESSION['adminLogged'] == true) {
 
             if ($_GET['action'] == 'adminView') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
                     (new BackendController)->adminView();
-                    }
+                }
                     
             } elseif ($_GET['action'] == 'addChapterView') {
                     (new BackendController)->addChapterView();
-                } elseif ($_GET['action'] == 'editChapterView') {
+                    
+            } elseif ($_GET['action'] == 'editChapterView') {
                     if (isset($_GET['id']) && $_GET['id'] > 0) {
                         (new BackendController)->editChapterView();
-                }
+                    }
                 
             } elseif ($_GET['action'] == 'showReportedComment') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
@@ -124,7 +126,7 @@ try {
                 }
                 
             } else {
-                (new FrontEndController)->listPosts(); //si aucune action front, on affiche l'index du site
+                (new FrontEndController)->listPosts(); //if no action claimed, show the indexView
             }
         }
         
@@ -133,5 +135,5 @@ try {
     }
     
 } catch (Exception $e) {
-    echo 'Erreur : ' . $e->getMessage(); //si erreur on recupere le message cfg dans les differents files
+    echo 'Erreur : ' . $e->getMessage(); //if error in the script, get the information and show message corresponding
 }

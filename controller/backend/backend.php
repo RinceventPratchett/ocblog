@@ -9,7 +9,7 @@ require_once(MODEL_DIR . '/Pagination.php');
 
 class BackEndController {   
 
-    function adminView() { //Equivalent of postView, qtty of reports done if existing
+    function adminView() { //Equivalent of postView, qtty of reports done if existing are presents
         $postManager = new PostManager();
         $post = $postManager->getPost($_GET['id']);
         $commentManager = new CommentManager();
@@ -68,7 +68,7 @@ class BackEndController {
     function showReportedComment($commentId, $postId) { //show the reported comments depending of 1 chapter 
         $AdminManager = new AdminManager();
         $req = $AdminManager->reportPending($_GET['id']);
-        if ($req->rowCount() != 0) { //test si la requete renvoie une ligne minimum
+        if ($req->rowCount() != 0) { //test if the request get 1 results minimum
             $postManager = new PostManager();
             $post = $postManager->getPost($_GET['id']);
             $comments = $req->fetchAll();    
@@ -85,16 +85,13 @@ class BackEndController {
     function showAllReportedComment($commentId) { //resume of all reported comments existing
         $AdminManager = new AdminManager();
         $comments = $AdminManager->showReportPending($commentId);
-        if ($comments->rowCount() != 0) { //test si la requete renvoie une ligne minimum
+        if ($comments->rowCount() != 0) { 
             require(BACK_VIEW_DIR . '/adminAllComment.php');
-        } else {
-            ?>
+            
+        } else { ?>           
             <script>alert("pas de commentaire à modérer");</script>
-
             <br /><a class="btn btn-secondary" href="/index.php">Retour à la liste des billets</a>
-            <?php
-
-        }
+        <?php }
     }
 
     function removeChapter($postId) {  //feature to delete an existing chapter

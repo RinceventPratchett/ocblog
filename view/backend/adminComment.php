@@ -4,7 +4,8 @@
 <h1>Visualisation des commentaires signalés du chapitre n°<?= $post['id'] ?></h1>
 
 
-<a class="btn btn-info linkAdmin adminCommentReportedByChapter" href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">retour administration du billet</a><br />
+<a class="btn btn-info linkAdmin adminCommentReportedByChapter" 
+   href="index.php?action=adminView&amp;id=<?= $post['id'] ?>">retour administration du billet</a><br />
 
 <div class="adminCommentReportedByChapter">
     <h2 class="adminCommentReportedByChapter">Commentaires signalés : </h2>
@@ -22,7 +23,7 @@
             </form>         
         </article>
     
-    <?php }?>
+    <?php } ?>
 </div>
 
 <?php $content = ob_get_clean();

@@ -18,6 +18,7 @@
             le <em><?= $comment['comment_date_fr'] ?></em><br />
             <?= nl2br($comment['comment']) ?><br />
             commentaire signalé <strong><?= nl2br($comment['reported']) ?></strong> fois<br />
+            
             <div>
                 <form action="index.php?action=moderateComment&amp;id=<?= $comment['id'] ?>&postId=<?= $comment['id_chapter'] ?>" onsubmit="return confirm('Voulez vous supprimer le commentaire ?')" method="POST">
                     <input class="btn btn-danger" type="submit" value="supprimer le commentaire" />
