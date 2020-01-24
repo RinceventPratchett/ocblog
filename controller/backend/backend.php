@@ -10,21 +10,18 @@ require_once(MODEL_DIR . '/Pagination.php');
 class BackEndController {   
 
     function adminView() { //Equivalent of postView, qtty of reports done if existing are presents
-        $postManager = new PostManager();
-        $post = $postManager->getPost($_GET['id']);
-        $commentManager = new CommentManager();
-        $comments = $commentManager->showComments($_GET['id']);
-        $AdminManager = new AdminManager();
-        $reportedComment = $AdminManager->reportPending($_GET['id']);
-
+        
+        $post = (new PostManager)->getPost($_GET['id']);
+        $comments = (new CommentManager)->showComments($_GET['id']);
+        $reportedComment = (new AdminManager)->reportPending($_GET['id']);
+        
         require(BACK_VIEW_DIR . '/adminView.php');
     }
 
     function editChapterView() {
-        $postManager = new PostManager();
-        $post = $postManager->getPost($_GET['id']);
-        $commentManager = new CommentManager();
-        $comments = $commentManager->showComments($_GET['id']);
+
+        $post = (new PostManager)->getPost($_GET['id']);
+        $comments = (new CommentManager)->showComments($_GET['id']);
 
         require(BACK_VIEW_DIR . '/editChapterView.php');
     }
@@ -34,9 +31,9 @@ class BackEndController {
     }
 
     function addChapter($chapterTitle, $chapterContent) {
-        $AdminManager = new AdminManager();
-        $affectedLines = $AdminManager->newChapter($chapterTitle, $chapterContent);
 
+        $affectedLines = (new AdminManager)->newChapter($chapterTitle, $chapterContent);
+        
         if ($affectedLines === false) {
             throw new Exception('Impossible d\'ajouter le chapitre !');
         } else {
@@ -45,8 +42,8 @@ class BackEndController {
     }
 
     function editChapter($chapterTitle, $chapterContent, $chapterId) {
-        $AdminManager = new AdminManager();
-        $affectedLines = $AdminManager->updateChapter($chapterTitle, $chapterContent, $chapterId);
+
+        $affectedLines = (new AdminManager)->updateChapter($chapterTitle, $chapterContent, $chapterId);
 
         if ($affectedLines === false) {
             throw new Exception('Impossible d\'editer le chapitre !');
@@ -56,8 +53,9 @@ class BackEndController {
     }
 
     function moderateComment($commentId, $postId) { //to delete a comment reported
-        $AdminManager = new AdminManager();
-        $affectedLines = $AdminManager->deleteComment($commentId);
+
+        $affectedLines = (new AdminManager)->deleteComment($commentId);
+
         if ($affectedLines === false) {
             throw new Exception('Impossible de supprimer le commentaire !');
         } else {
@@ -66,13 +64,13 @@ class BackEndController {
     }
 
     function showReportedComment($commentId, $postId) { //show the reported comments depending of 1 chapter 
-        $AdminManager = new AdminManager();
-        $req = $AdminManager->reportPending($_GET['id']);
-        if ($req->rowCount() != 0) { //test if the request get 1 results minimum
-            $postManager = new PostManager();
-            $post = $postManager->getPost($_GET['id']);
-            $comments = $req->fetchAll();    
 
+        $req = (new AdminManager)->reportPending($_GET['id']);
+
+        if ($req->rowCount() != 0) { //test if the request get 1 results minimum
+  
+            $post = (new PostManager)->getPost($_GET['id']);
+            $comments = $req->fetchAll();    
 
             require(BACK_VIEW_DIR . '/adminComment.php');
 
@@ -83,8 +81,9 @@ class BackEndController {
     }
 
     function showAllReportedComment($commentId) { //resume of all reported comments existing
-        $AdminManager = new AdminManager();
-        $comments = $AdminManager->showReportPending($commentId);
+
+        $comments = (new AdminManager)->showReportPending($commentId);
+
         if ($comments->rowCount() != 0) { 
             require(BACK_VIEW_DIR . '/adminAllComment.php');
             
@@ -95,8 +94,9 @@ class BackEndController {
     }
 
     function removeChapter($postId) {  //feature to delete an existing chapter
-        $AdminManager = new AdminManager();
-        $affectedLines = $AdminManager->deleteChapter($postId);
+
+        $affectedLines = (new AdminManager)->deleteChapter($postId);
+
         if ($affectedLines === false) {
             throw new Exception('Impossible de supprimer le chapitre !');
         } else {

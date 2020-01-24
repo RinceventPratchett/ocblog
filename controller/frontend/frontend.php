@@ -13,8 +13,9 @@ class FrontEndController {
     }
 
     function signIn() {
-        $AdminManager = new AdminManager();
-        $signIn = $AdminManager->signIn();
+
+        $signIn = (new AdminManager)->signIn();
+
         if ($signIn) {
             header('Location: index.php');
         }
@@ -24,9 +25,8 @@ class FrontEndController {
 
     function signOut() {
         if ($_SESSION['adminLogged']){
-
-            $AdminManager = new AdminManager();
-            $signOut = $AdminManager->signOut();
+            
+            $signOut = (new AdminManager)->signOut();
             header('Location: index.php');
         }
 
@@ -37,8 +37,10 @@ class FrontEndController {
         $pagination = new Pagination();
 
         $postsPerPage = 6;
+        
         $nbPosts = $pagination->getPostsPagination();
         $nbPage = $pagination->getPostsPages($nbPosts, $postsPerPage);
+        
         if (!isset($_GET['page'])) {
             $cPage = 0;
         } else {
@@ -55,10 +57,9 @@ class FrontEndController {
     }
 
     function postDetails() { //Show one chapter and existing comments depending of
-        $postManager = new PostManager();
-        $post = $postManager->getPost($_GET['id']);
-        $commentManager = new CommentManager();
-        $comments = $commentManager->showComments($_GET['id']);
+
+        $post = (new PostManager)->getPost($_GET['id']);
+        $comments = (new CommentManager)->showComments($_GET['id']);
 
         if (isset($_GET['id']) && $_GET['id'] > 0 && $_GET['id'] <= $post){        
             require(FRONT_VIEW_DIR . '/postView.php');
@@ -68,9 +69,9 @@ class FrontEndController {
     }
 
     function addComment($postId, $author, $comment) {
-        $commentManager = new CommentManager();
-        $affectedLines = $commentManager->newComment($postId, $author, $comment);
 
+        $affectedLines = (new CommentManager)->showComments($postId, $author, $comment);
+        
         if ($affectedLines === false) {
             throw new Exception('Impossible d\'ajouter le commentaire !');
         } else {
@@ -80,9 +81,7 @@ class FrontEndController {
 
     function reportComment($commentId, $chapterId) {
 
-
-        $CommentManager = new CommentManager();
-        $affectedLines = $CommentManager->reportComment($commentId, $chapterId);
+        $affectedLines = (new CommentManager)->reportComment($commentId, $chapterId);
 
         if ($affectedLines === false) {
             throw new Exception('Impossible de signaler le commentaire (reportComment->frontend)');
