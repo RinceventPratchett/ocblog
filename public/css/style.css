@@ -309,7 +309,12 @@ h2.adminView{
     align-items: center;
     height: auto;
     position: relative;
+    flex-direction: column;
+}
 
+.adminCommentReportedByChapterDetails{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .btn.btn-info.linkAdmin{
