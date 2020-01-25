@@ -38,7 +38,7 @@ class CommentManager extends Manager {
 
         $db = $this->dbConnect();
 
-        $reportedComment = $db->prepare('UPDATE comment SET reported=reported+1 WHERE id=' . $commentId);
+        $reportedComment = $db->prepare('UPDATE comment SET reported=reported+1 WHERE id=?');
         $affectedLines = $reportedComment->execute(array($commentId));
 
         return $affectedLines;

@@ -47,7 +47,7 @@ class AdminManager extends Manager
     public function deleteChapter($postId) 
     {
         $db = $this->dbConnect();
-        $deleteChapter = $db->prepare('DELETE FROM chapter WHERE id='.$postId);
+        $deleteChapter = $db->prepare('DELETE FROM chapter WHERE id=?');
         $affectedLines = $deleteChapter->execute(array($postId));
 
         return $affectedLines;
@@ -76,7 +76,7 @@ class AdminManager extends Manager
 
         $db = $this->dbConnect();
 
-        $deleteComment = $db->prepare('DELETE FROM comment WHERE id='.$commentId);
+        $deleteComment = $db->prepare('DELETE FROM comment WHERE id=?');
         $affectedLines = $deleteComment->execute(array($commentId));
 
         return $affectedLines;
