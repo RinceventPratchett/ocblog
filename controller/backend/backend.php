@@ -15,15 +15,23 @@ class BackEndController {
         $comments = (new CommentManager)->showComments($_GET['id']);
         $reportedComment = (new AdminManager)->reportPending($_GET['id']);
         
-        require(BACK_VIEW_DIR . '/adminView.php');
+        if (isset($_GET['id']) && $_GET['id'] > 0 && $_GET['id'] <= $post){
+            require(BACK_VIEW_DIR . '/adminView.php');
+        } else {
+            header('Location: index.php');
+        }
     }
 
     function editChapterView() {
 
         $post = (new PostManager)->getPost($_GET['id']);
         $comments = (new CommentManager)->showComments($_GET['id']);
-
-        require(BACK_VIEW_DIR . '/editChapterView.php');
+        
+         if (isset($_GET['id']) && $_GET['id'] > 0 && $_GET['id'] <= $post){
+            require(BACK_VIEW_DIR . '/editChapterView.php');
+        } else {
+            header('Location: index.php?action=adminView&id=' . $post);
+        }
     }
 
     function addChapterView() {
@@ -48,7 +56,7 @@ class BackEndController {
         if ($affectedLines === false) {
             throw new Exception('Impossible d\'editer le chapitre !');
         } else {
-            header('Location: index.php');
+            header('Location: index.php?action=adminView&id=' . $chapterId);
         }
     }
 
@@ -87,9 +95,11 @@ class BackEndController {
         if ($comments->rowCount() != 0) { 
             require(BACK_VIEW_DIR . '/adminAllComment.php');
             
-        } else { ?>           
+        } else { ?> 
+
             <script>alert("pas de commentaire à modérer");</script>
             <br /><a class="btn btn-secondary" href="/index.php">Retour à la liste des billets</a>
+            
         <?php }
     }
 
