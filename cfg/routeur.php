@@ -26,6 +26,8 @@ try {
             if ($_GET['action'] == 'adminView') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
                     (new BackendController)->adminView();
+                } else {
+                    header('Location: index.php');
                 }
                     
             } elseif ($_GET['action'] == 'addChapterView') {
